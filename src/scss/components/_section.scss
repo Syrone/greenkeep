@@ -1,0 +1,36 @@
+@use "mixins" as mixins;
+
+.section {
+
+	&-header {
+		margin-bottom: 1.5rem;
+
+		@include mixins.breakpoint-up(lg) {
+			margin-bottom: 3rem;
+		}
+	}
+
+	&-title,
+	&-subtitle {
+		color: var(--gray-400);
+		text-transform: uppercase;
+	}
+
+	&-title {
+		display: flex;
+		align-items: center;
+		gap: .25em;
+
+		font-size: 2.5rem;
+		font-weight: 600;
+		line-height: 1;
+
+		+ .section-subtitle {
+			margin-top: 1rem;
+		}
+	}
+
+	&-subtitle {
+		font-size: 1.5rem;
+	}
+}
