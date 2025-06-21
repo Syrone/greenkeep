@@ -1,0 +1,46 @@
+@use "../mixins" as mixins;
+
+.contacts-list {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+
+  &-item {
+    display: flex;
+  }
+
+  &-link {
+    --_fw: 600;
+    --_icon-size: 2rem;
+
+    justify-content: initial;
+    gap: .5rem;
+    text-align: start;
+
+    @include mixins.breakpoint-up(lg) {
+      --_icon-size: 2.5rem;
+    }
+  }
+
+  &-icon {
+    background-color: var(--light-200);
+    border-radius: .5rem;
+    padding: .5rem;
+
+    @include mixins.breakpoint-up(lg) {
+      padding: .75rem;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-main,
+  &-sup {
+    font-size: .75rem;
+    font-weight: 500;
+    color: var(--gray);
+  }
+}

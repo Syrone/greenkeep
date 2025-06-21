@@ -1,0 +1,38 @@
+.phone {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+
+  &-time {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .75rem;
+    font-weight: 500;
+    color: var(--gray-400);
+
+    &::before {
+      content: '';
+      width: .375rem;
+      height: .375rem;
+      display: inline-block;
+      flex-shrink: 0;
+      background-color: var(--success-300);
+      border-radius: 50rem;
+    }
+  }
+
+  &-link {
+    --_fs: 1.125rem;
+    --_fw: 600;
+    --_icon-size: 1.125rem;
+    --_icon-color: var(--primary);
+
+    --_color: var(--dark-500);
+    --_color-hover: var(--primary);
+    --_color-active: var(--dark-500);
+
+    justify-content: initial;
+    text-align: start;
+  }
+}

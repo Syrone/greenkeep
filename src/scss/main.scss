@@ -1,14 +1,25 @@
-// базовые подключения
+// Base
 @use "vars";
 @use "fonts";
 @use "settings";
 
-// подключения компонентов страницы
+// Components
 @use "./components/utilities";
 @use "./components/containers";
-@use "./components/section";
+@use "./components/typography";
 @use "./components/icons";
 @use "./components/buttons";
 @use "./components/field-control";
-@use "./components/form-check";
+@use "./components/checkbox";
+@use "./components/input-phone";
+@use "./components/section";
+@use "./components/phone";
+@use "./components/contacts-list";
+@use "./components/socials-list";
+@use "./components/brand";
 @use "./components/header";
+@use "./components/offcanvas";
+@use "./components/dropdown";
+
+// Sections
+@use "./sections/hero";

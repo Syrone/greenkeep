@@ -7,26 +7,24 @@
 	--_fw: 400;
 	--_lh: normal;
 	--_ls: normal;
-	--_color: var(--text-color);
-	--_bg: transparent;
-	--_border-width: 0;
+	--_border-width: .0625rem;
 	--_border-style: solid;
-	--_border-color: transparent;
 	--_rounded: 0;
 	--_padding: 0;
-	--_transform: initial;
 	--_transition-duration: var(--transition-duration);
 	--_transition-timing-function: var(--transition-timing-function);
 
+	--_color: var(--text-color);
 	--_color-hover: var(--primary);
-	--_bg-hover: transparent;
-	--_border-color-hover: transparent;
-	--_transform-hover: initial;
-
 	--_color-active: var(--primary);
+
+	--_bg: transparent;
+	--_bg-hover: transparent;
 	--_bg-active: transparent;
+
+	--_border-color: transparent;
+	--_border-color-hover: transparent;
 	--_border-color-active: transparent;
-	--_transform-active: initial;
 
 	--_icon-size: 1rem;
 	--_icon-color: currentColor;
@@ -78,52 +76,110 @@
 	}
 }
 
-.btn-check {
-	position: absolute;
-	clip: rect(0, 0, 0, 0);
-	pointer-events: none;
+.btn-primary {
+  --_color: var(--light-100);
+	--_color-hover: var(--light-100);
+	--_color-active: var(--light-100);
 
-	&:checked {
-		+ .btn {
-			--_color: var(--primary);
-			--_color-hover: var(--primary);
-			--_color-active: var(--primary);
-		}
-	}
+  --_bg: var(--primary);
+  --_bg-hover: var(--primary-400);
+  --_bg-active: var(--primary);
 }
 
-.btn-inline {
-	--_color: inherit;
+.btn-outline-primary {
+  --_color: var(--text-color);
+	--_color-hover: var(--light);
+	--_color-active: var(--text-color);
+
+  --_bg-hover: var(--primary);
+
+  --_border-color: var(--primary);
+  --_border-color-hover: var(--primary);
+  --_border-color-active: var(--primary);
 }
 
-.btn-inherit {
-	--_fs: inherit;
-	--_fw: inherit;
-	--_lh: inherit;
-	--_ls: inherit;
-	--_color: inherit;
+.btn-whatsapp,
+.btn-telegram {
+  --_color: var(--light-100);
+  --_color-hover: var(--light-100);
+  --_color-active: var(--light-100);
+}
 
-	display: inline;
-	text-transform: initial;
+.btn-whatsapp {
+  --_bg: var(--whatsapp);
+  --_bg-hover: var(--whatsapp-hover);
+  --_bg-active: var(--whatsapp);
+}
+
+.btn-telegram {
+  --_bg: var(--telegram);
+  --_bg-hover: var(--telegram-hover);
+  --_bg-active: var(--telegram);
+}
+
+.btn-link {
+	--_color: var(--primary);
+	--_color-hover: var(--primary-400);
+	--_color-active: var(--primary);
+}
+
+.btn-icon {
+  --_rounded: .5rem;
+  --_padding: .4375rem;
+  --_icon-size: 1rem;
+
+  @include mixins.breakpoint-up(lg) {
+    --_padding: .5625rem;
+    --_icon-size: 1.25rem;
+  }
 }
 
 .btn-base {
 	--_height: 2.25rem;
-	--_fs: 1.25rem;
-	--_rounded: 1.25rem;
+	--_fs: .875rem;
+  --_fw: 500;
+	--_rounded: .5rem;
 	--_padding: .25rem 1rem;
+
+  text-transform: uppercase;
+
+  @include mixins.breakpoint-up(lg) {
+    --_height: 2.5rem;
+    --_padding: .25rem 1.5rem;
+  }
 }
 
 .btn-lg {
-	--_height: 2.5rem;
-	--_fs: 1.25rem;
-	--_rounded: 1.25rem;
-	--_padding: .25rem 1.5rem;
+	--_height: 3rem;
+	--_fs: .875rem;
+  --_fw: 700;
+	--_rounded: .5rem;
+	--_padding: .25rem 1rem;
+
+  text-transform: uppercase;
 
 	@include mixins.breakpoint-up(lg) {
-		--_height: 3.125rem;
-		--_fs: 1.5rem;
-		--_rounded: 1.5rem;
-		--_padding: .25rem 1.25rem;
+		--_height: 3.5rem;
+		--_fs: 1rem;
+	}
+}
+
+.btn-xl {
+	--_height: 3rem;
+	--_fs: .875rem;
+  --_fw: 700;
+	--_rounded: .5rem;
+	--_padding: .25rem 1rem;
+  --_icon-size: 1.5rem;
+
+  gap: .875rem;
+  text-transform: uppercase;
+
+	@include mixins.breakpoint-up(lg) {
+		--_height: 4rem;
+		--_fs: 1rem;
+	  --_padding: .25rem 2rem;
+
+    gap: 1rem;
 	}
 }

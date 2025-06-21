@@ -1,0 +1,106 @@
+@use "../mixins" as mixins;
+
+.header {
+  width: 100%;
+  background-color: var(--light-100);
+  border-radius: 0 0 2.5rem 2.5rem;
+  padding-block: .75rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+
+  > .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include mixins.breakpoint-up(xl) {
+      flex-direction: column;
+      align-items: initial;
+      justify-content: initial;
+      gap: .75rem;
+    }
+  }
+
+  &-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-bottom {
+    order: -1;
+
+    @include mixins.breakpoint-up(xl) {
+      order: initial;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: .0625rem solid var(--border-color);
+      padding-top: .75rem;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+    gap: .375rem;
+
+    @include mixins.breakpoint-up(xl) {
+      gap: 1.5rem;
+    }
+  }
+
+  &-nav {
+    display: flex;
+    align-items: center;
+    gap: .875rem;
+
+    @include mixins.breakpoint-up(xxl) {
+      gap: 1.125rem;
+    }
+
+    &-link {
+      --_fs: .875rem;
+      --_fw: 500;
+
+      text-transform: uppercase;
+    }
+  }
+
+  .contacts-list {
+    order: -1;
+  }
+
+  .phone {
+
+    &-time {
+
+      @include mixins.breakpoint-down(lg) {
+        display: none;
+      }
+    }
+
+    &-link {
+
+      @include mixins.breakpoint-down(lg) {
+        --_fs: .75rem;
+      }
+
+      .icon {
+
+        @include mixins.breakpoint-down(lg) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .btn-menu {
+
+    @include mixins.breakpoint-up(xl) {
+      display: none;
+    }
+  }
+}

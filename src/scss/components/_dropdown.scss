@@ -16,17 +16,17 @@
 .dropdown-menu {
   // scss-docs-start dropdown-css-vars
   --bs-dropdown-zindex: 1040;
-  --bs-dropdown-min-width: 18rem;
-  --bs-dropdown-padding-x: .75rem;
-  --bs-dropdown-padding-y: .75rem;
+  --bs-dropdown-min-width: 3.125rem;
+  --bs-dropdown-padding-x: .5rem;
+  --bs-dropdown-padding-y: .5rem;
   --bs-dropdown-spacer: 0rem;
   --bs-dropdown-font-size: var(--fs-base);
   --bs-dropdown-color: inherit;
-  --bs-dropdown-bg: var(--light-color);
+  --bs-dropdown-bg: var(--light);
   --bs-dropdown-border-color: transparent;
-  --bs-dropdown-border-radius: 1.25rem;
+  --bs-dropdown-border-radius: .5rem;
   --bs-dropdown-border-width: 0rem;
-  --bs-dropdown-box-shadow: 0px 8px 24px -6px rgba(0, 0, 0, 0.15);
+  --bs-dropdown-box-shadow: 0px 8px 24px -6px rgba(0, 0, 0, 0.25);
   --bs-dropdown-item-border-radius: .75rem;
   --bs-dropdown-link-color: var(--dark-color-400);
   --bs-dropdown-link-hover-color: var(--dark-color-400);

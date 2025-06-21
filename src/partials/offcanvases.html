@@ -1,0 +1,21 @@
+<div class="offcanvas offcanvas-end offcanvas-menu" tabindex="-1" id="offcanvas-menu">
+  <div class="offcanvas-header">
+    @include('brand.html')
+
+    <button type="button" class="btn btn-icon btn-close btn-outline-primary" data-bs-dismiss="offcanvas"
+      aria-label="Close">
+      <span class="icon">
+        <svg>
+          <use xlink:href="img/icons/close.svg#svg-close"></use>
+        </svg>
+      </span>
+    </button>
+  </div>
+  <div class="offcanvas-body" data-transfer-target="header-nav"></div>
+
+  <div class="offcanvas-footer">
+    <div data-transfer-target="header-contacts"></div>
+    <div class="offcanvas-footer-buttons"
+      data-transfer-target="header-callback"></div>
+  </div>
+</div>

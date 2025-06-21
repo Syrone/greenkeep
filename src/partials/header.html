@@ -1,3 +1,57 @@
 <header class="header">
-  <div class="container"></div>
+  <div class="container">
+    <div class="header-top">
+      @include('contacts-list.html', {
+        transfer: 'header-contacts'
+      })
+
+      <div class="header-actions">
+        @include('phone.html')
+        @include('socials-list.html')
+        <button type="button" class="btn btn-base btn-outline-primary"
+          data-transfer-origin="header-callback"
+          data-transfer-breakpoint="1199.98">
+          Обратный звонок
+        </button>
+        <button type="button" class="btn btn-icon btn-outline-primary btn-menu"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvas-menu">
+          <span class="icon">
+            <svg>
+              <use xlink:href="img/icons/menu.svg#svg-menu"></use>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="header-bottom">
+      @include('brand.html')
+
+      <nav class="header-nav"
+        data-transfer-origin="header-nav"
+        data-transfer-breakpoint="1199.98">
+        <a href="#" class="btn header-nav-link">
+          Об услуге
+        </a>
+        <a href="#" class="btn header-nav-link">
+          Этапы монтажа
+        </a>
+        <a href="#" class="btn header-nav-link">
+          Преимущества
+        </a>
+        <a href="#" class="btn header-nav-link">
+          О нас
+        </a>
+        <a href="#" class="btn header-nav-link">
+          Наши объекты
+        </a>
+        <a href="#" class="btn header-nav-link">
+          Отзывы
+        </a>
+        <a href="#" class="btn header-nav-link">
+          Контакты
+        </a>
+      </nav>
+    </div>
+  </div>
 </header>

@@ -1,0 +1,10 @@
+@use "../mixins" as mixins;
+
+.socials-list {
+  display: flex;
+  gap: .375rem;
+
+  @include mixins.breakpoint-up(lg) {
+    gap: .5rem;
+  }
+}

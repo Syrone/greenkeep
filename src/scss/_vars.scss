@@ -3,14 +3,14 @@
 :root {
   // base
   --font-family: "Manrope", sans-serif;
-  --content-width: 1200px;
-  --container-offset: 1.25rem;
+  --content-width: 1280px;
+  --container-offset: 1rem;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
   // sizes
   --fs-base: 1rem;
   --fw-base: 400;
-  --lh-base: normal;
+  --lh-base: 1.25;
 
   // colors
   --title-color: #000;
@@ -27,13 +27,27 @@
 
   --light: #fff;
   --light-100: #fcfcfc;
-  --light-200: #f3f4f5;
+  --light-200: #f3f5f7;
 
   --gray: #727F93;
+  --gray-200: #D6E3F7;
   --gray-400: #7F92B2;
 
+  --border-color: #D6E3F7;
+
+  --success-300: #65BC54;
+
+  --whatsapp: #28D146;
+  --whatsapp-hover: #1AC639;
+
+  --telegram: #27A7E7;
+  --telegram-hover: #229ED6;
+
   // backgrounds
-  --body-bg: #fff;
+  --body-bg: var(--light-200);
+
+  // Backdrop
+  --backdrop: rgba(0, 0, 0, .72);
 
   // radius
   --rounded: 1rem;

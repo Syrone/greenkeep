@@ -1,0 +1,63 @@
+@use "../mixins" as mixins;
+
+.brand {
+
+  &,
+  &-slogan {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+
+    @include mixins.breakpoint-up(xl) {
+      flex-direction: row;
+      align-items: center;
+      gap: .75rem;
+    }
+  }
+
+  &-picture {
+    flex-shrink: 0;
+
+    img {
+      width: auto;
+      height: 1rem;
+      display: block;
+      object-fit: contain;
+
+      @include mixins.breakpoint-up(lg) {
+        height: 1.5rem;
+      }
+
+      @include mixins.breakpoint-up(xl) {
+        height: 2.5rem;
+      }
+    }
+  }
+
+  &-slogan {
+    max-width: 6.25rem;
+    font-size: .375rem;
+    font-weight: 500;
+    color: var(--gray);
+
+    @include mixins.breakpoint-up(lg) {
+      max-width: 11.25rem;
+      font-size: .625rem;
+    }
+
+    @include mixins.breakpoint-up(xl) {
+      max-width: 16.25rem;
+      font-size: .875rem;
+    }
+
+    &::before {
+
+      @include mixins.breakpoint-up(xl) {
+        content: '';
+        height: 1rem;
+        display: inline-block;
+        border-left: .0625rem solid var(--border-color);
+      }
+    }
+  }
+}

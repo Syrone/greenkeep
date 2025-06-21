@@ -1,0 +1,88 @@
+@use "../mixins" as mixins;
+
+.checkbox {
+  --_checkbox-size: .75rem;
+  --_checkbox-fs: .75rem;
+  --_checkbox-lh: 1.25;
+
+  font-size: var(--_checkbox-fs);
+  font-weight: 500;
+  line-height: var(--_checkbox-lh);
+  cursor: pointer;
+
+  @include mixins.breakpoint-up(lg) {
+    --_checkbox-size: 1.125rem;
+    --_checkbox-fs: .875rem;
+  }
+
+  .fieldset {
+    display: flex;
+    gap: .5rem;
+  }
+
+  &-wrapper {
+    min-height: calc(var(--_checkbox-fs) * var(--_checkbox-lh));
+    display: inline-grid;
+    place-content: center;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+
+  &-input,
+  &-icon {
+    grid-column: -1 / 1;
+    grid-row: -1 / 1;
+  }
+
+  &-input {
+    width: var(--_checkbox-size);
+    height: var(--_checkbox-size);
+    appearance: none;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    border-radius: .25rem;
+
+    &:checked {
+      background-color: var(--primary);
+
+      ~ .checkbox-icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-icon {
+    --_size: var(--_checkbox-size);
+    --_color: var(--light);
+
+    opacity: 0;
+  }
+
+  &-label {
+    align-self: center;
+
+    .btn {
+      --_border-width: 0;
+
+      font: inherit;
+      display: inline;
+      text-align: start;
+
+      @media (hover: hover) {
+
+        &:hover {
+          text-decoration: underline;
+          text-decoration-thickness: .0625rem;
+          text-underline-offset: .125em;
+        }
+      }
+
+      @media (hover: none) {
+        text-decoration: underline;
+        text-decoration-thickness: .0625rem;
+        text-underline-offset: .125em;
+      }
+    }
+  }
+}

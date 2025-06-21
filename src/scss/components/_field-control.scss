@@ -1,63 +1,9 @@
 @use "mixins" as mixins;
 
-.form-control-requireds,
-.form-fieldset-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: .75rem 1rem;
-	color: var(--gray-300);
-
-	.form-check {
-		color: inherit;
-
-		&-input {
-
-			&:checked {
-				--bs-form-check-bg-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"%3E%3Ccircle cx="10" cy="10" r="8" stroke="none" fill="%23b3b3b3" /%3E%3C/svg%3E')
-			}
-		}
-	}
-
-	&:not(:first-child) {
-		margin-top: 1.5rem;
-	}
-
-	&:not(:last-child) {
-		margin-bottom: 1.5rem;
-	}
-}
-
-.form-control-requireds {
-
-	.required {
-		color: inherit;
-		margin-bottom: 0;
-	}
-}
-
-.form-fieldset-header {
-	flex-wrap: wrap;
-
-	&-title {
-		font-size: 1.25rem;
-		font-weight: 300;
-		letter-spacing: normal;
-		color: inherit;
-	}
-}
-
-.field-control,
-.fieldset {
-	position: relative;
-}
-
-.field-control {
-
-	+ .field-control,
-	+ .btn-submit {
-		margin-top: 1.5rem;
-	}
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
 }
 
 .field {
@@ -119,66 +65,15 @@
 	}
 }
 
-textarea {
-	height: 7.5rem;
-	resize: none;
+.error-message {
+  font-size: .875rem;
+  font-weight: 600;
 
-	@include mixins.breakpoint-up(lg) {
-		height: 10rem;
-	}
-}
+  @include mixins.breakpoint-up(lg) {
+    font-size: 1rem;
+  }
 
-.required {
-	font-size: .625rem;
-	color: var(--gray-300);
-	margin-inline-start: auto;
-	margin-bottom: .5rem;
-	text-align: end;
-
-	@include mixins.breakpoint-up(lg) {
-		font-size: .75rem;
-	}
-}
-
-.btn-submit {
-	--_width: 100%;
-
-	&:not(:first-child) {
-		margin-top: 1.5rem;
-	}
-}
-
-.field-controls {
-
-	+ .field-controls {
-		margin-top: 1.5rem;
-	}
-}
-
-[data-has-fields] {
-	display: grid;
-	gap: 1.5rem;
-
-	.field-control {
-		margin: 0;
-	}
-
-	[data-columns-field="2"] {
-		@include mixins.breakpoint-up(lg) {
-			grid-column: span 2;
-		}
-	}
-}
-
-[data-has-fields="2"] {
-
-	@include mixins.breakpoint-up(lg) {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-	}
-}
-
-[data-has-fields="3"] {
-	@include mixins.breakpoint-up(lg) {
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-	}
+  &:empty {
+    display: none;
+  }
 }

@@ -1,1 +1,5 @@
-console.log('components');
+import './components/header.js'
+import './components/transfer.js'
+import './components/form.js'
+import './components/offcanvas.js'
+import './components/dropdown.js'
