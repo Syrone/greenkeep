@@ -450,6 +450,114 @@
           </div>
         </div>
       </section>
+
+      <section class="section stages">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">
+              <span>Этапы монтажа</span> системы автоматического полива
+            </h2>
+            <div class="section-subtitle">
+              <p>
+                Монтаж системы автоматического полива состоит из нескольких ключевых этапов, которые важно выполнить правильно, чтобы ваша система работала эффективно и без сбоев.
+              </p>
+            </div>
+
+            <div class="section-touch">
+              <picture>
+                <source srcset="./img/touch.webp" type="image/webp">
+                <img loading="lazy" src="./img/touch.png" class="image" width="34" height="24" alt="Картинка">
+              </picture>
+            </div>
+          </div>
+
+          <div class="stages-swiper">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <form class="stages-form js-form">
+                    <div class="hero-form-header">
+                      <h3 class="hero-form-title">
+                        Заполняете заявку на бесплатный замер участка
+                      </h3>
+
+                      <div class="hero-form-header-bottom">
+                        <div class="hero-form-subtitle">
+                          <p>
+                            Мы сразу назовем примерную стоимость, подберем удобное время для записи на бесплатный выезд
+                            и замер участка
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="hero-form-main">
+                      <div class="hero-form-actions">
+                        @include('partials/input-phone.html')
+                        <button type="submit" class="btn btn-xl btn-dark hero-form-submit">
+                          Получить консультацию
+                        </button>
+                      </div>
+
+                      @include('partials/checkbox.html')
+                    </div>
+                  </form>
+                </div>
+                <div class="swiper-slide">
+                  @include('partials/stages-card.html', {
+                    "title": "Замер участка",
+                    "current": "01",
+                    "desc": "Перед тем как начать монтаж системы необходимо тщательно оценить ваш участок:",
+                    "list": [
+                      "типы растений",
+                      "площадь участка",
+                      "особенности почвы и уклон",
+                    ],
+                    "image": "image-1",
+                  })
+                </div>
+                <div class="swiper-slide">
+                  @include('partials/stages-card.html', {
+                    "title": "Выбор подходящего типа системы полива",
+                    "current": "02",
+                    "desc": "В зависимости от типа вашего участка и потребностей растений выбирается один из типов системы полива.",
+                    "list": [],
+                    "image": "image-2",
+                  })
+                </div>
+                <div class="swiper-slide">
+                  @include('partials/stages-card.html', {
+                    "title": "Проектирование  схемы системы",
+                    "current": "03",
+                    "desc": "На этом этапе проектируется схема расположения всех элементов ",
+                    "list": [],
+                    "image": "image-3",
+                  })
+                </div>
+              </div>
+            </div>
+            <div class="swiper-controll">
+              <div class="swiper-pagination"></div>
+              <div class="swiper-navigation">
+                <button type="button" class="btn btn-icon btn-outline-primary swiper-button-prev">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="img/icons/swiper-prev.svg#svg-swiper-prev"></use>
+                    </svg>
+                  </span>
+                </button>
+                <button type="button" class="btn btn-icon btn-outline-primary swiper-button-next">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="img/icons/swiper-next.svg#svg-swiper-next"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     @include('partials/footer.html')

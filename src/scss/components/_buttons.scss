@@ -159,6 +159,16 @@
   --_border-color-active: var(--primary);
 }
 
+.btn-dark {
+  --_color: var(--light);
+	--_color-hover: var(--light);
+	--_color-active: var(--light);
+
+  --_bg: var(--dark-500);
+  --_bg-hover: var(--dark-300);
+  --_bg-active: var(--dark-500);
+}
+
 .btn-whatsapp,
 .btn-telegram {
   --_color: var(--light-100);
@@ -180,7 +190,7 @@
 
 .btn-outline-whatsapp,
 .btn-outline-telegram {
-  --_fs: .75rem;
+  --_fs: .875rem;
   --_icon-size: 1.5rem;
   --_icon-color: var(--light-100);
 
@@ -191,6 +201,11 @@
   --_bg-active: transparent;
 
   text-align: start;
+  text-transform: uppercase;
+
+  @include mixins.breakpoint-up(lg) {
+    --_fs: .75rem;
+  }
 
   .icon {
     border-radius: 50rem;

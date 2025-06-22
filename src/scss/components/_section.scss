@@ -58,4 +58,11 @@
       line-height: 1.4;
     }
   }
+
+  &-touch {
+
+    @include mixins.breakpoint-up(lg) {
+      display: none;
+    }
+  }
 }

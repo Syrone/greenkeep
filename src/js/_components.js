@@ -1,5 +1,6 @@
 import './components/header.js'
 import './components/transfer.js'
+import './components/swipers.js'
 import './components/form.js'
 import './components/accordion.js'
 import './components/offcanvas.js'

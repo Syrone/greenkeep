@@ -1,0 +1,41 @@
+<article class="stages-card">
+  <div class="stages-card-body">
+    <div class="stages-card-header">
+      <h3 class="stages-card-title">
+        @title
+      </h3>
+
+      <div class="stages-card-current">
+        @current
+      </div>
+    </div>
+    <div class="stages-card-main">
+      <p>
+        @desc
+      </p>
+
+      <ul class="list-reset list-disc">
+        @for(var i = 0; i < list.length; i++) {
+          <li>
+            `+list[i]+`
+          </li>
+        }
+      </ul>
+      <a href="#" target="_blank" class="btn btn-link stages-card-link">
+        <span>Подробнее</span>
+        <span class="icon">
+          <svg>
+            <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <div class="stages-card-picture">
+    <picture>
+      <source srcset="./img/stages/@image.webp" type="image/webp">
+      <img loading="lazy" src="./img/stages/@image.jpg" class="image" width="378" height="210" alt="Картинка">
+    </picture>
+  </div>
+</article>
