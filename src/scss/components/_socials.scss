@@ -1,0 +1,27 @@
+@use "../mixins" as mixins;
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &-label {
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.32;
+
+    @include mixins.breakpoint-up(lg) {
+      font-size: 1.125rem;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem 1rem;
+
+    @include mixins.breakpoint-up(lg) {
+      flex-direction: row;
+    }
+  }
+}

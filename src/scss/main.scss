@@ -7,6 +7,7 @@
 @use "./components/utilities";
 @use "./components/containers";
 @use "./components/typography";
+@use "./components/list";
 @use "./components/icons";
 @use "./components/buttons";
 @use "./components/field-control";
@@ -16,10 +17,15 @@
 @use "./components/phone";
 @use "./components/contacts-list";
 @use "./components/socials-list";
+@use "./components/socials";
 @use "./components/brand";
 @use "./components/header";
+@use "./components/accordion";
 @use "./components/offcanvas";
 @use "./components/dropdown";
 
 // Sections
 @use "./sections/hero";
+@use "./sections/comfort";
+@use "./sections/system";
+@use "./sections/selecting";

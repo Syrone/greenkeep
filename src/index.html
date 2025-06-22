@@ -6,70 +6,398 @@
 <body class="page-body">
   @include('partials/h1.html', {title: 'Главная страница'})
 
+  <script>
+    window.PHONES_MASK = {
+      ru: {
+        mask: '+7 (999) 999-99-99',
+        length: 10
+      },
+      usa: {
+        mask: '+1 (999) 999-99-99',
+        length: 10
+      },
+    }
+  </script>
+
   <div class="site-container">
     @include('partials/header.html')
 
     <main class="main">
       <section class="section hero">
-        <span class="background hero-background" style="background-image: url(./img/hero/background.webp);"></span>
+        <div class="hero-top">
+          <span class="background hero-background" style="background-image: url(./img/hero/background.webp);"></span>
 
-        <div class="container">
-          <div class="hero-body">
-            <div class="hero-content">
-              <h2 class="hero-title">
-                Установим автополив <b>под ключ за 1 день</b> с пожизненной гарантией
-              </h2>
+          <div class="container">
+            <div class="hero-body">
+              <div class="hero-content">
+                <h2 class="hero-title">
+                  Установим автополив <b>под ключ за 1 день</b> с пожизненной гарантией
+                </h2>
 
-              <button type="button" class="btn btn-xl btn-primary hero-button">
-                <span class="icon">
+                <button type="button" class="btn btn-xl btn-primary hero-button">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="img/icons/calc.svg#svg-calc"></use>
+                    </svg>
+                  </span>
+                  <span>
+                    Рассчитать стоимость онлайн
+                  </span>
+                </button>
+              </div>
+
+              <form class="hero-form js-form">
+                <div class="hero-form-header">
+                  <div class="hero-form-header-top">
+                    <h3 class="hero-form-title">
+                      Заполните форму ниже и получите предварительный расчет стоимости
+                    </h3>
+
+                    <div class="hero-persons">
+                      <div class="hero-persons-pictures">
+                        <div class="hero-persons-picture">
+                          <picture>
+                            <source srcset="./img/hero/image-1.webp" type="image/webp">
+                            <img loading="lazy" src="./img/hero/image-1.jpg" class="image" width="104" height="104"
+                              alt="Картинка">
+                          </picture>
+                        </div>
+                        <div class="hero-persons-picture">
+                          <picture>
+                            <source srcset="./img/hero/image-2.webp" type="image/webp">
+                            <img loading="lazy" src="./img/hero/image-2.jpg" class="image" width="104" height="104"
+                              alt="Картинка">
+                          </picture>
+                        </div>
+                      </div>
+
+                      <div class="hero-persons-label">
+                        <span>
+                          Сейчас работаем
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hero-form-header-bottom">
+                    <div class="hero-form-subtitle">
+                      <p>
+                        Мы сразу назовем примерную стоимость, подберем удобное время для записи на бесплатный выезд
+                        и замер участка
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="hero-form-main">
+                  <div class="hero-form-actions">
+                    @include('partials/input-phone.html')
+                    <button type="submit" class="btn btn-xl btn-primary hero-form-submit">
+                      <span>Получить консультацию</span>
+
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+
+                  @include('partials/checkbox.html')
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-bottom">
+          <div class="container">
+            <div class="hero-features">
+              <div class="hero-feature">
+                <span class="icon hero-feature-icon">
                   <svg>
-                    <use xlink:href="img/icons/calc.svg#svg-calc"></use>
+                    <use xlink:href="img/icons/truck.svg#svg-truck"></use>
                   </svg>
                 </span>
                 <span>
-                  Рассчитать стоимость онлайн
+                  Выезд на участок
+                  <br>
+                  бесплатно
                 </span>
-              </button>
+              </div>
+              <div class="hero-feature">
+                <span class="icon hero-feature-icon">
+                  <svg>
+                    <use xlink:href="img/icons/calendar.svg#svg-calendar"></use>
+                  </svg>
+                </span>
+                <span>
+                  Срок монтажа
+                  <br>
+                  от 1 дня
+                </span>
+              </div>
+              <div class="hero-feature">
+                <span class="icon hero-feature-icon">
+                  <svg>
+                    <use xlink:href="img/icons/shield.svg#svg-shield"></use>
+                  </svg>
+                </span>
+                <span>
+                  5 лет гарантия
+                  <br>
+                  на оборудование
+                </span>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <form class="hero-form js-form">
-              <div class="hero-form-header">
-                <div class="hero-form-header-top">
-                  <h3 class="hero-form-title">
-                    Заполните форму ниже и получите предварительный расчет стоимости
-                  </h3>
+      <section class="section comfort">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">
+              С <span>Green Keep ваш сад всегда в порядке</span>, а вы свободны от забот
+            </h2>
+            <div class="section-subtitle">
+              <p>
+                Мы создаем не просто системы полива, а инновационные решения, которые обеспечивают идеальный уход за садом и газоном без вашего участия.
+              </p>
+            </div>
+          </div>
 
-                  <div class="hero-persons">
-                    <div class="hero-persons-pictures">
-                      <div class="hero-persons-picture">
-                        <picture>
-                          <source srcset="./img/hero/image-1.webp" type="image/webp">
-                          <img loading="lazy" src="./img/hero/image-1.jpg" class="image" width="104" height="104" alt="Картинка">
-                        </picture>
-                      </div>
-                      <div class="hero-persons-picture">
-                        <picture>
-                          <source srcset="./img/hero/image-2.webp" type="image/webp">
-                          <img loading="lazy" src="./img/hero/image-2.jpg" class="image" width="104" height="104" alt="Картинка">
-                        </picture>
-                      </div>
-                    </div>
+          <div class="comfort-top">
+            <span class="background" style="background-image: url(./img/comfort/background.webp);"></span>
 
-                    <div class="hero-persons-label">
+            <div class="accordion">
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <button type="button" class="accordion-button collapsed"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#comfort-collapse-0"
+                      aria-expanded="false"
+                      aria-controls="comfort-collapse-0">
                       <span>
-                        Сейчас работаем
+                        Экономия времени
                       </span>
+                      <span class="icon accordion-button-icon">
+                        <svg>
+                          <use xlink:href="img/icons/plus.svg#svg-plus"></use>
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="accordion-collapse collapse"
+                    id="comfort-collapse-0">
+                    <div class="accordion-body">
+                      <p>
+                        Вам больше не нужно будет тратить время на полив. Система автоматически регулирует полив в зависимости от погоды и нужд растений, а вы отдыхаете.
+                      </p>
                     </div>
                   </div>
                 </div>
-                <div class="hero-form-header-bottom">
-                  <div class="hero-form-subtitle">
-                    <p>
-                      Мы сразу назовем примерную стоимость, подберем удобное время для записи на бесплатный выезд и замер участка
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <button type="button" class="accordion-button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#comfort-collapse-1"
+                      aria-expanded="true"
+                      aria-controls="comfort-collapse-1">
+                      <span>
+                        Эстетичный внешний вид вашего сада и газона
+                      </span>
+                      <span class="icon accordion-button-icon">
+                        <svg>
+                          <use xlink:href="img/icons/plus.svg#svg-plus"></use>
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="accordion-collapse collapse show"
+                    id="comfort-collapse-1">
+                    <div class="accordion-body">
+                      <p>
+                        Интеллектуальная система экономит до 50% воды (в сравнении с ручным поливом), сокращая ваши расходы на коммунальные услуги.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <button type="button" class="accordion-button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#comfort-collapse-2"
+                      aria-expanded="true"
+                      aria-controls="comfort-collapse-2">
+                      <span>
+                        Снижение расходов на коммунальные платежи
+                      </span>
+                      <span class="icon accordion-button-icon">
+                        <svg>
+                          <use xlink:href="img/icons/plus.svg#svg-plus"></use>
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="accordion-collapse collapse show"
+                    id="comfort-collapse-2">
+                    <div class="accordion-body">
+                      <p>
+                        Вам больше не нужно будет тратить время на полив. Система автоматически регулирует полив в зависимости от погоды и нужд растений, а вы отдыхаете.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="comfort-bottom">
+            <div class="comfort-bottom-content">
+              <h3 class="comfort-bottom-title">
+                Удобное управление поливом
+              </h3>
+              <div class="comfort-bottom-subtitle">
+                <p>
+                  Полив можно контролировать через мобильное приложение независимо от того, где вы находитесь
+                </p>
+              </div>
+            </div>
+
+            <div class="comfort-bottom-picture">
+              <picture>
+                <source srcset="./img/comfort/image-1.webp" type="image/webp">
+                <img loading="lazy" src="./img/comfort/image-1." width="320" height="260" alt="Картинка">
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section system">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">
+              Состав <span>системы</span> полива
+            </h2>
+          </div>
+
+          <ul class="list-reset system-list">
+            <li class="system-list-item">
+              @include('partials/system-card.html', {
+                "image": "image-1",
+                "title": "Капельный полив",
+                "subtitle": "Экономичный полив корневой зоны растений с использованием капельных шлангов и эмиттеров",
+              })
+            </li>
+            <li class="system-list-item">
+              @include('partials/system-card.html', {
+                "image": "image-2",
+                "title": "Дождевание",
+                "subtitle": "Равномерное орошение газонов и клумб с помощью роторных и спрей-форсунок",
+              })
+            </li>
+            <li class="system-list-item">
+              @include('partials/system-card.html', {
+                "image": "image-3",
+                "title": "Насосный узел",
+                "subtitle": "Подключение насосов для подачи воды с необходимым давлением",
+              })
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section selecting">
+        <div class="container">
+          <div class="selecting-body">
+            <div class="selecting-content">
+              <img src="./img/selecting/image-1.webp" loading="lazy" alt="Картинка" class="selecting-image">
+              <h2 class="section-title">
+                Не знаете, какая система автополива подойдет под ваш участок?
+              </h2>
+              <p class="section-subtitle">
+                Поможем подобрать систему автополива индивидуально под ваши задачи
+              </p>
+              <div class="selecting-info">
+                <div class="selecting-person">
+                  <div class="selecting-person-picture">
+                    <picture>
+                      <source srcset="./img/selecting/image-1.webp" type="image/webp">
+                      <img loading="lazy" src="./img/selecting/image-1.png" class="image" width="149" height="221" alt="Картинка">
+                    </picture>
+                  </div>
+                  <div class="selecting-person-content">
+                    <h4 class="selecting-person-name">
+                      Имя Фамилия
+                    </h4>
+                    <p class="selecting-person-position">
+                      должность
                     </p>
                   </div>
                 </div>
+                <ul class="list-reset selecting-list">
+                  <li class="selecting-list-item">
+                    <div class="selecting-list-content">
+                      <span class="icon selecting-list-icon">
+                        <svg>
+                          <use xlink:href="img/icons/blocks.svg#svg-blocks"></use>
+                        </svg>
+                      </span>
+                      <span>
+                        Подберем подходящую систему систему полива с учетом особенностей вашего участка
+                      </span>
+                    </div>
+                  </li>
+                  <li class="selecting-list-item">
+                    <div class="selecting-list-content">
+                      <span class="icon selecting-list-icon">
+                        <svg>
+                          <use xlink:href="img/icons/zap.svg#svg-zap"></use>
+                        </svg>
+                      </span>
+                      <span>
+                        Оценим возможность подключения к водоисточнику и электричеству
+                      </span>
+                    </div>
+                  </li>
+                  <li class="selecting-list-item">
+                    <div class="selecting-list-content">
+                      <span class="icon selecting-list-icon">
+                        <svg>
+                          <use xlink:href="img/icons/file.svg#svg-file"></use>
+                        </svg>
+                      </span>
+                      <span>
+                        Подготовим детализированную смету с учетом:
+                      </span>
+                    </div>
+                    <ul class="list-reset list-disc">
+                      <li>
+                        Площади территории
+                      </li>
+                      <li>
+                        Стоимости комплектующих
+                      </li>
+                      <li>
+                        Работы специалистов
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
+            </div>
+            <form class="hero-form selecting-form js-form">
+              <div class="hero-form-header">
+                <h3 class="hero-form-title">
+                  Заполните форму ниже, чтобы получить расчет стоимости
+                </h3>
+                <div class="hero-form-subtitle">
+                  <p>
+                    Мы сразу назовем примерную стоимость, подберем удобное время для записи на бесплатный выезд
+                    и замер участка
+                  </p>
+                </div>
+              </div>
+
               <div class="hero-form-main">
                 <div class="hero-form-actions">
                   @include('partials/input-phone.html')
@@ -85,6 +413,38 @@
                 </div>
 
                 @include('partials/checkbox.html')
+              </div>
+
+              <div class="selecting-form-footer">
+                <div class="socials">
+                  <div class="socials-label">
+                    <p>
+                      Или напишите в любой удобный мессенджер:
+                    </p>
+                  </div>
+                  <div class="socials-actions">
+                    <a href="#" target="_blank" class="btn btn-lg btn-outline-primary btn-outline-whatsapp">
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="img/icons/whatsapp.svg#svg-whatsapp"></use>
+                        </svg>
+                      </span>
+                      <span>
+                        Написать в WhatsApp
+                      </span>
+                    </a>
+                    <a href="#" target="_blank" class="btn btn-lg btn-outline-primary btn-outline-telegram">
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="img/icons/telegram.svg#svg-telegram"></use>
+                        </svg>
+                      </span>
+                      <span>
+                        Написать в Telegram
+                      </span>
+                    </a>
+                  </div>
+                </div>
               </div>
             </form>
           </div>

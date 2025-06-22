@@ -76,53 +76,6 @@
 	}
 }
 
-.btn-primary {
-  --_color: var(--light-100);
-	--_color-hover: var(--light-100);
-	--_color-active: var(--light-100);
-
-  --_bg: var(--primary);
-  --_bg-hover: var(--primary-400);
-  --_bg-active: var(--primary);
-}
-
-.btn-outline-primary {
-  --_color: var(--text-color);
-	--_color-hover: var(--light);
-	--_color-active: var(--text-color);
-
-  --_bg-hover: var(--primary);
-
-  --_border-color: var(--primary);
-  --_border-color-hover: var(--primary);
-  --_border-color-active: var(--primary);
-}
-
-.btn-whatsapp,
-.btn-telegram {
-  --_color: var(--light-100);
-  --_color-hover: var(--light-100);
-  --_color-active: var(--light-100);
-}
-
-.btn-whatsapp {
-  --_bg: var(--whatsapp);
-  --_bg-hover: var(--whatsapp-hover);
-  --_bg-active: var(--whatsapp);
-}
-
-.btn-telegram {
-  --_bg: var(--telegram);
-  --_bg-hover: var(--telegram-hover);
-  --_bg-active: var(--telegram);
-}
-
-.btn-link {
-	--_color: var(--primary);
-	--_color-hover: var(--primary-400);
-	--_color-active: var(--primary);
-}
-
 .btn-icon {
   --_rounded: .5rem;
   --_padding: .4375rem;
@@ -182,4 +135,109 @@
 
     gap: 1rem;
 	}
+}
+
+.btn-primary {
+  --_color: var(--light-100);
+	--_color-hover: var(--light-100);
+	--_color-active: var(--light-100);
+
+  --_bg: var(--primary);
+  --_bg-hover: var(--primary-400);
+  --_bg-active: var(--primary);
+}
+
+.btn-outline-primary {
+  --_color: var(--text-color);
+	--_color-hover: var(--light);
+	--_color-active: var(--text-color);
+
+  --_bg-hover: var(--primary);
+
+  --_border-color: var(--primary);
+  --_border-color-hover: var(--primary);
+  --_border-color-active: var(--primary);
+}
+
+.btn-whatsapp,
+.btn-telegram {
+  --_color: var(--light-100);
+  --_color-hover: var(--light-100);
+  --_color-active: var(--light-100);
+}
+
+.btn-whatsapp {
+  --_bg: var(--whatsapp);
+  --_bg-hover: var(--whatsapp-hover);
+  --_bg-active: var(--whatsapp);
+}
+
+.btn-telegram {
+  --_bg: var(--telegram);
+  --_bg-hover: var(--telegram-hover);
+  --_bg-active: var(--telegram);
+}
+
+.btn-outline-whatsapp,
+.btn-outline-telegram {
+  --_fs: .75rem;
+  --_icon-size: 1.5rem;
+  --_icon-color: var(--light-100);
+
+  --_color-hover: var(--text-color);
+  --_color-active: var(--text-color);
+
+  --_bg-hover: transparent;
+  --_bg-active: transparent;
+
+  text-align: start;
+
+  .icon {
+    border-radius: 50rem;
+    padding: .3125rem;
+
+    transition-property: background-color;
+    transition-duration: var(--_transition-duration);
+    transition-timing-function: var(--_transition-timing-function);
+  }
+}
+
+.btn-outline-whatsapp {
+
+  .icon {
+    background-color: var(--whatsapp);
+  }
+
+  @media (hover: hover) {
+
+    &:is(:hover, :focus-visible) {
+
+      .icon {
+        background-color: var(--whatsapp-hover);
+      }
+    }
+  }
+}
+
+.btn-outline-telegram {
+
+  .icon {
+    background-color: var(--telegram);
+  }
+
+  @media (hover: hover) {
+
+    &:is(:hover, :focus-visible) {
+
+      .icon {
+        background-color: var(--telegram-hover);
+      }
+    }
+  }
+}
+
+.btn-link {
+	--_color: var(--primary);
+	--_color-hover: var(--primary-400);
+	--_color-active: var(--primary);
 }

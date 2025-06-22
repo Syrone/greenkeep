@@ -1,5 +1,5 @@
-// если вы хотите использовать sass-переменные - удалите root
-// colors
+@use "mixins" as mixins;
+
 :root {
   // base
   --font-family: "Manrope", sans-serif;
@@ -11,6 +11,9 @@
   --fs-base: 1rem;
   --fw-base: 400;
   --lh-base: 1.25;
+
+  // Titles
+  --h2: 1.75rem;
 
   // colors
   --title-color: #000;
@@ -58,4 +61,12 @@
   // transitions
   --transition-duration: 300ms;
   --transition-timing-function: ease-in-out;
+}
+
+@include mixins.breakpoint-up(lg) {
+
+  :root {
+    // Titles
+    --h2: 3rem;
+  }
 }

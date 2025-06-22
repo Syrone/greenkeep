@@ -1,0 +1,12 @@
+.list-disc {
+
+  li {
+
+    &::before {
+      content: '•';
+      display: inline-block;
+      vertical-align: baseline;
+      margin-right: .25rem;
+    }
+  }
+}

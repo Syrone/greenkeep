@@ -3106,6 +3106,264 @@ function withinMaxClamp(min, value, max) {
 
 /***/ }),
 
+/***/ "./node_modules/bootstrap/js/dist/collapse.js":
+/*!****************************************************!*\
+  !*** ./node_modules/bootstrap/js/dist/collapse.js ***!
+  \****************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+/*!
+  * Bootstrap collapse.js v5.3.7 (https://getbootstrap.com/)
+  * Copyright 2011-2025 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+  */
+(function (global, factory) {
+   true ? module.exports = factory(__webpack_require__(/*! ./base-component.js */ "./node_modules/bootstrap/js/dist/base-component.js"), __webpack_require__(/*! ./dom/event-handler.js */ "./node_modules/bootstrap/js/dist/dom/event-handler.js"), __webpack_require__(/*! ./dom/selector-engine.js */ "./node_modules/bootstrap/js/dist/dom/selector-engine.js"), __webpack_require__(/*! ./util/index.js */ "./node_modules/bootstrap/js/dist/util/index.js")) :
+  0;
+})(this, (function (BaseComponent, EventHandler, SelectorEngine, index_js) { 'use strict';
+
+  /**
+   * --------------------------------------------------------------------------
+   * Bootstrap collapse.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+   * --------------------------------------------------------------------------
+   */
+
+
+  /**
+   * Constants
+   */
+
+  const NAME = 'collapse';
+  const DATA_KEY = 'bs.collapse';
+  const EVENT_KEY = `.${DATA_KEY}`;
+  const DATA_API_KEY = '.data-api';
+  const EVENT_SHOW = `show${EVENT_KEY}`;
+  const EVENT_SHOWN = `shown${EVENT_KEY}`;
+  const EVENT_HIDE = `hide${EVENT_KEY}`;
+  const EVENT_HIDDEN = `hidden${EVENT_KEY}`;
+  const EVENT_CLICK_DATA_API = `click${EVENT_KEY}${DATA_API_KEY}`;
+  const CLASS_NAME_SHOW = 'show';
+  const CLASS_NAME_COLLAPSE = 'collapse';
+  const CLASS_NAME_COLLAPSING = 'collapsing';
+  const CLASS_NAME_COLLAPSED = 'collapsed';
+  const CLASS_NAME_DEEPER_CHILDREN = `:scope .${CLASS_NAME_COLLAPSE} .${CLASS_NAME_COLLAPSE}`;
+  const CLASS_NAME_HORIZONTAL = 'collapse-horizontal';
+  const WIDTH = 'width';
+  const HEIGHT = 'height';
+  const SELECTOR_ACTIVES = '.collapse.show, .collapse.collapsing';
+  const SELECTOR_DATA_TOGGLE = '[data-bs-toggle="collapse"]';
+  const Default = {
+    parent: null,
+    toggle: true
+  };
+  const DefaultType = {
+    parent: '(null|element)',
+    toggle: 'boolean'
+  };
+
+  /**
+   * Class definition
+   */
+
+  class Collapse extends BaseComponent {
+    constructor(element, config) {
+      super(element, config);
+      this._isTransitioning = false;
+      this._triggerArray = [];
+      const toggleList = SelectorEngine.find(SELECTOR_DATA_TOGGLE);
+      for (const elem of toggleList) {
+        const selector = SelectorEngine.getSelectorFromElement(elem);
+        const filterElement = SelectorEngine.find(selector).filter(foundElement => foundElement === this._element);
+        if (selector !== null && filterElement.length) {
+          this._triggerArray.push(elem);
+        }
+      }
+      this._initializeChildren();
+      if (!this._config.parent) {
+        this._addAriaAndCollapsedClass(this._triggerArray, this._isShown());
+      }
+      if (this._config.toggle) {
+        this.toggle();
+      }
+    }
+
+    // Getters
+    static get Default() {
+      return Default;
+    }
+    static get DefaultType() {
+      return DefaultType;
+    }
+    static get NAME() {
+      return NAME;
+    }
+
+    // Public
+    toggle() {
+      if (this._isShown()) {
+        this.hide();
+      } else {
+        this.show();
+      }
+    }
+    show() {
+      if (this._isTransitioning || this._isShown()) {
+        return;
+      }
+      let activeChildren = [];
+
+      // find active children
+      if (this._config.parent) {
+        activeChildren = this._getFirstLevelChildren(SELECTOR_ACTIVES).filter(element => element !== this._element).map(element => Collapse.getOrCreateInstance(element, {
+          toggle: false
+        }));
+      }
+      if (activeChildren.length && activeChildren[0]._isTransitioning) {
+        return;
+      }
+      const startEvent = EventHandler.trigger(this._element, EVENT_SHOW);
+      if (startEvent.defaultPrevented) {
+        return;
+      }
+      for (const activeInstance of activeChildren) {
+        activeInstance.hide();
+      }
+      const dimension = this._getDimension();
+      this._element.classList.remove(CLASS_NAME_COLLAPSE);
+      this._element.classList.add(CLASS_NAME_COLLAPSING);
+      this._element.style[dimension] = 0;
+      this._addAriaAndCollapsedClass(this._triggerArray, true);
+      this._isTransitioning = true;
+      const complete = () => {
+        this._isTransitioning = false;
+        this._element.classList.remove(CLASS_NAME_COLLAPSING);
+        this._element.classList.add(CLASS_NAME_COLLAPSE, CLASS_NAME_SHOW);
+        this._element.style[dimension] = '';
+        EventHandler.trigger(this._element, EVENT_SHOWN);
+      };
+      const capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
+      const scrollSize = `scroll${capitalizedDimension}`;
+      this._queueCallback(complete, this._element, true);
+      this._element.style[dimension] = `${this._element[scrollSize]}px`;
+    }
+    hide() {
+      if (this._isTransitioning || !this._isShown()) {
+        return;
+      }
+      const startEvent = EventHandler.trigger(this._element, EVENT_HIDE);
+      if (startEvent.defaultPrevented) {
+        return;
+      }
+      const dimension = this._getDimension();
+      this._element.style[dimension] = `${this._element.getBoundingClientRect()[dimension]}px`;
+      index_js.reflow(this._element);
+      this._element.classList.add(CLASS_NAME_COLLAPSING);
+      this._element.classList.remove(CLASS_NAME_COLLAPSE, CLASS_NAME_SHOW);
+      for (const trigger of this._triggerArray) {
+        const element = SelectorEngine.getElementFromSelector(trigger);
+        if (element && !this._isShown(element)) {
+          this._addAriaAndCollapsedClass([trigger], false);
+        }
+      }
+      this._isTransitioning = true;
+      const complete = () => {
+        this._isTransitioning = false;
+        this._element.classList.remove(CLASS_NAME_COLLAPSING);
+        this._element.classList.add(CLASS_NAME_COLLAPSE);
+        EventHandler.trigger(this._element, EVENT_HIDDEN);
+      };
+      this._element.style[dimension] = '';
+      this._queueCallback(complete, this._element, true);
+    }
+
+    // Private
+    _isShown(element = this._element) {
+      return element.classList.contains(CLASS_NAME_SHOW);
+    }
+    _configAfterMerge(config) {
+      config.toggle = Boolean(config.toggle); // Coerce string values
+      config.parent = index_js.getElement(config.parent);
+      return config;
+    }
+    _getDimension() {
+      return this._element.classList.contains(CLASS_NAME_HORIZONTAL) ? WIDTH : HEIGHT;
+    }
+    _initializeChildren() {
+      if (!this._config.parent) {
+        return;
+      }
+      const children = this._getFirstLevelChildren(SELECTOR_DATA_TOGGLE);
+      for (const element of children) {
+        const selected = SelectorEngine.getElementFromSelector(element);
+        if (selected) {
+          this._addAriaAndCollapsedClass([element], this._isShown(selected));
+        }
+      }
+    }
+    _getFirstLevelChildren(selector) {
+      const children = SelectorEngine.find(CLASS_NAME_DEEPER_CHILDREN, this._config.parent);
+      // remove children if greater depth
+      return SelectorEngine.find(selector, this._config.parent).filter(element => !children.includes(element));
+    }
+    _addAriaAndCollapsedClass(triggerArray, isOpen) {
+      if (!triggerArray.length) {
+        return;
+      }
+      for (const element of triggerArray) {
+        element.classList.toggle(CLASS_NAME_COLLAPSED, !isOpen);
+        element.setAttribute('aria-expanded', isOpen);
+      }
+    }
+
+    // Static
+    static jQueryInterface(config) {
+      const _config = {};
+      if (typeof config === 'string' && /show|hide/.test(config)) {
+        _config.toggle = false;
+      }
+      return this.each(function () {
+        const data = Collapse.getOrCreateInstance(this, _config);
+        if (typeof config === 'string') {
+          if (typeof data[config] === 'undefined') {
+            throw new TypeError(`No method named "${config}"`);
+          }
+          data[config]();
+        }
+      });
+    }
+  }
+
+  /**
+   * Data API implementation
+   */
+
+  EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
+    // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
+    if (event.target.tagName === 'A' || event.delegateTarget && event.delegateTarget.tagName === 'A') {
+      event.preventDefault();
+    }
+    for (const element of SelectorEngine.getMultipleElementsFromSelector(this)) {
+      Collapse.getOrCreateInstance(element, {
+        toggle: false
+      }).toggle();
+    }
+  });
+
+  /**
+   * jQuery
+   */
+
+  index_js.defineJQueryPlugin(Collapse);
+
+  return Collapse;
+
+}));
+//# sourceMappingURL=collapse.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/js/dist/dom/data.js":
 /*!****************************************************!*\
   !*** ./node_modules/bootstrap/js/dist/dom/data.js ***!
@@ -10506,13 +10764,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_header_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/header.js */ "./src/js/components/header.js");
 /* harmony import */ var _components_transfer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/transfer.js */ "./src/js/components/transfer.js");
 /* harmony import */ var _components_form_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/form.js */ "./src/js/components/form.js");
-/* harmony import */ var _components_offcanvas_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/offcanvas.js */ "./src/js/components/offcanvas.js");
-/* harmony import */ var _components_dropdown_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/dropdown.js */ "./src/js/components/dropdown.js");
+/* harmony import */ var _components_accordion_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/accordion.js */ "./src/js/components/accordion.js");
+/* harmony import */ var _components_offcanvas_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/offcanvas.js */ "./src/js/components/offcanvas.js");
+/* harmony import */ var _components_dropdown_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/dropdown.js */ "./src/js/components/dropdown.js");
 
 
 
 
 
+
+
+/***/ }),
+
+/***/ "./src/js/components/accordion.js":
+/*!****************************************!*\
+  !*** ./src/js/components/accordion.js ***!
+  \****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var bootstrap_js_dist_collapse_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap/js/dist/collapse.js */ "./node_modules/bootstrap/js/dist/collapse.js");
+
+window.collapseInstances = new Map();
+window.initializeCollapse = function (element) {
+  const collapse = new bootstrap_js_dist_collapse_js__WEBPACK_IMPORTED_MODULE_0__(element, {
+    toggle: false
+  });
+  window.collapseInstances.set(element, collapse);
+};
+document.querySelectorAll('[data-bs-toggle="collapse"]')?.forEach(button => {
+  const targetSelector = button.getAttribute('data-bs-target');
+  const collapseElement = document.querySelector(targetSelector);
+  if (collapseElement) {
+    window.initializeCollapse(collapseElement);
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      const parentId = collapseElement.getAttribute('data-bs-parent');
+      if (parentId) {
+        const parentElement = document.getElementById(parentId);
+        if (parentElement) {
+          parentElement.querySelectorAll('.accordion-collapse.show').forEach(openElement => {
+            if (openElement !== collapseElement) {
+              const instance = window.collapseInstances.get(openElement);
+              instance?.hide();
+            }
+          });
+        }
+      }
+      const instance = window.collapseInstances.get(collapseElement);
+      instance?.toggle();
+    });
+  }
+});
 
 /***/ }),
 
@@ -10880,16 +11184,6 @@ __webpack_require__.r(__webpack_exports__);
 
 const validateForms = (selector, rules, afterSend) => {
   const forms = document.querySelectorAll(selector);
-  const phoneMasks = {
-    ru: {
-      mask: '+7 (999) 999-99-99',
-      length: 10
-    },
-    usa: {
-      mask: '+1 (999) 999-99-99',
-      length: 10
-    }
-  };
   if (!forms || forms.length === 0) {
     console.error('Нет таких форм!');
     return false;
@@ -10904,18 +11198,18 @@ const validateForms = (selector, rules, afterSend) => {
     const dropdownToggle = dorpdown?.querySelector('.dropdown-toggle');
     const dorpdownChoices = dorpdown?.querySelectorAll('.dropdown-menu-choice');
     if (telSelector) {
-      const defaultMask = new _node_modules_inputmask_dist_inputmask_es6_js__WEBPACK_IMPORTED_MODULE_1__["default"](phoneMasks['ru'].mask);
+      const defaultMask = new _node_modules_inputmask_dist_inputmask_es6_js__WEBPACK_IMPORTED_MODULE_1__["default"](window.PHONES_MASK['ru'].mask);
       defaultMask.mask(telSelector);
-      telSelector.dataset.maskLength = phoneMasks['ru'].length;
+      telSelector.dataset.maskLength = window.PHONES_MASK['ru'].length;
     }
     if (dropdownToggle && telSelector && dorpdownChoices) {
       dorpdownChoices.forEach(btn => {
         btn.addEventListener('click', () => {
           const countryCode = btn.dataset.country;
-          const selectedMask = phoneMasks[countryCode];
+          const selectedMask = window.PHONES_MASK[countryCode];
           if (selectedMask) {
             telSelector.value = '';
-            telSelector.placeholder = phoneMasks[countryCode].mask;
+            telSelector.placeholder = window.PHONES_MASK[countryCode].mask;
             _node_modules_inputmask_dist_inputmask_es6_js__WEBPACK_IMPORTED_MODULE_1__["default"].remove(telSelector);
             const newMask = new _node_modules_inputmask_dist_inputmask_es6_js__WEBPACK_IMPORTED_MODULE_1__["default"](selectedMask.mask);
             newMask.mask(telSelector);

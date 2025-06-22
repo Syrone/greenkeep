@@ -4,17 +4,6 @@ import Inputmask from "../../../node_modules/inputmask/dist/inputmask.es6.js";
 export const validateForms = (selector, rules, afterSend) => {
   const forms = document.querySelectorAll(selector);
 
-  const phoneMasks = {
-    ru: {
-      mask: '+7 (999) 999-99-99',
-      length: 10
-    },
-    usa: {
-      mask: '+1 (999) 999-99-99',
-      length: 10
-    },
-  };
-
   if (!forms || forms.length === 0) {
     console.error('Нет таких форм!');
     return false;
@@ -32,20 +21,20 @@ export const validateForms = (selector, rules, afterSend) => {
     const dorpdownChoices = dorpdown?.querySelectorAll('.dropdown-menu-choice');
 
     if (telSelector) {
-      const defaultMask = new Inputmask(phoneMasks['ru'].mask);
+      const defaultMask = new Inputmask(window.PHONES_MASK['ru'].mask);
       defaultMask.mask(telSelector);
-      telSelector.dataset.maskLength = phoneMasks['ru'].length;
+      telSelector.dataset.maskLength = window.PHONES_MASK['ru'].length;
     }
 
     if (dropdownToggle && telSelector && dorpdownChoices) {
       dorpdownChoices.forEach((btn) => {
         btn.addEventListener('click', () => {
           const countryCode = btn.dataset.country;
-          const selectedMask = phoneMasks[countryCode];
+          const selectedMask = window.PHONES_MASK[countryCode];
 
           if (selectedMask) {
             telSelector.value = '';
-            telSelector.placeholder = phoneMasks[countryCode].mask;
+            telSelector.placeholder = window.PHONES_MASK[countryCode].mask;
             Inputmask.remove(telSelector);
             const newMask = new Inputmask(selectedMask.mask);
             newMask.mask(telSelector);

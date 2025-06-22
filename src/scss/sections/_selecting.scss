@@ -1,0 +1,226 @@
+@use "../mixins" as mixins;
+
+.selecting {
+  color: var(--light-100);
+  background-image: linear-gradient(140deg, var(--dark-500) 1%, #161616 25%, var(--dark-500) 50%, #161616 75%, var(--dark-500) 90%);
+  padding-block: 2rem;
+
+  @include mixins.breakpoint-up(lg) {
+    padding-block: 2.75rem;
+    overflow: hidden;
+  }
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include mixins.breakpoint-up(lg) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include mixins.breakpoint-up(xl) {
+      gap: initial;
+    }
+  }
+
+  &-content {
+
+    @include mixins.breakpoint-up(lg) {
+      max-width: 47.5rem;
+    }
+  }
+
+  &-image {
+    display: none;
+
+    @include mixins.breakpoint-up(xl) {
+      width: 27.5rem;
+      display: block;
+      float: right;
+      shape-outside: url(../img/selecting/shape.svg);
+      margin-right: -7rem;
+      margin-bottom: -6rem;
+    }
+
+    @include mixins.breakpoint-up(xxl) {
+      width: 32.6875rem;
+      margin-bottom: -10rem;
+    }
+  }
+
+  .section-title,
+  .section-subtitle {
+    color: inherit;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+
+    @include mixins.breakpoint-up(lg) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .section-subtitle {
+    margin-block: 1rem 1rem;
+
+    @include mixins.breakpoint-up(lg) {
+      margin-block: 1rem 2.5rem;
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @include mixins.breakpoint-up(md) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    @include mixins.breakpoint-up(lg) {
+      display: initial;
+    }
+  }
+
+  &-person {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    @include mixins.breakpoint-up(lg) {
+      display: none;
+    }
+
+    &-picture {
+      max-width: 11.25rem;
+      width: 100%;
+      background-color: var(--dark-300);
+      border-radius: 1.5rem;
+      padding: .75rem .75rem 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: .375rem;
+    }
+
+    &-name {
+      font-size: 1.125rem;
+      font-weight: 600;
+      line-height: var(--lh-base);
+    }
+
+    &-position {
+      font-size: .875rem;
+      font-weight: 500;
+    }
+  }
+
+  &-list {
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.4;
+
+    @include mixins.breakpoint-up(md) {
+      max-width: 25rem;
+    }
+
+    @include mixins.breakpoint-up(lg) {
+      max-width: initial;
+      font-size: 1.125rem;
+    }
+
+    &-item {
+
+      & + & {
+        margin-top: 1rem;
+
+        @include mixins.breakpoint-up(lg) {
+          margin-top: 1.125rem;
+        }
+      }
+
+      .list-disc {
+        line-height: var(--lh-base);
+        margin-top: .5rem;
+
+        @include mixins.breakpoint-up(lg) {
+          line-height: inherit;
+        }
+      }
+    }
+
+    &-content,
+    &-item .list-disc {
+      padding-left: 2.5rem;
+
+      @include mixins.breakpoint-up(lg) {
+        padding-left: 3.5rem;
+      }
+    }
+
+    &-content {
+      position: relative;
+    }
+
+    &-icon {
+      --_size: 1.5rem;
+      --_color: var(--primary);
+
+      background-color: var(--light);
+      border-radius: .25rem;
+      padding: .25rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      @include mixins.breakpoint-up(lg) {
+        --_size: 2.5rem;
+
+        border-radius: .5rem;
+        padding: .5rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &-form {
+    align-self: center;
+
+    @include mixins.breakpoint-up(lg) {
+      align-self: flex-start;
+    }
+
+    .hero-form-title {
+      line-height: var(--lh-base);
+
+      @include mixins.breakpoint-up(lg) {
+        font-size: 2rem;
+        line-height: 1.14;
+      }
+    }
+
+    .hero-form-subtitle {
+
+      @include mixins.breakpoint-up(lg) {
+        display: none;
+      }
+    }
+  }
+}

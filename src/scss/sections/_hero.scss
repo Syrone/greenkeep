@@ -1,9 +1,19 @@
 @use "../mixins" as mixins;
 
 .hero {
-  color: var(--light);
-  padding-top: var(--header-height);
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @include mixins.breakpoint-up(lg) {
+    gap: 2rem;
+  }
+
+  &-top {
+    color: var(--light);
+    padding-top: var(--header-height);
+    position: relative;
+  }
 
   &-background {
 
@@ -206,6 +216,49 @@
         background-color: var(--success-300);
         border-radius: 50rem;
       }
+    }
+  }
+
+  &-features {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    background-color: var(--light-100);
+    border-radius: 1.5rem;
+    padding: 1rem .75rem;
+
+    @include mixins.breakpoint-up(lg) {
+      padding: 2.5rem;
+    }
+  }
+
+  &-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: .75rem;
+    font-weight: 500;
+    color: #1E1F25;
+    text-align: center;
+
+    @include mixins.breakpoint-up(lg) {
+      flex-direction: row;
+      align-items: start;
+      justify-content: initial;
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-align: start;
+    }
+
+    &-icon {
+      --_size: 2.5rem;
+      --_color: var(--primary);
+
+      background-color: #EBEBEB;
+      border-radius: .25rem;
+      padding: .5rem;
     }
   }
 }
