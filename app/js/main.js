@@ -21365,6 +21365,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_accordion_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/accordion.js */ "./src/js/components/accordion.js");
 /* harmony import */ var _components_offcanvas_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/offcanvas.js */ "./src/js/components/offcanvas.js");
 /* harmony import */ var _components_dropdown_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/dropdown.js */ "./src/js/components/dropdown.js");
+/* harmony import */ var _components_seo_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/seo.js */ "./src/js/components/seo.js");
+
 
 
 
@@ -21560,6 +21562,26 @@ document.body.addEventListener('click', event => {
 
 /***/ }),
 
+/***/ "./src/js/components/seo.js":
+/*!**********************************!*\
+  !*** ./src/js/components/seo.js ***!
+  \**********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+document.querySelectorAll('.seo')?.forEach(element => {
+  const wrapper = element.querySelector('.seo-wrapper');
+  const toggle = element.querySelector('.seo-button');
+  toggle.addEventListener('click', () => {
+    const expanded = wrapper.dataset.expanded === 'true';
+    wrapper.dataset.expanded = !expanded;
+    toggle.classList.toggle('is-open', !expanded);
+  });
+});
+
+/***/ }),
+
 /***/ "./src/js/components/swipers.js":
 /*!**************************************!*\
   !*** ./src/js/components/swipers.js ***!
@@ -21644,6 +21666,67 @@ document.querySelectorAll('.objects-card-swiper')?.forEach(element => {
     },
     thumbs: {
       swiper: thumbSwiper
+    }
+  });
+});
+document.querySelectorAll('.reviews-swiper')?.forEach(element => {
+  const swiperElement = element.querySelector('.swiper');
+  const swiperPrev = element.querySelector('.swiper-button-prev');
+  const swiperNext = element.querySelector('.swiper-button-next');
+  const swiperPagination = element.querySelector('.swiper-pagination');
+  new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](swiperElement, {
+    slidesPerView: 3,
+    spaceBetween: 24,
+    navigation: {
+      nextEl: swiperNext,
+      prevEl: swiperPrev
+    },
+    pagination: {
+      el: swiperPagination,
+      clickable: true
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 8
+      },
+      576: {
+        slidesPerView: 2,
+        spaceBetween: 8
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 24
+      }
+    }
+  });
+});
+document.querySelectorAll('.letters-swiper')?.forEach(element => {
+  const swiperElement = element.querySelector('.swiper');
+  const swiperPrev = element.querySelector('.swiper-button-prev');
+  const swiperNext = element.querySelector('.swiper-button-next');
+  const swiperPagination = element.querySelector('.swiper-pagination');
+  new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](swiperElement, {
+    slidesPerView: 'auto',
+    spaceBetween: 24,
+    navigation: {
+      nextEl: swiperNext,
+      prevEl: swiperPrev
+    },
+    pagination: {
+      el: swiperPagination,
+      clickable: true
+    },
+    breakpoints: {
+      0: {
+        spaceBetween: 8
+      },
+      576: {
+        spaceBetween: 8
+      },
+      992: {
+        spaceBetween: 24
+      }
     }
   });
 });

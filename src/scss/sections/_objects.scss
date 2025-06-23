@@ -2,6 +2,16 @@
 
 .objects {
 
+  .section-header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    @include mixins.breakpoint-down(lg) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
   &-card {
     display: grid;
     grid-template-columns: 100%;

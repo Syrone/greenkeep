@@ -19,6 +19,7 @@
 @use "./components/socials";
 @use "./components/brand";
 @use "./components/header";
+@use "./components/footer";
 @use "./components/swipers";
 @use "./components/accordion";
 @use "./components/offcanvas";
@@ -34,3 +35,8 @@
 @use "./sections/quiz";
 @use "./sections/team";
 @use "./sections/objects";
+@use "./sections/reviews";
+@use "./sections/letters";
+@use "./sections/seo";
+@use "./sections/advice";
+@use "./sections/newsletter";

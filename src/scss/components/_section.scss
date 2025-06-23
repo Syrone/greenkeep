@@ -60,9 +60,14 @@
   }
 
   &-touch {
+    flex-shrink: 0;
 
     @include mixins.breakpoint-up(lg) {
       display: none;
+    }
+
+    img {
+      display: block;
     }
   }
 }

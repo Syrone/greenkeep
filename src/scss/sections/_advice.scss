@@ -1,0 +1,227 @@
+@use "../mixins" as mixins;
+
+.advice {
+  color: var(--light-100);
+  background-image: var(--dark-gradient);
+  padding-block: 2rem;
+  overflow: hidden;
+
+  @include mixins.breakpoint-up(lg) {
+    padding-block: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  @include mixins.breakpoint-down(lg) {
+    margin-bottom: 0;
+  }
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+
+    @include mixins.breakpoint-up(lg) {
+      flex-direction: row;
+      align-items: start;
+      justify-content: space-between;
+    }
+  }
+
+  &-start {
+
+    @include mixins.breakpoint-up(lg) {
+      display: flex;
+      flex-direction: column;
+      gap: 2.75rem;
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+
+      @include mixins.breakpoint-up(lg) {
+        margin-bottom: 0;
+      }
+    }
+
+    .section-title,
+    .section-subtitle {
+      color: inherit;
+    }
+
+    .section-title {
+
+      @include mixins.breakpoint-up(lg) {
+        font-size: 2.5rem;
+      }
+    }
+
+    .section-subtitle {
+
+      @include mixins.breakpoint-up(lg) {
+        max-width: 23.125rem;
+      }
+    }
+
+    .phone {
+      align-items: center;
+      text-align: center;
+      margin-bottom: .5rem;
+
+      @include mixins.breakpoint-up(lg) {
+        align-items: initial;
+        text-align: initial;
+        margin-bottom: unset;
+      }
+
+      &-link {
+        --_fs: 2.25rem;
+        --_lh: 1.08;
+        --_color: inherit;
+
+        @include mixins.breakpoint-up(lg) {
+          --_fs: 2rem;
+        }
+      }
+
+      &-time {
+        font-size: 1rem;
+        font-weight: 600;
+        color: inherit;
+
+        @include mixins.breakpoint-up(lg) {
+          font-size: .75rem;
+        }
+      }
+    }
+  }
+
+  &-person {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block: -1.25rem -2rem;
+
+    @include mixins.breakpoint-up(lg) {
+      justify-content: initial;
+      margin-block: unset;
+      position: absolute;
+      left: 52.5%;
+      transform: translateX(-50%);
+      bottom: 0;
+      z-index: -1;
+    }
+
+    @include mixins.breakpoint-up(xl) {
+      left: 48.5%;
+    }
+
+    &-picture {
+      flex-shrink: 0;
+      transform: translateX(3rem);
+      pointer-events: none;
+
+      @include mixins.breakpoint-up(lg) {
+        transform: unset;
+      }
+
+      @include mixins.breakpoint-down(lg) {
+        mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 85%);
+        mask-repeat: no-repeat;
+        mask-size: 100% 100%;
+      }
+
+      img {
+        width: 19rem;
+        display: block;
+        object-fit: contain;
+
+        @include mixins.breakpoint-up(lg) {
+          width: 20rem;
+        }
+
+        @include mixins.breakpoint-up(xl) {
+          width: 24.75rem;
+        }
+      }
+    }
+
+    &-content {
+      max-width: 9.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .375rem;
+      font-size: .875rem;
+      font-weight: 500;
+      margin-right: -7rem;
+
+      @include mixins.breakpoint-up(lg) {
+        margin-right: -6rem;
+      }
+    }
+
+    &-name {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: inherit;
+    }
+  }
+
+  &-transfer {
+    display: flex;
+    justify-content: center;
+
+    @include mixins.breakpoint-up(lg) {
+      display: none;
+    }
+  }
+
+  .hero-form {
+    color: inherit;
+    background-color: transparent;
+    border-radius: unset;
+    padding: unset;
+
+    @include mixins.breakpoint-up(md) {
+      max-width: 27.25rem;
+    }
+
+    &-header {
+
+      @include mixins.breakpoint-down(lg) {
+        display: none;
+      }
+    }
+
+    &-title {
+
+      @include mixins.breakpoint-up(lg) {
+        font-size: 2rem;
+      }
+    }
+
+    .checkbox {
+
+      &-input {
+        background-color: var(--light);
+        border-color: var(--light);
+      }
+
+      &-icon {
+        --_color: var(--primary);
+      }
+
+      &-label {
+
+        .btn-link {
+          --_color: inherit;
+          --_color-hover: var(--light-100);
+          --_color-active: inherit;
+        }
+      }
+    }
+  }
+}

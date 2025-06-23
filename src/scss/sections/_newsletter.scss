@@ -1,0 +1,101 @@
+@use "../mixins" as mixins;
+
+.newsletter {
+
+  @include mixins.breakpoint-down(lg) {
+    color: var(--light);
+    background-color: var(--dark-500);
+  }
+
+  &:last-child {
+
+    @include mixins.breakpoint-down(lg) {
+      margin-bottom: -1.5rem;
+      padding-block: 2rem 3.5rem;
+    }
+  }
+
+  .hero-form {
+
+    @include mixins.breakpoint-up(lg) {
+      max-width: initial;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      padding: 2.5rem;
+    }
+
+    @include mixins.breakpoint-down(lg) {
+      color: inherit;
+      margin-inline: auto;
+      background-color: transparent;
+      border-radius: 0;
+      padding: 0;
+    }
+
+    &-title {
+      margin-inline: auto;
+      text-align: center;
+
+      @include mixins.breakpoint-up(lg) {
+        font-size: 2rem;
+        margin-inline: unset;
+        text-align: start;
+      }
+    }
+
+    &-actions {
+
+      @include mixins.breakpoint-up(lg) {
+        flex-direction: row;
+      }
+
+      .form-control {
+
+        @include mixins.breakpoint-up(lg) {
+          flex: 1 1;
+        }
+      }
+    }
+
+    &-main {
+      gap: 1rem;
+    }
+
+    &-submit {
+
+      @include mixins.breakpoint-down(lg) {
+        justify-content: center;
+      }
+    }
+
+    .checkbox {
+
+      &-input {
+
+        @include mixins.breakpoint-down(lg) {
+          background-color: var(--light);
+          border-color: var(--light);
+        }
+      }
+
+      &-icon {
+
+        @include mixins.breakpoint-down(lg) {
+          --_color: var(--primary);
+        }
+      }
+
+      &-label {
+
+        .btn-link {
+
+          @include mixins.breakpoint-down(lg) {
+            --_color: inherit;
+            --_color-hover: var(--light-100);
+            --_color-active: inherit;
+          }
+        }
+      }
+    }
+  }
+}

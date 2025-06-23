@@ -159,6 +159,33 @@
   --_border-color-active: var(--primary);
 }
 
+.btn-light {
+
+  &,
+  &.btn-type-whatsapp,
+  &.btn-type-telegram {
+    --_color: var(--text-color);
+    --_color-hover: var(--text-color);
+    --_color-active: var(--text-color);
+
+    --_bg: var(--light-100);
+    --_bg-hover: var(--light-200);
+    --_bg-active: var(--light-100);
+  }
+}
+
+.btn-outline-light {
+  --_color: inherit;
+  --_color-hover: inherit;
+  --_color-active: inherit;
+
+  --_bg-hover: rgba(255, 255, 255, 0.08);
+
+  --_border-color: var(--light-100);
+  --_border-color-hover: var(--light-100);
+  --_border-color-active: var(--light-100);
+}
+
 .btn-dark {
   --_color: var(--light);
 	--_color-hover: var(--light);
@@ -188,8 +215,20 @@
   --_bg-active: var(--telegram);
 }
 
-.btn-outline-whatsapp,
-.btn-outline-telegram {
+.btn-vk {
+  --_color: var(--primary);
+  --_color-hover: var(--primary-400);
+  --_color-active: var(--primary);
+}
+
+.btn-dzen {
+  --_color: var(--dark-500);
+  --_color-hover: var(--dark-300);
+  --_color-active: var(--dark-500);
+}
+
+.btn-type-whatsapp,
+.btn-type-telegram {
   --_fs: .875rem;
   --_icon-size: 1.5rem;
   --_icon-color: var(--light-100);
@@ -217,7 +256,7 @@
   }
 }
 
-.btn-outline-whatsapp {
+.btn-type-whatsapp {
 
   .icon {
     background-color: var(--whatsapp);
@@ -234,7 +273,7 @@
   }
 }
 
-.btn-outline-telegram {
+.btn-type-telegram {
 
   .icon {
     background-color: var(--telegram);

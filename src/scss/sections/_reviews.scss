@@ -1,0 +1,130 @@
+@use "../mixins" as mixins;
+
+.reviews {
+  overflow: hidden;
+
+  .section-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @include mixins.breakpoint-down(lg) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &-swiper {
+
+    .swiper {
+      overflow: initial;
+    }
+  }
+
+  &-card {
+    font-size: .875rem;
+    font-weight: 500;
+    color: var(--dark);
+    background-color: var(--light-100);
+    border-radius: 1.5rem;
+    padding: 1rem;
+
+    @include mixins.breakpoint-up(lg) {
+      font-size: var(--fs-base);
+      padding: 1.5rem;
+    }
+
+    &-header {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    &-title {
+      font-size: var(--fs-base);
+      line-height: var(--lh-base);
+
+      @include mixins.breakpoint-up(lg) {
+        font-size: 1.125rem;
+      }
+    }
+
+    &-stars {
+      display: flex;
+      gap: .5rem;
+
+      .icon {
+        --_color: #FFE83A;
+      }
+    }
+
+    &-main {
+      height: 12rem;
+      margin-top: .5rem;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      @include mixins.breakpoint-up(lg) {
+        height: 11.375rem;
+        margin-top: 1rem;
+        padding-right: 1rem;
+      }
+
+      &::-webkit-scrollbar {
+        width: .25rem;
+        height: .25rem;
+
+        &-track {
+          background-color: #d9d9d9;
+        }
+
+        &-thumb {
+          background-color: var(--primary);
+          cursor: pointer;
+
+          @media (hover: hover) {
+
+            &:hover {
+              background-color: var(--primary-400);
+            }
+          }
+        }
+      }
+    }
+
+    &-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1rem;
+
+      @include mixins.breakpoint-up(lg) {
+        margin-top: 1.5rem;
+      }
+    }
+
+    &-link {
+      --_fs: .75rem;
+
+      --_color: var(--gray-400);
+      --_color-hover: var(--textc-color);
+      --_color-active: var(--gray-400);
+
+      text-decoration: underline;
+      text-decoration-thickness: .0625rem;
+      text-underline-offset: .125em;
+
+      @include mixins.breakpoint-up(lg) {
+        --_fs: .875rem;
+      }
+    }
+
+    &-yandex {
+
+      img {
+        width: 1.5rem;
+        height: 1.5rem;
+        display: block;
+      }
+    }
+  }
+}

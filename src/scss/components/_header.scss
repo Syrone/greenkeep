@@ -66,6 +66,21 @@
       --_fw: 500;
 
       text-transform: uppercase;
+
+      @media (hover: hover) {
+
+        &:hover {
+          text-decoration: underline;
+          text-decoration-thickness: .0625rem;
+          text-underline-offset: .125em;
+        }
+      }
+
+      @media (hover: none) {
+        text-decoration: underline;
+        text-decoration-thickness: .0625rem;
+        text-underline-offset: .125em;
+      }
     }
   }
 

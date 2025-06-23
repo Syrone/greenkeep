@@ -13,6 +13,10 @@
     color: var(--light);
     padding-top: var(--header-height);
     position: relative;
+
+    @include mixins.breakpoint-up(lg) {
+      overflow: hidden;
+    }
   }
 
   &-background {
@@ -128,6 +132,10 @@
         font-size: 1.375rem;
         font-weight: 600;
       }
+
+      span {
+        color: var(--primary);
+      }
     }
 
     &-subtitle {
@@ -150,6 +158,26 @@
 
       @include mixins.breakpoint-up(lg) {
         gap: 1rem;
+      }
+    }
+
+    &-submit {
+
+      @include mixins.breakpoint-down(lg) {
+        --_icon-size: 2rem;
+        --_icon-color: var(--primary);
+
+        justify-content: space-between;
+        padding-right: .5rem;
+      }
+
+      .icon {
+
+        @include mixins.breakpoint-down(lg) {
+          background-color: var(--light-100);
+          border-radius: .25rem;
+          padding: .5rem;
+        }
       }
     }
   }
