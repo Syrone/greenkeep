@@ -1,0 +1,199 @@
+@use "../mixins" as mixins;
+
+.team {
+
+  @include mixins.breakpoint-down(lg) {
+    background-image: url(../img/team/background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-block: 2rem;
+  }
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+
+    @include mixins.breakpoint-up(lg) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+  }
+
+  &-start {
+
+    @include mixins.breakpoint-up(lg) {
+      max-width: 39.125rem;
+    }
+
+    .section-header {
+      flex-direction: column;
+      align-items: stretch;
+      margin-bottom: 1rem;
+
+      @include mixins.breakpoint-up(lg) {
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+  }
+
+  &-end {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+
+    @include mixins.breakpoint-up(lg) {
+      max-width: 33.625rem;
+      gap: 2rem;
+    }
+
+    &-content {
+      font-size: .875rem;
+      font-weight: 500;
+      line-height: 1.32;
+
+      @include mixins.breakpoint-up(lg) {
+        font-size: 1.125rem;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+
+      p + p {
+
+        @include mixins.breakpoint-up(lg) {
+          margin-top: 1.5rem;
+        }
+      }
+    }
+  }
+
+  &-features {
+    max-width: 15.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    @include mixins.breakpoint-up(lg) {
+      max-width: 32.5rem;
+    }
+  }
+
+  &-feature {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    font-weight: 500;
+    line-height: 1.16;
+
+    @include mixins.breakpoint-up(lg) {
+      gap: initial;
+      font-size: 1.125rem;
+      line-height: 1.4;
+    }
+
+    &-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: var(--lh-base);
+
+      @include mixins.breakpoint-up(lg) {
+        font-size: 3rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: .875rem;
+    font-weight: 700;
+    line-height: 1.16;
+    background-color: var(--light-100);
+    border-radius: 1rem;
+    padding: .75rem;
+    position: relative;
+
+    @include mixins.breakpoint-up(lg) {
+      max-width: fit-content;
+      font-size: 1.125rem;
+      font-weight: 700;
+      line-height: 1.4;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+    }
+
+    &-picture {
+
+      img {
+        width: 2.5rem;
+        height: 2.5rem;
+        display: block;
+        object-fit: contain;
+
+        @include mixins.breakpoint-up(lg) {
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+    }
+
+    &-title {
+      max-width: 12.875rem;
+      font: inherit;
+    }
+
+    .checkbox {
+      --_checkbox-size: 1.5rem;
+
+      pointer-events: none;
+      user-select: none;
+
+      position: absolute;
+      top: -.75rem;
+      right: 1rem;
+
+      @include mixins.breakpoint-up(lg) {
+        --_checkbox-size: 2rem;
+
+        top: -1rem;
+        right: 2rem;
+      }
+    }
+  }
+
+  &-picture {
+    margin-inline: -.5rem;
+
+    @include mixins.breakpoint-up(lg) {
+      margin-inline: unset;
+    }
+
+    img {
+      display: block;
+      object-fit: contain;
+    }
+  }
+
+  &-bottom {
+    margin-top: -2rem;
+
+    @include mixins.breakpoint-up(lg) {
+      display: none;
+    }
+
+    .team-end {
+      flex-direction: column-reverse;
+    }
+  }
+}

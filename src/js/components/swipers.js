@@ -1,7 +1,7 @@
 import Swiper from 'swiper'
-import { Navigation, Pagination } from 'swiper/modules'
+import { Navigation, Pagination, FreeMode, Thumbs } from 'swiper/modules'
 
-Swiper.use([Navigation, Pagination])
+Swiper.use([Navigation, Pagination, FreeMode, Thumbs])
 
 document.querySelectorAll('.stages-swiper')?.forEach(element => {
   const swiperElement = element.querySelector('.swiper')
@@ -34,5 +34,52 @@ document.querySelectorAll('.stages-swiper')?.forEach(element => {
         spaceBetween: 24,
       },
     }
+  })
+})
+
+document.querySelectorAll('.objects-swiper')?.forEach(element => {
+  const swiperParentElement = element.querySelector('.swiper')
+  const swiperParentPrev = element.querySelector('.objects-swiper-prev')
+  const swiperParentNext = element.querySelector('.objects-swiper-next')
+  const swiperParentPagination = element.querySelector('.objects-swiper-pagination')
+
+  new Swiper(swiperParentElement, {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    autoHeight: true,
+    navigation: {
+      nextEl: swiperParentNext,
+      prevEl: swiperParentPrev,
+    },
+    pagination: {
+      el: swiperParentPagination,
+      clickable: true,
+    },
+  })
+})
+
+document.querySelectorAll('.objects-card-swiper')?.forEach(element => {
+  const swiperMainElement = element.querySelector('.objects-card-main .swiper')
+  const swiperThumbElement = element.querySelector('.objects-card-thumb .swiper')
+  const swiperMainPagination = element.querySelector('.objects-card-main .swiper-pagination')
+
+  const thumbSwiper = new Swiper(swiperThumbElement, {
+    slidesPerView: 3,
+    spaceBetween: 16,
+    nested: true,
+    freeMode: true,
+    watchSlidesProgress: true,
+  })
+
+  new Swiper(swiperMainElement, {
+    spaceBetween: 24,
+    nested: true,
+    pagination: {
+      el: swiperMainPagination,
+      clickable: true,
+    },
+    thumbs: {
+      swiper: thumbSwiper,
+    },
   })
 })

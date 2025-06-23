@@ -21572,7 +21572,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
 
 
-swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Pagination]);
+swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.FreeMode, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Thumbs]);
 document.querySelectorAll('.stages-swiper')?.forEach(element => {
   const swiperElement = element.querySelector('.swiper');
   const swiperPrev = element.querySelector('.swiper-button-prev');
@@ -21602,6 +21602,48 @@ document.querySelectorAll('.stages-swiper')?.forEach(element => {
         slidesPerView: 3,
         spaceBetween: 24
       }
+    }
+  });
+});
+document.querySelectorAll('.objects-swiper')?.forEach(element => {
+  const swiperParentElement = element.querySelector('.swiper');
+  const swiperParentPrev = element.querySelector('.objects-swiper-prev');
+  const swiperParentNext = element.querySelector('.objects-swiper-next');
+  const swiperParentPagination = element.querySelector('.objects-swiper-pagination');
+  new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](swiperParentElement, {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    autoHeight: true,
+    navigation: {
+      nextEl: swiperParentNext,
+      prevEl: swiperParentPrev
+    },
+    pagination: {
+      el: swiperParentPagination,
+      clickable: true
+    }
+  });
+});
+document.querySelectorAll('.objects-card-swiper')?.forEach(element => {
+  const swiperMainElement = element.querySelector('.objects-card-main .swiper');
+  const swiperThumbElement = element.querySelector('.objects-card-thumb .swiper');
+  const swiperMainPagination = element.querySelector('.objects-card-main .swiper-pagination');
+  const thumbSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](swiperThumbElement, {
+    slidesPerView: 3,
+    spaceBetween: 16,
+    nested: true,
+    freeMode: true,
+    watchSlidesProgress: true
+  });
+  new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](swiperMainElement, {
+    spaceBetween: 24,
+    nested: true,
+    pagination: {
+      el: swiperMainPagination,
+      clickable: true
+    },
+    thumbs: {
+      swiper: thumbSwiper
     }
   });
 });
