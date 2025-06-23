@@ -2,7 +2,7 @@
 
 .selecting {
   color: var(--light-100);
-  background-image: linear-gradient(140deg, var(--dark-500) 1%, #161616 25%, var(--dark-500) 50%, #161616 75%, var(--dark-500) 90%);
+  background-image: var(--dark-gradient);
   padding-block: 2rem;
 
   @include mixins.breakpoint-up(lg) {

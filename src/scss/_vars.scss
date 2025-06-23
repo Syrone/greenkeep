@@ -49,6 +49,9 @@
   // backgrounds
   --body-bg: var(--light-200);
 
+  // Gradients
+  --dark-gradient: linear-gradient(140deg, var(--dark-500) 1%, #161616 25%, var(--dark-500) 50%, #161616 75%, var(--dark-500) 90%);
+
   // Backdrop
   --backdrop: rgba(0, 0, 0, .72);
 

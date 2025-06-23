@@ -15,4 +15,28 @@
   <link rel="stylesheet" href="css/vendor.css">
   <link rel="stylesheet" href="css/main.css">
   <script defer src="js/main.js"></script>
+
+  <!-- Marquiz script start -->
+  <script>
+  (function(w, d, s, o){
+    var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js';j.onload = function() {
+      if (document.readyState !== 'loading') Marquiz.init(o);
+      else document.addEventListener("DOMContentLoaded", function() {
+        Marquiz.init(o);
+      });
+    };
+    d.head.insertBefore(j, d.head.firstElementChild);
+  })(window, document, 'script', {
+      host: '//quiz.marquiz.ru',
+      region: 'ru',
+      id: '5ca1f0fad94cec005295dcb5',
+      autoOpen: false,
+      autoOpenFreq: 'once',
+      openOnExit: false,
+      disableOnMobile: false
+    }
+  );
+  </script>
+  <!-- Marquiz script end -->
+
 </head>

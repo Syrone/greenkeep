@@ -10,9 +10,8 @@
 @use "./components/list";
 @use "./components/icons";
 @use "./components/buttons";
-@use "./components/field-control";
+@use "./components/form-control";
 @use "./components/checkbox";
-@use "./components/input-phone";
 @use "./components/section";
 @use "./components/phone";
 @use "./components/contacts-list";
@@ -31,3 +30,5 @@
 @use "./sections/system";
 @use "./sections/selecting";
 @use "./sections/stages";
+@use "./sections/choose";
+@use "./sections/quiz";

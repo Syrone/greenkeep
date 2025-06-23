@@ -6,19 +6,6 @@
 <body class="page-body">
   @include('partials/h1.html', {title: 'Главная страница'})
 
-  <script>
-    window.PHONES_MASK = {
-      ru: {
-        mask: '+7 (999) 999-99-99',
-        length: 10
-      },
-      usa: {
-        mask: '+1 (999) 999-99-99',
-        length: 10
-      },
-    }
-  </script>
-
   <div class="site-container">
     @include('partials/header.html')
 
@@ -553,6 +540,205 @@
                     </svg>
                   </span>
                 </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section choose">
+        <div class="choose-top">
+          <div class="container">
+            <div class="section-header">
+              <h2 class="section-title">
+                <span>Почему</span> вам стоит выбрать именно нас
+              </h2>
+            </div>
+
+            <div class="choose-top-grid">
+              <div class="choose-card">
+                <div class="choose-card-content">
+                  <p>
+                    Мы настолько уверены в качестве своей работы и используемом оборудовании, что <b>даем пожизненную гарантию</b> при заключении договора на сервисное обслуживание и <b>5 лет гарантии на оборудование.</b>
+                  </p>
+                </div>
+
+                <div class="choose-card-person">
+                  <div class="choose-card-person-picture">
+                    <picture>
+                      <source srcset="./img/choose/person.webp" type="image/webp">
+                      <img loading="lazy" src="./img/choose/person." class="image" width="146" height="146" alt="Картинка">
+                    </picture>
+                  </div>
+                  <div class="choose-card-person-content">
+                    <div class="choose-card-person-signed">
+                      <picture>
+                        <source srcset="./img/choose/signed.webp" type="image/webp">
+                        <img loading="lazy" src="./img/choose/signed.png" class="image" width="113" height="84" alt="Картинка">
+                      </picture>
+                    </div>
+                    <div class="choose-card-person-info">
+                      <h4 class="choose-card-person-name">
+                        Аксенов Евгений
+                      </h4>
+                      <div class="choose-card-person-position">
+                        <p>
+                          Генеральный директор
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="choose-card">
+                <span class="choose-card-background background" style="background-image: url(./img/choose/image-1.webp);"></span>
+                <div class="choose-card-body">
+                  <h3 class="choose-card-title">
+                    Пожизненная гарантия
+                  </h3>
+                  <div class="choose-card-content">
+                    <p>
+                      При заключении договора на сервисное обслуживание
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="choose-card">
+                <span class="choose-card-background background" style="background-image: url(./img/choose/image-2.webp);"></span>
+                <div class="choose-card-body">
+                  <h3 class="choose-card-title">
+                    Собственный склад и автопарк
+                  </h3>
+                </div>
+              </div>
+              <div class="choose-card">
+                <span class="choose-card-background background" style="background-image: url(./img/choose/image-3.webp);"></span>
+                <div class="choose-card-body">
+                  <h3 class="choose-card-title">
+                    5 лет гарантии качества <br> на наши системы
+                  </h3>
+                  <div class="choose-card-content">
+                    <p>
+                      Мы используем только лучшее оборудование мировых брендов: Hunter, Rain Bird, Unidelta, Pedrollo, Italtechnica и другие — для надежности и долговечности вашего полива!
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="choose-card">
+                <span class="choose-card-background background" style="background-image: url(./img/choose/image-4.webp);"></span>
+                <div class="choose-card-body">
+                  <h3 class="choose-card-title">
+                    Не экономим на материалах и строго соблюдаем технологии установки система полива
+                  </h3>
+                </div>
+              </div>
+              <div class="choose-card">
+                <span class="choose-card-background background"></span>
+                <div class="choose-card-body">
+                  <h3 class="choose-card-title">
+                    Быстрый запуск работ и монтаж всего от 1 дня
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="choose-bottom">
+          <div class="container">
+            <div class="choose-bottom-body">
+              <form class="hero-form js-form">
+                <div class="hero-form-header">
+                  <div class="hero-form-header-top">
+                    <h3 class="hero-form-title">
+                      Получите бесплатную консультацию
+                    </h3>
+                  </div>
+                  <div class="hero-form-header-bottom">
+                    <div class="hero-form-subtitle">
+                      <p>
+                        Получите бесплтаную конслуьтацию и полный бесплтаный парйс на монтаж автополива
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="hero-form-main">
+                  <div class="hero-form-actions">
+                    @include('partials/input-phone.html')
+                    <button type="submit" class="btn btn-xl btn-primary hero-form-submit">
+                      <span>Получить консультацию</span>
+
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+
+                  @include('partials/checkbox.html')
+                </div>
+              </form>
+
+              <div class="choose-bottom-person">
+                <div class="choose-bottom-person-picture">
+                  <picture>
+                    <source srcset="./img/choose/person-2.webp" type="image/webp">
+                    <img loading="lazy" src="./img/choose/person-2.png" class="image" width="460" height="416" alt="Картинка">
+                  </picture>
+                </div>
+
+                <div class="choose-bottom-person-content">
+                  <h4 class="choose-bottom-person-name">
+                    Имя Фамилия
+                  </h4>
+                  <div class="choose-bottom-person-position">
+                    <p>
+                      Руководитель клиентского отдела
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section quiz">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">
+              <span>Рассчитайте стоимость</span> системы полива
+            </h2>
+            <div class="section-subtitle">
+              <p>
+                Ответьте всего на 5 вопросов и получите подарок.
+              </p>
+            </div>
+          </div>
+
+          <div class="quiz-body">
+            <div class="quiz-iframe">
+              <div data-marquiz-id="5ca1f0fad94cec005295dcb5"></div>
+              <script>(function(t, p) {window.Marquiz ? Marquiz.add([t, p]) : document.addEventListener('marquizLoaded', function() {Marquiz.add([t, p])})})('Inline', {id: '5ca1f0fad94cec005295dcb5', buttonText: '«Старт»', rounded: true, blicked: false, buttonOnMobile: false})</script>
+            </div>
+            <div class="quiz-person" style="background-image: url(./img/quiz/person.webp);">
+              <div class="quiz-person-content">
+                <div class="quiz-person-info">
+                  <h4 class="quiz-person-name">
+                    Марина Андреева
+                  </h4>
+                  <div class="quiz-person-position">
+                    <p>
+                      Ваш менеджер
+                    </p>
+                  </div>
+                </div>
+                <div class="quiz-person-desc">
+                  <p>
+                    Текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст
+                  </p>
+                </div>
               </div>
             </div>
           </div>

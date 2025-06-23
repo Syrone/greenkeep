@@ -16,43 +16,13 @@ export const validateForms = (selector, rules, afterSend) => {
 
   forms.forEach((form) => {
     const telSelector = form.querySelector('input[type="tel"]');
-    const dorpdown = telSelector.closest('.js-input-validate')?.querySelector('.dropdown');
-    const dropdownToggle = dorpdown?.querySelector('.dropdown-toggle');
-    const dorpdownChoices = dorpdown?.querySelectorAll('.dropdown-menu-choice');
 
     if (telSelector) {
-      const defaultMask = new Inputmask(window.PHONES_MASK['ru'].mask);
-      defaultMask.mask(telSelector);
-      telSelector.dataset.maskLength = window.PHONES_MASK['ru'].length;
-    }
-
-    if (dropdownToggle && telSelector && dorpdownChoices) {
-      dorpdownChoices.forEach((btn) => {
-        btn.addEventListener('click', () => {
-          const countryCode = btn.dataset.country;
-          const selectedMask = window.PHONES_MASK[countryCode];
-
-          if (selectedMask) {
-            telSelector.value = '';
-            telSelector.placeholder = window.PHONES_MASK[countryCode].mask;
-            Inputmask.remove(telSelector);
-            const newMask = new Inputmask(selectedMask.mask);
-            newMask.mask(telSelector);
-            telSelector.dataset.maskLength = selectedMask.length;
-
-            const img = dropdownToggle.querySelector('img');
-            const source = dropdownToggle.querySelector('source');
-            if (img && source) {
-              img.src = `./img/input-phone/${countryCode}.png`;
-              source.srcset = `./img/input-phone/${countryCode}.webp`;
-            }
-          }
-        });
-      });
+      const inputMask = new Inputmask('+7 (999)9999999');
+      inputMask.mask(telSelector);
     }
 
     const formRules = rules.map((item) => {
-      // Создаем копию объекта правил для каждой формы
       const newItem = { ...item };
       if (newItem.tel && telSelector) {
         newItem.rules = [...newItem.rules, {

@@ -21841,38 +21841,11 @@ const validateForms = (selector, rules, afterSend) => {
   }
   forms.forEach(form => {
     const telSelector = form.querySelector('input[type="tel"]');
-    const dorpdown = telSelector.closest('.js-input-validate')?.querySelector('.dropdown');
-    const dropdownToggle = dorpdown?.querySelector('.dropdown-toggle');
-    const dorpdownChoices = dorpdown?.querySelectorAll('.dropdown-menu-choice');
     if (telSelector) {
-      const defaultMask = new _node_modules_inputmask_dist_inputmask_es6_js__WEBPACK_IMPORTED_MODULE_1__["default"](window.PHONES_MASK['ru'].mask);
-      defaultMask.mask(telSelector);
-      telSelector.dataset.maskLength = window.PHONES_MASK['ru'].length;
-    }
-    if (dropdownToggle && telSelector && dorpdownChoices) {
-      dorpdownChoices.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const countryCode = btn.dataset.country;
-          const selectedMask = window.PHONES_MASK[countryCode];
-          if (selectedMask) {
-            telSelector.value = '';
-            telSelector.placeholder = window.PHONES_MASK[countryCode].mask;
-            _node_modules_inputmask_dist_inputmask_es6_js__WEBPACK_IMPORTED_MODULE_1__["default"].remove(telSelector);
-            const newMask = new _node_modules_inputmask_dist_inputmask_es6_js__WEBPACK_IMPORTED_MODULE_1__["default"](selectedMask.mask);
-            newMask.mask(telSelector);
-            telSelector.dataset.maskLength = selectedMask.length;
-            const img = dropdownToggle.querySelector('img');
-            const source = dropdownToggle.querySelector('source');
-            if (img && source) {
-              img.src = `./img/input-phone/${countryCode}.png`;
-              source.srcset = `./img/input-phone/${countryCode}.webp`;
-            }
-          }
-        });
-      });
+      const inputMask = new _node_modules_inputmask_dist_inputmask_es6_js__WEBPACK_IMPORTED_MODULE_1__["default"]('+7 (999)9999999');
+      inputMask.mask(telSelector);
     }
     const formRules = rules.map(item => {
-      // Создаем копию объекта правил для каждой формы
       const newItem = {
         ...item
       };

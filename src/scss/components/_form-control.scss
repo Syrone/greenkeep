@@ -6,29 +6,29 @@
   gap: .25rem;
 }
 
-.field {
+.input {
 	--_width: 100%;
-	--_height: 2.5rem;
+	--_height: 3rem;
 
-	--_fs: var(--fs-base);
-	--_fw: var(--fw-base);
+	--_fs: .875rem;
+	--_fw: 500;
 	--_lh: var(--lh-base);
 	--_ls: var(--ls-base);
-	--_color: var(--gray-300);
-	--_bg: transparent;
+	--_color: var(--gray-400);
+	--_bg: var(--light-200);
 	--_border-width: 1px;
 	--_border-solid: solid;
-	--_border-color: currentColor;
-	--_rounded: 1.5rem;
-	--_padding: .625rem 1rem;
+	--_border-color: var(--light-200);
+	--_rounded: .75rem;
+	--_padding: .5rem 1rem;
 
-	--_color-hover: var(--gray-800);
-	--_bg-hover: transparent;
-	--_border-color-hover: currentColor;
+	--_color-hover: var(--text-color);
+	--_bg-hover: var(--light-200);
+	--_border-color-hover: var(--light-200);
 
-	--_color-active: var(--gray-800);
-	--_bg-active: transparent;
-	--_border-color-active: currentColor;
+	--_color-active: var(--text-color);
+	--_bg-active: var(--light-200);
+	--_border-color-active: var(--light-200);
 
 	width: var(--_width);
 	min-height: var(--_height);
@@ -49,13 +49,17 @@
 	transition-timing-function: var(--transition-timing-function);
 
 	@include mixins.breakpoint-up(lg) {
-		--_height: 3.125rem;
-		--_padding: .78125rem 1rem;
+		--_height: 4rem;
+	  --_fs: 1.125rem;
 	}
+
+  &:not(:placeholder-shown) {
+	  --_color: var(--text-color);
+  }
 
 	&::placeholder {
 		font: inherit;
-		color: currentColor;
+		color: var(--gray-400);
 	}
 
 	&:focus-visible {
