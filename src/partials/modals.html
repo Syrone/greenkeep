@@ -1,0 +1,110 @@
+<div class="modal modal-form fade" id="modal-form" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
+        <span class="icon">
+          <svg>
+            <use xlink:href="img/icons/close.svg#svg-close"></use>
+          </svg>
+        </span>
+      </button>
+
+      <div class="modal-body">
+        <form class="hero-form js-form">
+          <div class="hero-form-header">
+            <h3 class="modal-title">
+              Заполните форму ниже и получите предварительный расчет стоимости
+            </h3>
+            <div class="modal-subtitle">
+              <p>
+                Мы сразу назовем примерную стоимость и, если она вас устроит, подберем удобное время для записи на бесплатный выезд и замер участка
+              </p>
+            </div>
+          </div>
+          <div class="hero-form-main">
+            <div class="loader is-hidden"></div>
+            <div class="hero-form-actions">
+              @include('input-phone.html')
+              <button type="submit" class="btn btn-xl btn-primary hero-form-submit">
+                <span>Получить консультацию</span>
+
+                <span class="icon">
+                  <svg>
+                    <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            @include('checkbox.html')
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-thanks fade" id="modal-thanks" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
+        <span class="icon">
+          <svg>
+            <use xlink:href="img/icons/close.svg#svg-close"></use>
+          </svg>
+        </span>
+      </button>
+
+      <div class="modal-body">
+        <h2 class="modal-title">
+          Благодарим за заявку!
+        </h2>
+
+        <div class="modal-subtitle">
+          <p>
+            В ближайшее время с вами свяжутся
+          </p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-xl btn-primary btn-submit" data-bs-dismiss="modal">
+            Спасибо за заявку
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-thanks fade" id="modal-error" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
+        <span class="icon">
+          <svg>
+            <use xlink:href="img/icons/close.svg#svg-close"></use>
+          </svg>
+        </span>
+      </button>
+
+      <div class="modal-body">
+        <h2 class="modal-title">
+          Упс!
+        </h2>
+
+        <div class="modal-subtitle">
+          <p>
+            Что-то пошло не так, попробуйте ещё раз.
+          </p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-xl btn-primary btn-submit" data-bs-dismiss="modal">
+            Спасибо за заявку
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

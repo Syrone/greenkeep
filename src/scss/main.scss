@@ -22,8 +22,9 @@
 @use "./components/footer";
 @use "./components/swipers";
 @use "./components/accordion";
-@use "./components/offcanvas";
 @use "./components/dropdown";
+@use "./components/offcanvas";
+@use "./components/modal";
 
 // Sections
 @use "./sections/hero";

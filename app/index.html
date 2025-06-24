@@ -201,7 +201,9 @@
                   Установим автополив <b>под ключ за 1 день</b> с пожизненной гарантией
                 </h2>
 
-                <button type="button" class="btn btn-xl btn-primary hero-button">
+                <button type="button" class="btn btn-xl btn-primary hero-button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal-thanks">
                   <span class="icon">
                     <svg>
                       <use xlink:href="img/icons/calc.svg#svg-calc"></use>
@@ -491,7 +493,9 @@
       </div>
     </div>
     <div class="system-card-actions">
-      <button type="button" class="btn btn-xl btn-primary system-card-button">
+      <button type="button" class="btn btn-xl btn-primary system-card-button"
+        data-bs-toggle="modal"
+        data-bs-target="#modal-form">
         Оставить заявку
       </button>
     </div>
@@ -517,7 +521,9 @@
       </div>
     </div>
     <div class="system-card-actions">
-      <button type="button" class="btn btn-xl btn-primary system-card-button">
+      <button type="button" class="btn btn-xl btn-primary system-card-button"
+        data-bs-toggle="modal"
+        data-bs-target="#modal-form">
         Оставить заявку
       </button>
     </div>
@@ -543,7 +549,9 @@
       </div>
     </div>
     <div class="system-card-actions">
-      <button type="button" class="btn btn-xl btn-primary system-card-button">
+      <button type="button" class="btn btn-xl btn-primary system-card-button"
+        data-bs-toggle="modal"
+        data-bs-target="#modal-form">
         Оставить заявку
       </button>
     </div>
@@ -1279,459 +1287,635 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="objects-card">
-                    <div class="objects-card-swiper">
-                      <div class="objects-card-main">
-                        <div class="swiper">
-                          <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                              <picture>
-                                <source srcset="./img/objects/main-1.webp" type="image/webp">
-                                <img loading="lazy" src="./img/objects/main-1.jpg" class="image" width="519" height="519" alt="Картинка">
-                              </picture>
-                            </div>
-                            <div class="swiper-slide">
-                              <picture>
-                                <source srcset="./img/objects/main-2.webp" type="image/webp">
-                                <img loading="lazy" src="./img/objects/main-2.jpg" class="image" width="519" height="519" alt="Картинка">
-                              </picture>
-                            </div>
-                            <div class="swiper-slide">
-                              <picture>
-                                <source srcset="./img/objects/main-3.webp" type="image/webp">
-                                <img loading="lazy" src="./img/objects/main-3.jpg" class="image" width="519" height="519" alt="Картинка">
-                              </picture>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                      </div>
-                      <div class="objects-card-thumb">
-                        <div class="swiper" thumbsSlider="">
-                          <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                              <picture>
-                                <source srcset="./img/objects/thumb-1.webp" type="image/webp">
-                                <img loading="lazy" src="./img/objects/thumb-1.jpg" class="image" width="163" height="92" alt="Картинка">
-                              </picture>
-                            </div>
-                            <div class="swiper-slide">
-                              <picture>
-                                <source srcset="./img/objects/thumb-2.webp" type="image/webp">
-                                <img loading="lazy" src="./img/objects/thumb-2.jpg" class="image" width="163" height="92" alt="Картинка">
-                              </picture>
-                            </div>
-                            <div class="swiper-slide">
-                              <picture>
-                                <source srcset="./img/objects/thumb-3.webp" type="image/webp">
-                                <img loading="lazy" src="./img/objects/thumb-3.jpg" class="image" width="163" height="92" alt="Картинка">
-                              </picture>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="objects-body">
-                      <h3 class="objects-title">
-                        Объект в КП Солнечный Бор
-                      </h3>
+  <div class="objects-card-swiper">
+    <div class="objects-card-main">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/main-1.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/main-1.jpg" class="image" width="519" height="519" alt="Картинка">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/main-2.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/main-2.jpg" class="image" width="519" height="519" alt="Картинка">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/main-3.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/main-3.jpg" class="image" width="519" height="519" alt="Картинка">
+            </picture>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="objects-card-thumb">
+      <div class="swiper" thumbsSlider="">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/thumb-1.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/thumb-1.jpg" class="image" width="163" height="92" alt="Картинка">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/thumb-2.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/thumb-2.jpg" class="image" width="163" height="92" alt="Картинка">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/thumb-3.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/thumb-3.jpg" class="image" width="163" height="92" alt="Картинка">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="objects-body">
+    <h3 class="objects-title">
+      Объект в КП Солнечный Бор
+    </h3>
 
-                      <div class="objects-content">
-                        <h5>
-                          Задача:
-                        </h5>
-                        <p>
-                          К нам обратились с пожеланием быстро установить систему полива. Объект уже обжит, газоны и растения посажены.
-                        </p>
-                        <p>
-                          В процессе ухода за садом клиенты напрямую столкнулись с необходимостью регулярного полива и сложностями связанными с этим процессом.
-                        </p>
-                        <p>
-                          Быстро согласовали смету и попросили успеть смонтировать до отъезда в отпуск. На весь процесс отводилось всего неделя.
-                        </p>
-                        <p>
-                          Мы выполнили весь комплекс работ за шесть дней, земляные работы с восстановлением целостности газонов, монтаж труб, и всего спектра оборудования для полива.
-                        </p>
-                      </div>
-                      <div class="objects-main">
-                        <ul class="list-reset objects-list">
-                          <li class="objects-list-item">
-                            <span class="icon objects-list-icon">
-                              <svg>
-                                <use xlink:href="img/icons/calendar.svg#svg-calendar"></use>
-                              </svg>
-                            </span>
-                            <div class="objects-list-content">
-                              <p>
-                                Срок монтажа:
-                              </p>
-                              <h5 class="objects-list-title">
-                                6 дней
-                              </h5>
-                            </div>
-                          </li>
-                          <li class="objects-list-item">
-                            <span class="icon objects-list-icon">
-                              <svg>
-                                <use xlink:href="img/icons/tag.svg#svg-tag"></use>
-                              </svg>
-                            </span>
-                            <div class="objects-list-content">
-                              <p>
-                                Оборудование:
-                              </p>
-                              <h5 class="objects-list-title">
-                                Hunter, Rain Bird
-                              </h5>
-                            </div>
-                          </li>
-                          <li class="objects-list-item">
-                            <span class="icon objects-list-icon">
-                              <svg>
-                                <use xlink:href="img/icons/shield.svg#svg-shield"></use>
-                              </svg>
-                            </span>
-                            <div class="objects-list-content">
-                              <p>
-                                Гарантия:
-                              </p>
-                              <h5 class="objects-list-title">
-                                5 лет
-                              </h5>
-                            </div>
-                          </li>
-                          <li class="objects-list-item">
-                            <span class="icon objects-list-icon">
-                              <svg>
-                                <use xlink:href="img/icons/square-check.svg#svg-square-check"></use>
-                              </svg>
-                            </span>
-                            <div class="objects-list-content">
-                              <p>
-                                Дата монтажа:
-                              </p>
-                              <h5 class="objects-list-title">
-                                15 мая 2023 года
-                              </h5>
-                            </div>
-                          </li>
-                        </ul>
-                        <div class="objects-actions">
-                          <button type="button" class="btn btn-xl btn-primary objects-button">
-                            <span>УЗНАТЬ СТОИМОСТЬ</span>
-                            <span class="icon">
-                              <svg>
-                                <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
-                              </svg>
-                            </span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+    <div class="objects-content">
+      <h5>
+        Задача:
+      </h5>
+      <p>
+        К нам обратились с пожеланием быстро установить систему полива. Объект уже обжит, газоны и растения посажены.
+      </p>
+      <p>
+        В процессе ухода за садом клиенты напрямую столкнулись с необходимостью регулярного полива и сложностями
+        связанными с этим процессом.
+      </p>
+      <p>
+        Быстро согласовали смету и попросили успеть смонтировать до отъезда в отпуск. На весь процесс отводилось всего
+        неделя.
+      </p>
+      <p>
+        Мы выполнили весь комплекс работ за шесть дней, земляные работы с восстановлением целостности газонов, монтаж
+        труб, и всего спектра оборудования для полива.
+      </p>
+    </div>
+    <div class="objects-main">
+      <ul class="list-reset objects-list">
+        <li class="objects-list-item">
+          <span class="icon objects-list-icon">
+            <svg>
+              <use xlink:href="img/icons/calendar.svg#svg-calendar"></use>
+            </svg>
+          </span>
+          <div class="objects-list-content">
+            <p>
+              Срок монтажа:
+            </p>
+            <h5 class="objects-list-title">
+              6 дней
+            </h5>
+          </div>
+        </li>
+        <li class="objects-list-item">
+          <span class="icon objects-list-icon">
+            <svg>
+              <use xlink:href="img/icons/tag.svg#svg-tag"></use>
+            </svg>
+          </span>
+          <div class="objects-list-content">
+            <p>
+              Оборудование:
+            </p>
+            <h5 class="objects-list-title">
+              Hunter, Rain Bird
+            </h5>
+          </div>
+        </li>
+        <li class="objects-list-item">
+          <span class="icon objects-list-icon">
+            <svg>
+              <use xlink:href="img/icons/shield.svg#svg-shield"></use>
+            </svg>
+          </span>
+          <div class="objects-list-content">
+            <p>
+              Гарантия:
+            </p>
+            <h5 class="objects-list-title">
+              5 лет
+            </h5>
+          </div>
+        </li>
+        <li class="objects-list-item">
+          <span class="icon objects-list-icon">
+            <svg>
+              <use xlink:href="img/icons/square-check.svg#svg-square-check"></use>
+            </svg>
+          </span>
+          <div class="objects-list-content">
+            <p>
+              Дата монтажа:
+            </p>
+            <h5 class="objects-list-title">
+              15 мая 2023 года
+            </h5>
+          </div>
+        </li>
+      </ul>
+      <div class="objects-actions">
+        <button type="button" class="btn btn-xl btn-primary objects-button"
+          data-bs-toggle="modal"
+          data-bs-target="#modal-form">
+          <span>УЗНАТЬ СТОИМОСТЬ</span>
+          <span class="icon">
+            <svg>
+              <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
                 </div>
                 <div class="swiper-slide">
                   <div class="objects-card">
-                    <div class="objects-card-swiper">
-                      <div class="objects-card-main">
-                        <div class="swiper">
-                          <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                              <picture>
-                                <source srcset="./img/objects/main-1.webp" type="image/webp">
-                                <img loading="lazy" src="./img/objects/main-1.jpg" class="image" width="519" height="519" alt="Картинка">
-                              </picture>
-                            </div>
-                            <div class="swiper-slide">
-                              <picture>
-                                <source srcset="./img/objects/main-2.webp" type="image/webp">
-                                <img loading="lazy" src="./img/objects/main-2.jpg" class="image" width="519" height="519" alt="Картинка">
-                              </picture>
-                            </div>
-                            <div class="swiper-slide">
-                              <picture>
-                                <source srcset="./img/objects/main-3.webp" type="image/webp">
-                                <img loading="lazy" src="./img/objects/main-3.jpg" class="image" width="519" height="519" alt="Картинка">
-                              </picture>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                      </div>
-                      <div class="objects-card-thumb">
-                        <div class="swiper" thumbsSlider="">
-                          <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                              <picture>
-                                <source srcset="./img/objects/thumb-1.webp" type="image/webp">
-                                <img loading="lazy" src="./img/objects/thumb-1.jpg" class="image" width="163" height="92" alt="Картинка">
-                              </picture>
-                            </div>
-                            <div class="swiper-slide">
-                              <picture>
-                                <source srcset="./img/objects/thumb-2.webp" type="image/webp">
-                                <img loading="lazy" src="./img/objects/thumb-2.jpg" class="image" width="163" height="92" alt="Картинка">
-                              </picture>
-                            </div>
-                            <div class="swiper-slide">
-                              <picture>
-                                <source srcset="./img/objects/thumb-3.webp" type="image/webp">
-                                <img loading="lazy" src="./img/objects/thumb-3.jpg" class="image" width="163" height="92" alt="Картинка">
-                              </picture>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="objects-body">
-                      <h3 class="objects-title">
-                        Объект в КП Солнечный Бор
-                      </h3>
+  <div class="objects-card-swiper">
+    <div class="objects-card-main">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/main-1.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/main-1.jpg" class="image" width="519" height="519" alt="Картинка">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/main-2.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/main-2.jpg" class="image" width="519" height="519" alt="Картинка">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/main-3.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/main-3.jpg" class="image" width="519" height="519" alt="Картинка">
+            </picture>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="objects-card-thumb">
+      <div class="swiper" thumbsSlider="">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/thumb-1.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/thumb-1.jpg" class="image" width="163" height="92" alt="Картинка">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/thumb-2.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/thumb-2.jpg" class="image" width="163" height="92" alt="Картинка">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/thumb-3.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/thumb-3.jpg" class="image" width="163" height="92" alt="Картинка">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="objects-body">
+    <h3 class="objects-title">
+      Объект в КП Солнечный Бор
+    </h3>
 
-                      <div class="objects-content">
-                        <h5>
-                          Задача:
-                        </h5>
-                        <p>
-                          К нам обратились с пожеланием быстро установить систему полива. Объект уже обжит, газоны и растения посажены.
-                        </p>
-                        <p>
-                          В процессе ухода за садом клиенты напрямую столкнулись с необходимостью регулярного полива и сложностями связанными с этим процессом.
-                        </p>
-                        <p>
-                          Быстро согласовали смету и попросили успеть смонтировать до отъезда в отпуск. На весь процесс отводилось всего неделя.
-                        </p>
-                        <p>
-                          Мы выполнили весь комплекс работ за шесть дней, земляные работы с восстановлением целостности газонов, монтаж труб, и всего спектра оборудования для полива.
-                        </p>
-                      </div>
-                      <div class="objects-main">
-                        <ul class="list-reset objects-list">
-                          <li class="objects-list-item">
-                            <span class="icon objects-list-icon">
-                              <svg>
-                                <use xlink:href="img/icons/calendar.svg#svg-calendar"></use>
-                              </svg>
-                            </span>
-                            <div class="objects-list-content">
-                              <p>
-                                Срок монтажа:
-                              </p>
-                              <h5 class="objects-list-title">
-                                6 дней
-                              </h5>
-                            </div>
-                          </li>
-                          <li class="objects-list-item">
-                            <span class="icon objects-list-icon">
-                              <svg>
-                                <use xlink:href="img/icons/tag.svg#svg-tag"></use>
-                              </svg>
-                            </span>
-                            <div class="objects-list-content">
-                              <p>
-                                Оборудование:
-                              </p>
-                              <h5 class="objects-list-title">
-                                Hunter, Rain Bird
-                              </h5>
-                            </div>
-                          </li>
-                          <li class="objects-list-item">
-                            <span class="icon objects-list-icon">
-                              <svg>
-                                <use xlink:href="img/icons/shield.svg#svg-shield"></use>
-                              </svg>
-                            </span>
-                            <div class="objects-list-content">
-                              <p>
-                                Гарантия:
-                              </p>
-                              <h5 class="objects-list-title">
-                                5 лет
-                              </h5>
-                            </div>
-                          </li>
-                          <li class="objects-list-item">
-                            <span class="icon objects-list-icon">
-                              <svg>
-                                <use xlink:href="img/icons/square-check.svg#svg-square-check"></use>
-                              </svg>
-                            </span>
-                            <div class="objects-list-content">
-                              <p>
-                                Дата монтажа:
-                              </p>
-                              <h5 class="objects-list-title">
-                                15 мая 2023 года
-                              </h5>
-                            </div>
-                          </li>
-                        </ul>
-                        <div class="objects-actions">
-                          <button type="button" class="btn btn-xl btn-primary objects-button">
-                            <span>УЗНАТЬ СТОИМОСТЬ</span>
-                            <span class="icon">
-                              <svg>
-                                <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
-                              </svg>
-                            </span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+    <div class="objects-content">
+      <h5>
+        Задача:
+      </h5>
+      <p>
+        К нам обратились с пожеланием быстро установить систему полива. Объект уже обжит, газоны и растения посажены.
+      </p>
+      <p>
+        В процессе ухода за садом клиенты напрямую столкнулись с необходимостью регулярного полива и сложностями
+        связанными с этим процессом.
+      </p>
+      <p>
+        Быстро согласовали смету и попросили успеть смонтировать до отъезда в отпуск. На весь процесс отводилось всего
+        неделя.
+      </p>
+      <p>
+        Мы выполнили весь комплекс работ за шесть дней, земляные работы с восстановлением целостности газонов, монтаж
+        труб, и всего спектра оборудования для полива.
+      </p>
+    </div>
+    <div class="objects-main">
+      <ul class="list-reset objects-list">
+        <li class="objects-list-item">
+          <span class="icon objects-list-icon">
+            <svg>
+              <use xlink:href="img/icons/calendar.svg#svg-calendar"></use>
+            </svg>
+          </span>
+          <div class="objects-list-content">
+            <p>
+              Срок монтажа:
+            </p>
+            <h5 class="objects-list-title">
+              6 дней
+            </h5>
+          </div>
+        </li>
+        <li class="objects-list-item">
+          <span class="icon objects-list-icon">
+            <svg>
+              <use xlink:href="img/icons/tag.svg#svg-tag"></use>
+            </svg>
+          </span>
+          <div class="objects-list-content">
+            <p>
+              Оборудование:
+            </p>
+            <h5 class="objects-list-title">
+              Hunter, Rain Bird
+            </h5>
+          </div>
+        </li>
+        <li class="objects-list-item">
+          <span class="icon objects-list-icon">
+            <svg>
+              <use xlink:href="img/icons/shield.svg#svg-shield"></use>
+            </svg>
+          </span>
+          <div class="objects-list-content">
+            <p>
+              Гарантия:
+            </p>
+            <h5 class="objects-list-title">
+              5 лет
+            </h5>
+          </div>
+        </li>
+        <li class="objects-list-item">
+          <span class="icon objects-list-icon">
+            <svg>
+              <use xlink:href="img/icons/square-check.svg#svg-square-check"></use>
+            </svg>
+          </span>
+          <div class="objects-list-content">
+            <p>
+              Дата монтажа:
+            </p>
+            <h5 class="objects-list-title">
+              15 мая 2023 года
+            </h5>
+          </div>
+        </li>
+      </ul>
+      <div class="objects-actions">
+        <button type="button" class="btn btn-xl btn-primary objects-button"
+          data-bs-toggle="modal"
+          data-bs-target="#modal-form">
+          <span>УЗНАТЬ СТОИМОСТЬ</span>
+          <span class="icon">
+            <svg>
+              <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
                 </div>
                 <div class="swiper-slide">
                   <div class="objects-card">
-                    <div class="objects-card-swiper">
-                      <div class="objects-card-main">
-                        <div class="swiper">
-                          <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                              <picture>
-                                <source srcset="./img/objects/main-1.webp" type="image/webp">
-                                <img loading="lazy" src="./img/objects/main-1.jpg" class="image" width="519" height="519" alt="Картинка">
-                              </picture>
-                            </div>
-                            <div class="swiper-slide">
-                              <picture>
-                                <source srcset="./img/objects/main-2.webp" type="image/webp">
-                                <img loading="lazy" src="./img/objects/main-2.jpg" class="image" width="519" height="519" alt="Картинка">
-                              </picture>
-                            </div>
-                            <div class="swiper-slide">
-                              <picture>
-                                <source srcset="./img/objects/main-3.webp" type="image/webp">
-                                <img loading="lazy" src="./img/objects/main-3.jpg" class="image" width="519" height="519" alt="Картинка">
-                              </picture>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                      </div>
-                      <div class="objects-card-thumb">
-                        <div class="swiper" thumbsSlider="">
-                          <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                              <picture>
-                                <source srcset="./img/objects/thumb-1.webp" type="image/webp">
-                                <img loading="lazy" src="./img/objects/thumb-1.jpg" class="image" width="163" height="92" alt="Картинка">
-                              </picture>
-                            </div>
-                            <div class="swiper-slide">
-                              <picture>
-                                <source srcset="./img/objects/thumb-2.webp" type="image/webp">
-                                <img loading="lazy" src="./img/objects/thumb-2.jpg" class="image" width="163" height="92" alt="Картинка">
-                              </picture>
-                            </div>
-                            <div class="swiper-slide">
-                              <picture>
-                                <source srcset="./img/objects/thumb-3.webp" type="image/webp">
-                                <img loading="lazy" src="./img/objects/thumb-3.jpg" class="image" width="163" height="92" alt="Картинка">
-                              </picture>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="objects-body">
-                      <h3 class="objects-title">
-                        Объект в КП Солнечный Бор
-                      </h3>
+  <div class="objects-card-swiper">
+    <div class="objects-card-main">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/main-1.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/main-1.jpg" class="image" width="519" height="519" alt="Картинка">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/main-2.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/main-2.jpg" class="image" width="519" height="519" alt="Картинка">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/main-3.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/main-3.jpg" class="image" width="519" height="519" alt="Картинка">
+            </picture>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="objects-card-thumb">
+      <div class="swiper" thumbsSlider="">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/thumb-1.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/thumb-1.jpg" class="image" width="163" height="92" alt="Картинка">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/thumb-2.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/thumb-2.jpg" class="image" width="163" height="92" alt="Картинка">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/thumb-3.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/thumb-3.jpg" class="image" width="163" height="92" alt="Картинка">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="objects-body">
+    <h3 class="objects-title">
+      Объект в КП Солнечный Бор
+    </h3>
 
-                      <div class="objects-content">
-                        <h5>
-                          Задача:
-                        </h5>
-                        <p>
-                          К нам обратились с пожеланием быстро установить систему полива. Объект уже обжит, газоны и растения посажены.
-                        </p>
-                        <p>
-                          В процессе ухода за садом клиенты напрямую столкнулись с необходимостью регулярного полива и сложностями связанными с этим процессом.
-                        </p>
-                        <p>
-                          Быстро согласовали смету и попросили успеть смонтировать до отъезда в отпуск. На весь процесс отводилось всего неделя.
-                        </p>
-                        <p>
-                          Мы выполнили весь комплекс работ за шесть дней, земляные работы с восстановлением целостности газонов, монтаж труб, и всего спектра оборудования для полива.
-                        </p>
-                      </div>
-                      <div class="objects-main">
-                        <ul class="list-reset objects-list">
-                          <li class="objects-list-item">
-                            <span class="icon objects-list-icon">
-                              <svg>
-                                <use xlink:href="img/icons/calendar.svg#svg-calendar"></use>
-                              </svg>
-                            </span>
-                            <div class="objects-list-content">
-                              <p>
-                                Срок монтажа:
-                              </p>
-                              <h5 class="objects-list-title">
-                                6 дней
-                              </h5>
-                            </div>
-                          </li>
-                          <li class="objects-list-item">
-                            <span class="icon objects-list-icon">
-                              <svg>
-                                <use xlink:href="img/icons/tag.svg#svg-tag"></use>
-                              </svg>
-                            </span>
-                            <div class="objects-list-content">
-                              <p>
-                                Оборудование:
-                              </p>
-                              <h5 class="objects-list-title">
-                                Hunter, Rain Bird
-                              </h5>
-                            </div>
-                          </li>
-                          <li class="objects-list-item">
-                            <span class="icon objects-list-icon">
-                              <svg>
-                                <use xlink:href="img/icons/shield.svg#svg-shield"></use>
-                              </svg>
-                            </span>
-                            <div class="objects-list-content">
-                              <p>
-                                Гарантия:
-                              </p>
-                              <h5 class="objects-list-title">
-                                5 лет
-                              </h5>
-                            </div>
-                          </li>
-                          <li class="objects-list-item">
-                            <span class="icon objects-list-icon">
-                              <svg>
-                                <use xlink:href="img/icons/square-check.svg#svg-square-check"></use>
-                              </svg>
-                            </span>
-                            <div class="objects-list-content">
-                              <p>
-                                Дата монтажа:
-                              </p>
-                              <h5 class="objects-list-title">
-                                15 мая 2023 года
-                              </h5>
-                            </div>
-                          </li>
-                        </ul>
-                        <div class="objects-actions">
-                          <button type="button" class="btn btn-xl btn-primary objects-button">
-                            <span>УЗНАТЬ СТОИМОСТЬ</span>
-                            <span class="icon">
-                              <svg>
-                                <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
-                              </svg>
-                            </span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+    <div class="objects-content">
+      <h5>
+        Задача:
+      </h5>
+      <p>
+        К нам обратились с пожеланием быстро установить систему полива. Объект уже обжит, газоны и растения посажены.
+      </p>
+      <p>
+        В процессе ухода за садом клиенты напрямую столкнулись с необходимостью регулярного полива и сложностями
+        связанными с этим процессом.
+      </p>
+      <p>
+        Быстро согласовали смету и попросили успеть смонтировать до отъезда в отпуск. На весь процесс отводилось всего
+        неделя.
+      </p>
+      <p>
+        Мы выполнили весь комплекс работ за шесть дней, земляные работы с восстановлением целостности газонов, монтаж
+        труб, и всего спектра оборудования для полива.
+      </p>
+    </div>
+    <div class="objects-main">
+      <ul class="list-reset objects-list">
+        <li class="objects-list-item">
+          <span class="icon objects-list-icon">
+            <svg>
+              <use xlink:href="img/icons/calendar.svg#svg-calendar"></use>
+            </svg>
+          </span>
+          <div class="objects-list-content">
+            <p>
+              Срок монтажа:
+            </p>
+            <h5 class="objects-list-title">
+              6 дней
+            </h5>
+          </div>
+        </li>
+        <li class="objects-list-item">
+          <span class="icon objects-list-icon">
+            <svg>
+              <use xlink:href="img/icons/tag.svg#svg-tag"></use>
+            </svg>
+          </span>
+          <div class="objects-list-content">
+            <p>
+              Оборудование:
+            </p>
+            <h5 class="objects-list-title">
+              Hunter, Rain Bird
+            </h5>
+          </div>
+        </li>
+        <li class="objects-list-item">
+          <span class="icon objects-list-icon">
+            <svg>
+              <use xlink:href="img/icons/shield.svg#svg-shield"></use>
+            </svg>
+          </span>
+          <div class="objects-list-content">
+            <p>
+              Гарантия:
+            </p>
+            <h5 class="objects-list-title">
+              5 лет
+            </h5>
+          </div>
+        </li>
+        <li class="objects-list-item">
+          <span class="icon objects-list-icon">
+            <svg>
+              <use xlink:href="img/icons/square-check.svg#svg-square-check"></use>
+            </svg>
+          </span>
+          <div class="objects-list-content">
+            <p>
+              Дата монтажа:
+            </p>
+            <h5 class="objects-list-title">
+              15 мая 2023 года
+            </h5>
+          </div>
+        </li>
+      </ul>
+      <div class="objects-actions">
+        <button type="button" class="btn btn-xl btn-primary objects-button"
+          data-bs-toggle="modal"
+          data-bs-target="#modal-form">
+          <span>УЗНАТЬ СТОИМОСТЬ</span>
+          <span class="icon">
+            <svg>
+              <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+                </div>
+                <div class="swiper-slide">
+                  <div class="objects-card">
+  <div class="objects-card-swiper">
+    <div class="objects-card-main">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/main-1.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/main-1.jpg" class="image" width="519" height="519" alt="Картинка">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/main-2.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/main-2.jpg" class="image" width="519" height="519" alt="Картинка">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/main-3.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/main-3.jpg" class="image" width="519" height="519" alt="Картинка">
+            </picture>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="objects-card-thumb">
+      <div class="swiper" thumbsSlider="">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/thumb-1.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/thumb-1.jpg" class="image" width="163" height="92" alt="Картинка">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/thumb-2.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/thumb-2.jpg" class="image" width="163" height="92" alt="Картинка">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="./img/objects/thumb-3.webp" type="image/webp">
+              <img loading="lazy" src="./img/objects/thumb-3.jpg" class="image" width="163" height="92" alt="Картинка">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="objects-body">
+    <h3 class="objects-title">
+      Объект в КП Солнечный Бор
+    </h3>
+
+    <div class="objects-content">
+      <h5>
+        Задача:
+      </h5>
+      <p>
+        К нам обратились с пожеланием быстро установить систему полива. Объект уже обжит, газоны и растения посажены.
+      </p>
+      <p>
+        В процессе ухода за садом клиенты напрямую столкнулись с необходимостью регулярного полива и сложностями
+        связанными с этим процессом.
+      </p>
+      <p>
+        Быстро согласовали смету и попросили успеть смонтировать до отъезда в отпуск. На весь процесс отводилось всего
+        неделя.
+      </p>
+      <p>
+        Мы выполнили весь комплекс работ за шесть дней, земляные работы с восстановлением целостности газонов, монтаж
+        труб, и всего спектра оборудования для полива.
+      </p>
+    </div>
+    <div class="objects-main">
+      <ul class="list-reset objects-list">
+        <li class="objects-list-item">
+          <span class="icon objects-list-icon">
+            <svg>
+              <use xlink:href="img/icons/calendar.svg#svg-calendar"></use>
+            </svg>
+          </span>
+          <div class="objects-list-content">
+            <p>
+              Срок монтажа:
+            </p>
+            <h5 class="objects-list-title">
+              6 дней
+            </h5>
+          </div>
+        </li>
+        <li class="objects-list-item">
+          <span class="icon objects-list-icon">
+            <svg>
+              <use xlink:href="img/icons/tag.svg#svg-tag"></use>
+            </svg>
+          </span>
+          <div class="objects-list-content">
+            <p>
+              Оборудование:
+            </p>
+            <h5 class="objects-list-title">
+              Hunter, Rain Bird
+            </h5>
+          </div>
+        </li>
+        <li class="objects-list-item">
+          <span class="icon objects-list-icon">
+            <svg>
+              <use xlink:href="img/icons/shield.svg#svg-shield"></use>
+            </svg>
+          </span>
+          <div class="objects-list-content">
+            <p>
+              Гарантия:
+            </p>
+            <h5 class="objects-list-title">
+              5 лет
+            </h5>
+          </div>
+        </li>
+        <li class="objects-list-item">
+          <span class="icon objects-list-icon">
+            <svg>
+              <use xlink:href="img/icons/square-check.svg#svg-square-check"></use>
+            </svg>
+          </span>
+          <div class="objects-list-content">
+            <p>
+              Дата монтажа:
+            </p>
+            <h5 class="objects-list-title">
+              15 мая 2023 года
+            </h5>
+          </div>
+        </li>
+      </ul>
+      <div class="objects-actions">
+        <button type="button" class="btn btn-xl btn-primary objects-button"
+          data-bs-toggle="modal"
+          data-bs-target="#modal-form">
+          <span>УЗНАТЬ СТОИМОСТЬ</span>
+          <span class="icon">
+            <svg>
+              <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
                 </div>
               </div>
             </div>
@@ -2516,6 +2700,141 @@
     <div data-transfer-target="header-contacts"></div>
     <div class="offcanvas-footer-buttons"
       data-transfer-target="header-callback"></div>
+  </div>
+</div>
+
+  <div class="modal modal-form fade" id="modal-form" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
+        <span class="icon">
+          <svg>
+            <use xlink:href="img/icons/close.svg#svg-close"></use>
+          </svg>
+        </span>
+      </button>
+
+      <div class="modal-body">
+        <form class="hero-form js-form">
+          <div class="hero-form-header">
+            <h3 class="modal-title">
+              Заполните форму ниже и получите предварительный расчет стоимости
+            </h3>
+            <div class="modal-subtitle">
+              <p>
+                Мы сразу назовем примерную стоимость и, если она вас устроит, подберем удобное время для записи на бесплатный выезд и замер участка
+              </p>
+            </div>
+          </div>
+          <div class="hero-form-main">
+            <div class="loader is-hidden"></div>
+            <div class="hero-form-actions">
+              <div class="input-phone form-control js-input-validate">
+  <div class="fieldset">
+    <input type="tel" class="input" name="phone" autocomplete="tel" placeholder="+7 (999) 999-99-99" required>
+  </div>
+  <div class="error-message"></div>
+</div>
+
+              <button type="submit" class="btn btn-xl btn-primary hero-form-submit">
+                <span>Получить консультацию</span>
+
+                <span class="icon">
+                  <svg>
+                    <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <label class="checkbox form-control js-input-validate">
+  <div class="fieldset">
+    <div class="checkbox-wrapper">
+      <input type="checkbox" class="checkbox-input" name="policy" required>
+      <span class="icon checkbox-icon">
+        <svg>
+          <use xlink:href="img/icons/check.svg#svg-check"></use>
+        </svg>
+      </span>
+    </div>
+    <div class="checkbox-label">
+      <p>
+        Я согласен с <a href="#" class="btn btn-link">условиями политики конфиденциальности</a>
+      </p>
+    </div>
+  </div>
+  <div class="error-message"></div>
+</label>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-thanks fade" id="modal-thanks" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
+        <span class="icon">
+          <svg>
+            <use xlink:href="img/icons/close.svg#svg-close"></use>
+          </svg>
+        </span>
+      </button>
+
+      <div class="modal-body">
+        <h2 class="modal-title">
+          Благодарим за заявку!
+        </h2>
+
+        <div class="modal-subtitle">
+          <p>
+            В ближайшее время с вами свяжутся
+          </p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-xl btn-primary btn-submit" data-bs-dismiss="modal">
+            Спасибо за заявку
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-thanks fade" id="modal-error" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
+        <span class="icon">
+          <svg>
+            <use xlink:href="img/icons/close.svg#svg-close"></use>
+          </svg>
+        </span>
+      </button>
+
+      <div class="modal-body">
+        <h2 class="modal-title">
+          Упс!
+        </h2>
+
+        <div class="modal-subtitle">
+          <p>
+            Что-то пошло не так, попробуйте ещё раз.
+          </p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-xl btn-primary btn-submit" data-bs-dismiss="modal">
+            Спасибо за заявку
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
