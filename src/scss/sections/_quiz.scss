@@ -2,17 +2,17 @@
 
 .quiz {
 
-  @include mixins.breakpoint-up(lg) {
-
-  }
-
   &-body {
     display: flex;
     flex-direction: column;
-    gap: 2rem 1.5rem;
+    gap: 2rem 1rem;
 
-    @include mixins.breakpoint-up(md) {
+    @include mixins.breakpoint-up(sm) {
       flex-direction: row;
+    }
+
+    @include mixins.breakpoint-up(lg) {
+      gap: 2rem 1.5rem;
     }
   }
 
@@ -49,10 +49,14 @@
     background-color: var(--dark-500);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center -20vw;
     border-radius: 1.5rem;
-    padding: 1rem;
     overflow: hidden;
+
+    @include mixins.breakpoint-up(sm) {
+      max-width: 12.5rem;
+      background-position: center;
+    }
 
     @include mixins.breakpoint-up(md) {
       max-width: 18.75rem;
@@ -60,7 +64,6 @@
 
     @include mixins.breakpoint-up(lg) {
       max-width: 20.75rem;
-      padding: 1.5rem;
     }
 
     &-content {
@@ -69,34 +72,26 @@
       gap: 1rem;
       font-size: .875rem;
       font-weight: 500;
+      padding: 1rem;
       position: relative;
       z-index: 1;
 
       @include mixins.breakpoint-up(lg) {
         gap: 1.5rem;
         font-size: var(--fs-base);
-      }
-
-      &::after,
-      &::before {
-        content: '';
-        width: 175%;
-        aspect-ratio: 1 / 1;
-        display: block;
-        border-radius: 451px;
-        background: var(--text-color);
-        position: absolute;
-        top: -6.25rem;
-        filter: blur(50px);
-        z-index: -1;
+        padding: 1.5rem;
       }
 
       &::after {
-        right: 25%;
-      }
-
-      &::before {
-        left: 25%;
+        content: '';
+        height: 175%;
+        display: block;
+        background-image: linear-gradient(to bottom, transparent 0%, #101010 55%, #101010 100%);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
       }
     }
 

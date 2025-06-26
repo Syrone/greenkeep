@@ -12,10 +12,18 @@
 
   &-list {
     display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 1rem;
 
-    @include mixins.breakpoint-up(lg) {
+    @include mixins.breakpoint-up(sm) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include mixins.breakpoint-up(md) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @include mixins.breakpoint-up(lg) {
       gap: 1.5rem;
     }
 

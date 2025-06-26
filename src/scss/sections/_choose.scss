@@ -59,6 +59,7 @@
     }
 
     .hero-form {
+      align-self: center;
       color: var(--light-100);
       background-color: transparent;
       padding: 0;
@@ -66,6 +67,7 @@
       @include mixins.breakpoint-up(lg) {
         width: 100%;
         max-width: 36.25rem;
+        align-self: stretch;
         padding: 3rem 0;
       }
 
