@@ -22,27 +22,39 @@
             data-transfer-origin="footer-nav-wrapper"
             data-transfer-breakpoint="991.98">
             <nav class="footer-nav">
-              <a href="#" class="btn footer-nav-link">
+              <button type="button" class="btn footer-nav-link"
+                data-scroll-anchor="service"
+                data-scroll-offset="32">
                 Об услуге
-              </a>
-              <a href="#" class="btn footer-nav-link">
+              </button>
+              <button type="button" class="btn footer-nav-link"
+                data-scroll-anchor="stages"
+                data-scroll-offset="32">
                 Этапы монтажа
-              </a>
-              <a href="#" class="btn footer-nav-link">
+              </button>
+              <button type="button" class="btn footer-nav-link"
+                data-scroll-anchor="benefits">
                 Преимущества
-              </a>
-              <a href="#" class="btn footer-nav-link">
+              </button>
+              <button type="button" class="btn footer-nav-link"
+                data-scroll-anchor="about"
+                data-scroll-offset="32">
                 О нас
-              </a>
-              <a href="#" class="btn footer-nav-link">
+              </button>
+              <button type="button" class="btn footer-nav-link"
+                data-scroll-anchor="objects"
+                data-scroll-offset="32">
                 Наши объекты
-              </a>
-              <a href="#" class="btn footer-nav-link">
+              </button>
+              <button type="button" class="btn footer-nav-link"
+                data-scroll-anchor="reviews"
+                data-scroll-offset="32">
                 Отзывы
-              </a>
-              <a href="#" class="btn footer-nav-link">
+              </button>
+              <button type="button" class="btn footer-nav-link"
+                data-scroll-anchor="contacts">
                 Контакты
-              </a>
+              </button>
             </nav>
           </div>
         </div>
@@ -118,7 +130,9 @@
         data-transfer-breakpoint="991.98">
         <div class="footer-callback">
           @include('phone.html')
-          <button type="button" class="btn btn-lg btn-outline-light footer-callback-button">
+          <button type="button" class="btn btn-lg btn-outline-light footer-callback-button"
+            data-bs-toggle="modal"
+            data-bs-target="#modal-form">
             Обратный звонок
           </button>
         </div>
