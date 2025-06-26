@@ -12,7 +12,7 @@
     &[data-expanded="true"] {
 
       .seo-content {
-        max-height: 62.5rem;
+        max-height: 125rem;
       }
     }
 
@@ -33,6 +33,58 @@
     transition-property: max-height;
     transition-duration: var(--transition-duration);
     transition-timing-function: var(--transition-timing-function);
+
+    h2 {
+      font-size: 1.5rem;
+
+      &:not(:first-child) {
+        margin-top: 2rem;
+      }
+    }
+
+    h3 {
+      font-size: 1.25rem;
+
+      &:not(:first-child) {
+        margin-top: 1.5rem;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: .5rem;
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.25em;
+
+      &:not(:first-child) {
+        margin-top: .5rem;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: .5rem;
+      }
+    }
+
+    a {
+      font: inherit;
+      color: var(--primary);
+      transition-property: color;
+      transition-duration: var(--transition-duration);
+      transition-timing-function: var(--transition-timing-function);
+
+      @media (hover: hover) {
+
+        &:is(:hover, :focus-visible) {
+          color: var(--primary-400);
+        }
+      }
+
+      &:is(:active) {
+        color: var(--primary-400);
+      }
+    }
   }
 
   &-actions {

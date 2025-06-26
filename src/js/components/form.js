@@ -2,6 +2,17 @@ import { validateForms } from '../functions/validate-forms.js'
 
 const rules = [
   {
+    ruleSelector: 'input[type="email"]',
+    errorsContainer: document.querySelector('.input-phone .error-message'),
+    rules: [
+      {
+        rule: 'required',
+        value: true,
+        errorMessage: 'Обязательное поле',
+      }
+    ]
+  },
+  {
     ruleSelector: 'input[type="tel"]',
     errorsContainer: document.querySelector('.input-phone .error-message'),
     tel: true,

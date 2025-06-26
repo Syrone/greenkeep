@@ -21689,13 +21689,15 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_header_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/header.js */ "./src/js/components/header.js");
 /* harmony import */ var _components_transfer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/transfer.js */ "./src/js/components/transfer.js");
-/* harmony import */ var _components_swipers_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/swipers.js */ "./src/js/components/swipers.js");
-/* harmony import */ var _components_form_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/form.js */ "./src/js/components/form.js");
-/* harmony import */ var _components_seo_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/seo.js */ "./src/js/components/seo.js");
-/* harmony import */ var _components_accordion_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/accordion.js */ "./src/js/components/accordion.js");
-/* harmony import */ var _components_dropdown_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/dropdown.js */ "./src/js/components/dropdown.js");
-/* harmony import */ var _components_offcanvas_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/offcanvas.js */ "./src/js/components/offcanvas.js");
-/* harmony import */ var _components_modal_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/modal.js */ "./src/js/components/modal.js");
+/* harmony import */ var _components_scroll_to_anchor_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/scroll-to-anchor.js */ "./src/js/components/scroll-to-anchor.js");
+/* harmony import */ var _components_swipers_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/swipers.js */ "./src/js/components/swipers.js");
+/* harmony import */ var _components_form_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/form.js */ "./src/js/components/form.js");
+/* harmony import */ var _components_seo_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/seo.js */ "./src/js/components/seo.js");
+/* harmony import */ var _components_accordion_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/accordion.js */ "./src/js/components/accordion.js");
+/* harmony import */ var _components_dropdown_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/dropdown.js */ "./src/js/components/dropdown.js");
+/* harmony import */ var _components_offcanvas_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/offcanvas.js */ "./src/js/components/offcanvas.js");
+/* harmony import */ var _components_modal_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/modal.js */ "./src/js/components/modal.js");
+
 
 
 
@@ -21822,6 +21824,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_validate_forms_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/validate-forms.js */ "./src/js/functions/validate-forms.js");
 
 const rules = [{
+  ruleSelector: 'input[type="email"]',
+  errorsContainer: document.querySelector('.input-phone .error-message'),
+  rules: [{
+    rule: 'required',
+    value: true,
+    errorMessage: 'Обязательное поле'
+  }]
+}, {
   ruleSelector: 'input[type="tel"]',
   errorsContainer: document.querySelector('.input-phone .error-message'),
   tel: true,
@@ -21932,6 +21942,34 @@ document.body.addEventListener('click', event => {
     initializeDropdown(target);
   }
   dropdownInstances.get(target).toggle();
+});
+
+/***/ }),
+
+/***/ "./src/js/components/scroll-to-anchor.js":
+/*!***********************************************!*\
+  !*** ./src/js/components/scroll-to-anchor.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_header_height_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/header-height.js */ "./src/js/functions/header-height.js");
+
+document.querySelectorAll('[data-scroll-anchor]')?.forEach(button => {
+  button.addEventListener('click', e => {
+    const targetKey = button.dataset.scrollAnchor;
+    const target = document.querySelector(`[data-scroll-target="${targetKey}"]`);
+    if (target) {
+      const headerHeight = (0,_functions_header_height_js__WEBPACK_IMPORTED_MODULE_0__.getHeaderHeight)();
+      const extraOffset = parseInt(button.dataset.scrollOffset) || 0;
+      const offsetTop = target.getBoundingClientRect().top + window.scrollY - headerHeight - extraOffset;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  });
 });
 
 /***/ }),
@@ -22133,8 +22171,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getHeaderHeight: () => (/* binding */ getHeaderHeight)
 /* harmony export */ });
 const getHeaderHeight = () => {
-  const headerHeight = document?.querySelector('.header').offsetHeight;
+  const header = document?.querySelector('.header');
+  const headerHeight = header?.offsetHeight || 0;
   document.querySelector(':root').style.setProperty('--header-height', `${headerHeight}px`);
+  return headerHeight;
 };
 
 /***/ }),

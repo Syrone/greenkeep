@@ -314,7 +314,7 @@
 
       @include mixins.breakpoint-up(lg) {
         display: grid;
-        grid-template-columns: .7875fr 1fr auto;
+        grid-template-columns: .60625fr 1fr;
         align-items: center;
       }
     }

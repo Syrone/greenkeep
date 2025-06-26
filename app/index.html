@@ -67,7 +67,7 @@
         <span class="contacts-list-main">
           Санкт-Петербург,
           <br>
-          пр. Обуховской обороны 22 к 8
+          пр. Ополчения 22 к 8
         </span>
       </span>
     </a>
@@ -130,6 +130,8 @@
 </ul>
 
         <button type="button" class="btn btn-base btn-outline-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#modal-form"
           data-transfer-origin="header-callback"
           data-transfer-breakpoint="1199.98">
           Обратный звонок
@@ -161,29 +163,41 @@
 </div>
 
       <nav class="header-nav"
-        data-transfer-origin="header-nav"
+        data-transfer-origin="header-nav js-navigation"
         data-transfer-breakpoint="1199.98">
-        <a href="#" class="btn header-nav-link">
+        <button type="button" class="btn header-nav-link"
+          data-scroll-anchor="service"
+          data-scroll-offset="32">
           Об услуге
-        </a>
-        <a href="#" class="btn header-nav-link">
+        </button>
+        <button type="button" class="btn header-nav-link"
+          data-scroll-anchor="stages"
+          data-scroll-offset="32">
           Этапы монтажа
-        </a>
-        <a href="#" class="btn header-nav-link">
+        </button>
+        <button type="button" class="btn header-nav-link"
+          data-scroll-anchor="benefits">
           Преимущества
-        </a>
-        <a href="#" class="btn header-nav-link">
+        </button>
+        <button type="button" class="btn header-nav-link"
+          data-scroll-anchor="about"
+          data-scroll-offset="32">
           О нас
-        </a>
-        <a href="#" class="btn header-nav-link">
+        </button>
+        <button type="button" class="btn header-nav-link"
+          data-scroll-anchor="objects"
+          data-scroll-offset="32">
           Наши объекты
-        </a>
-        <a href="#" class="btn header-nav-link">
+        </button>
+        <button type="button" class="btn header-nav-link"
+          data-scroll-anchor="reviews"
+          data-scroll-offset="32">
           Отзывы
-        </a>
-        <a href="#" class="btn header-nav-link">
+        </button>
+        <button type="button" class="btn header-nav-link"
+          data-scroll-anchor="contacts">
           Контакты
-        </a>
+        </button>
       </nav>
     </div>
   </div>
@@ -258,7 +272,7 @@
                 </div>
                 <div class="hero-form-main">
                   <div class="hero-form-actions">
-                    <div class="input-phone form-control js-input-validate">
+                    <div class="form-control js-input-validate">
   <div class="fieldset">
     <input type="tel" class="input" name="phone" autocomplete="tel" placeholder="+7 (999) 999-99-99" required>
   </div>
@@ -345,7 +359,8 @@
         </div>
       </section>
 
-      <section class="section comfort">
+      <section class="section comfort"
+        data-scroll-target="service">
         <div class="container">
           <div class="section-header">
             <h2 class="section-title">
@@ -656,7 +671,7 @@
 
               <div class="hero-form-main">
                 <div class="hero-form-actions">
-                  <div class="input-phone form-control js-input-validate">
+                  <div class="form-control js-input-validate">
   <div class="fieldset">
     <input type="tel" class="input" name="phone" autocomplete="tel" placeholder="+7 (999) 999-99-99" required>
   </div>
@@ -731,7 +746,8 @@
         </div>
       </section>
 
-      <section class="section stages">
+      <section class="section stages"
+        data-scroll-target="stages">
         <div class="container">
           <div class="section-header">
             <h2 class="section-title">
@@ -773,7 +789,7 @@
 
                     <div class="hero-form-main">
                       <div class="hero-form-actions">
-                        <div class="input-phone form-control js-input-validate">
+                        <div class="form-control js-input-validate">
   <div class="fieldset">
     <input type="tel" class="input" name="phone" autocomplete="tel" placeholder="+7 (999) 999-99-99" required>
   </div>
@@ -964,7 +980,8 @@
         </div>
       </section>
 
-      <section class="section choose">
+      <section class="section choose"
+        data-scroll-target="benefits">
         <div class="choose-top">
           <div class="container">
             <div class="section-header">
@@ -1082,7 +1099,7 @@
                 </div>
                 <div class="hero-form-main">
                   <div class="hero-form-actions">
-                    <div class="input-phone form-control js-input-validate">
+                    <div class="form-control js-input-validate">
   <div class="fieldset">
     <input type="tel" class="input" name="phone" autocomplete="tel" placeholder="+7 (999) 999-99-99" required>
   </div>
@@ -1187,7 +1204,8 @@
         </div>
       </section>
 
-      <section class="section team">
+      <section class="section team"
+        data-scroll-target="about">
         <div class="container">
           <div class="team-body">
             <div class="team-content">
@@ -1267,7 +1285,8 @@
         </div>
       </section>
 
-      <section class="section objects">
+      <section class="section objects"
+        data-scroll-target="objects">
         <div class="container">
           <div class="section-header">
             <h2 class="section-title">
@@ -1943,7 +1962,8 @@
         </div>
       </section>
 
-      <section class="section reviews">
+      <section class="section reviews"
+        data-scroll-target="reviews">
         <div class="container">
           <div class="section-header">
             <h2 class="section-title">
@@ -2285,7 +2305,121 @@
         <div class="container">
           <div class="seo-wrapper" data-expanded="false">
             <div class="seo-content">
-              SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст SEO текст
+              <h2>
+                Профессиональный монтаж систем автоматического полива под ключ в Санкт-Петербурге
+              </h2>
+
+              <h3>
+                Почему вам нужна система автоматического полива?
+              </h3>
+              <p>
+                <b>Автоматизация полива</b> — это современное решение для поддержания красоты вашего участка без лишних хлопот. Компания GREEN-KEEP предлагает полный комплекс услуг по проектированию, монтажу и обслуживанию систем автоматического полива в Санкт-Петербурге и Ленинградской области.
+              </p>
+
+              <h3>
+                Наши преимущества
+              </h3>
+              <ul>
+                <li>
+                  <b>13 лет опыта</b> в монтаже автополива под ключ
+                </li>
+                <li>
+                  <b>Комплексный подход</b> к ландшафтному поливу
+                </li>
+                <li>
+                  <b>Гарантия 3 года</b> на все виды работ
+                </li>
+                <li>
+                  <b>Собственный склад</b> оборудования для полива газона
+                </li>
+                <li>
+                  <b>Выезд специалиста</b> для бесплатного расчета в день обращения
+                </li>
+                <li>
+                  <b>Круглосуточная поддержка</b> клиентов
+                </li>
+              </ul>
+
+              <h3>
+                Что входит в наши услуги
+              </h3>
+              <p>
+                <b>Полный цикл работ:</b>
+              </p>
+              <ul>
+                <li>
+                  Проектирование системы полива под ключ
+                </li>
+                <li>
+                  Монтаж автополива и настройка оборудования
+                </li>
+                <li>
+                  Установка системы полива газона
+                </li>
+                <li>
+                  Ландшафтный полив всех зон участка
+                </li>
+                <li>
+                  Пусконаладочные работы
+                </li>
+                <li>
+                  Техническое обслуживание
+                </li>
+              </ul>
+
+              <h3>
+                Используемое оборудование
+              </h3>
+              <p>
+                Мы работаем с оборудованием ведущих производителей:
+              </p>
+              <ul>
+                <li>
+                  Rain Bird
+                </li>
+                <li>
+                  Hunter
+                </li>
+              </ul>
+
+              <h3>
+                Почему выбирают нас?
+              </h3>
+              <p>
+                <b>Экономия ресурсов</b> — наши системы позволяют сократить расход воды до 50% по сравнению с ручным поливом. <b>Точность полива</b> обеспечивается современными датчиками влажности и метеостанциями. <b>Удобство использования</b> — управление системой возможно через мобильное приложение.
+              </p>
+
+              <h3>
+                Специальное предложение
+              </h3>
+              <p>
+                Закажите монтаж системы автоматического полива под ключ до конца месяца и получите:
+              </p>
+              <ul>
+                <li>
+                  Бесплатную консультацию специалиста
+                </li>
+                <li>
+                  Скидку 15% на оборудование для автополива
+                </li>
+                <li>
+                  Гарантийное обслуживание 3 года
+                </li>
+                <li>
+                  Бесплатную настройку системы полива газона
+                </li>
+              </ul>
+
+              <h3>
+                Как заказать услуги
+              </h3>
+              <p>
+                Позвоните нам по телефону <a href="tel:+78124907686">+7 (812) 490-76-86</a> или оставьте заявку на нашем сайте. Наш специалист свяжется с вами в течение 15 минут для обсуждения деталей проекта.
+                <br>
+                <b>Работаем по договору</b> с предоставлением всей необходимой документации и гарантийных обязательств.
+                <br>
+                Создайте идеальный газон с профессиональной системой автоматического полива под ключ! Наши специалисты выполнят монтаж автополива и обеспечат качественный полив газона на вашем участке.
+              </p>
             </div>
           </div>
           <div class="seo-actions">
@@ -2304,7 +2438,8 @@
         </div>
       </section>
 
-      <section class="section advice">
+      <section class="section advice"
+        data-scroll-target="contacts">
         <div class="container">
           <div class="advice-body">
             <div class="advice-start">
@@ -2387,7 +2522,7 @@
               </div>
               <div class="hero-form-main">
                 <div class="hero-form-actions">
-                  <div class="input-phone form-control js-input-validate">
+                  <div class="form-control js-input-validate">
   <div class="fieldset">
     <input type="tel" class="input" name="phone" autocomplete="tel" placeholder="+7 (999) 999-99-99" required>
   </div>
@@ -2442,13 +2577,12 @@
             </div>
             <div class="hero-form-main">
               <div class="hero-form-actions">
-                <div class="input-phone form-control js-input-validate">
-  <div class="fieldset">
-    <input type="tel" class="input" name="phone" autocomplete="tel" placeholder="+7 (999) 999-99-99" required>
-  </div>
-  <div class="error-message"></div>
-</div>
-
+                <div class="form-control js-input-validate">
+                  <div class="fieldset">
+                    <input type="email" class="input" name="phone" autocomplete="email" placeholder="E-mail" required>
+                  </div>
+                  <div class="error-message"></div>
+                </div>
                 <button type="submit" class="btn btn-xl btn-primary hero-form-submit">
                   Подписаться
                 </button>
@@ -2567,7 +2701,7 @@
                   <span class="contacts-list-main">
                     Санкт-Петербург,
                     <br>
-                    пр. Обуховской обороны 22 к 8
+                    пр. Ополчения 22 к 8
                   </span>
                 </span>
               </a>
@@ -2658,9 +2792,6 @@
           <a href="#" class="btn footer-bottom-link">
             Публичная оферта
           </a>
-          <a href="#" class="btn footer-bottom-link">
-            Разработка сайта
-          </a>
         </div>
       </div>
     </div>
@@ -2729,7 +2860,7 @@
           <div class="hero-form-main">
             <div class="loader is-hidden"></div>
             <div class="hero-form-actions">
-              <div class="input-phone form-control js-input-validate">
+              <div class="form-control js-input-validate">
   <div class="fieldset">
     <input type="tel" class="input" name="phone" autocomplete="tel" placeholder="+7 (999) 999-99-99" required>
   </div>

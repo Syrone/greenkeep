@@ -1,5 +1,6 @@
 import './components/header.js'
 import './components/transfer.js'
+import './components/scroll-to-anchor.js'
 import './components/swipers.js'
 import './components/form.js'
 import './components/seo.js'
