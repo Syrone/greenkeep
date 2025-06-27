@@ -1036,12 +1036,17 @@ p + p {
 .header {
   width: 100%;
   background-color: var(--light-100);
-  border-radius: 0 0 2.5rem 2.5rem;
+  border-radius: 0 0 1.5rem 1.5rem;
   padding-block: 0.75rem;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1030;
+}
+@media (min-width: 991.98px) {
+  .header {
+    border-radius: 0 0 2.5rem 2.5rem;
+  }
 }
 .header > .container {
   display: -webkit-box;
@@ -3122,7 +3127,7 @@ p + p {
   flex-direction: column;
   gap: 1.5rem;
 }
-@media (min-width: 767.98px) {
+@media (min-width: 575.98px) {
   .selecting-info {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -3143,15 +3148,17 @@ p + p {
   }
 }
 .selecting-person {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   gap: 1rem;
 }
 @media (min-width: 991.98px) {
@@ -3162,6 +3169,8 @@ p + p {
 .selecting-person-picture {
   max-width: 11.25rem;
   width: 100%;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   background-color: var(--dark-300);
   border-radius: 1.5rem;
   padding: 0.75rem 0.75rem 0;
@@ -3196,11 +3205,6 @@ p + p {
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.4;
-}
-@media (min-width: 767.98px) {
-  .selecting-list {
-    max-width: 25rem;
-  }
 }
 @media (min-width: 991.98px) {
   .selecting-list {

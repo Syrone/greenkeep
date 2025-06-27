@@ -3,12 +3,16 @@
 .header {
   width: 100%;
   background-color: var(--light-100);
-  border-radius: 0 0 2.5rem 2.5rem;
+  border-radius: 0 0 1.5rem 1.5rem;
   padding-block: .75rem;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1030;
+
+  @include mixins.breakpoint-up(lg) {
+    border-radius: 0 0 2.5rem 2.5rem;
+  }
 
   > .container {
     display: flex;

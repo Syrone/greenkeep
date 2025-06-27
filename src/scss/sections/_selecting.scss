@@ -76,7 +76,7 @@
     flex-direction: column;
     gap: 1.5rem;
 
-    @include mixins.breakpoint-up(md) {
+    @include mixins.breakpoint-up(sm) {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
@@ -89,9 +89,10 @@
   }
 
   &-person {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 1rem;
 
     @include mixins.breakpoint-up(lg) {
@@ -101,6 +102,7 @@
     &-picture {
       max-width: 11.25rem;
       width: 100%;
+      flex-shrink: 0;
       background-color: var(--dark-300);
       border-radius: 1.5rem;
       padding: .75rem .75rem 0;
@@ -135,10 +137,6 @@
     font-size: .875rem;
     font-weight: 600;
     line-height: 1.4;
-
-    @include mixins.breakpoint-up(md) {
-      max-width: 25rem;
-    }
 
     @include mixins.breakpoint-up(lg) {
       max-width: initial;
