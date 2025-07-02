@@ -135,6 +135,10 @@
   box-shadow: var(--shadow-sm);
   // Remove focus outline from opened modal
   outline: 0;
+
+  @include mixins.breakpoint-up(sm) {
+    margin-inline: var(--container-offset);
+  }
 }
 
 // Modal background
@@ -237,7 +241,7 @@
 // scss-docs-end modal-fullscreen-loop
 
 
-.modal-form {
+.modal--form {
 
   .hero-form {
     color: inherit;
@@ -269,7 +273,7 @@
   }
 }
 
-.modal-thanks {
+.modal--thanks {
 
   .modal-footer {
     margin-top: 1rem;
@@ -282,4 +286,8 @@
   .btn-submit {
     flex: 1 1;
   }
+}
+
+.modal--content {
+  --bs-modal-width: 50rem;
 }

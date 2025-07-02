@@ -13,9 +13,9 @@ $title = "Заголовок письма";
 foreach ( $_POST as $key => $value ) {
   if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" ) {
     $body .= "
-    " . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
-      <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
-      <td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
+    " . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #fcfcfc;">' ) . "
+      <td style='padding: 10px; border: #d6e3f7 1px solid;'><b>$key</b></td>
+      <td style='padding: 10px; border: #d6e3f7 1px solid;'>$value</td>
     </tr>
     ";
   }
@@ -32,16 +32,17 @@ try {
   $mail->SMTPAuth   = true;
 
   // Настройки вашей почты
-  $mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
-  $mail->Username   = ''; // Логин на почте
-  $mail->Password   = ''; // Пароль на почте
+  $mail->Host       = 'mail.hosting.reg.ru'; // SMTP сервера вашей почты
+  $mail->Username   = 'lp@greenkeep.ru'; // Логин на почте
+  $mail->Password   = 'jY7xK7cM4tvY2xX9'; // Пароль на почте
   $mail->SMTPSecure = 'ssl';
   $mail->Port       = 465;
 
-  $mail->setFrom('', 'Заявка с вашего сайта'); // Адрес самой почты и имя отправителя
+  $mail->setFrom('lp@greenkeep.ru', 'Заявка с вашего сайта'); // Адрес самой почты и имя отправителя
 
   // Получатель письма
-  $mail->addAddress('');
+  $mail->addAddress('lp@greenkeep.ru');
+  // $mail->addAddress('lp@greenkeep.ru'); // Ещё один, если нужен
 
   // Прикрипление файлов к письму
   if (!empty($file['name'][0])) {

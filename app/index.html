@@ -21,15 +21,15 @@
 
   <!-- Marquiz script start -->
   <script>
-  (function(w, d, s, o){
-    var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js';j.onload = function() {
-      if (document.readyState !== 'loading') Marquiz.init(o);
-      else document.addEventListener("DOMContentLoaded", function() {
-        Marquiz.init(o);
-      });
-    };
-    d.head.insertBefore(j, d.head.firstElementChild);
-  })(window, document, 'script', {
+    (function (w, d, s, o) {
+      var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js'; j.onload = function () {
+        if (document.readyState !== 'loading') Marquiz.init(o);
+        else document.addEventListener("DOMContentLoaded", function () {
+          Marquiz.init(o);
+        });
+      };
+      d.head.insertBefore(j, d.head.firstElementChild);
+    })(window, document, 'script', {
       host: '//quiz.marquiz.ru',
       region: 'ru',
       id: '5ca1f0fad94cec005295dcb5',
@@ -38,9 +38,35 @@
       openOnExit: false,
       disableOnMobile: false
     }
-  );
+    );
   </script>
   <!-- Marquiz script end -->
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+      m[i].l = 1 * new Date();
+
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(103153441, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    });
+
+  </script>
+
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/103153441" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+
+  <!-- /Yandex.Metrika counter -->
 
 </head>
 
@@ -110,7 +136,7 @@
 
         <ul class="list-reset socials-list">
   <li class="socials-list-item">
-    <a href="#" class="btn btn-icon btn-whatsapp socials-list-link">
+    <a href="https://wa.me/+79312023562" target="_blank" class="btn btn-icon btn-whatsapp socials-list-link">
       <span class="icon">
         <svg>
           <use xlink:href="img/icons/whatsapp.svg#svg-whatsapp"></use>
@@ -119,7 +145,7 @@
     </a>
   </li>
   <li class="socials-list-item">
-    <a href="#" class="btn btn-icon btn-telegram socials-list-link">
+    <a href="https://t.me/+79312023562" target="_blank" class="btn btn-icon btn-telegram socials-list-link">
       <span class="icon">
         <svg>
           <use xlink:href="img/icons/telegram.svg#svg-telegram"></use>
@@ -216,8 +242,8 @@
                 </h2>
 
                 <button type="button" class="btn btn-xl btn-primary hero-button"
-                  data-bs-toggle="modal"
-                  data-bs-target="#modal-form">
+                  data-scroll-anchor="quiz"
+                  data-scroll-offset="32">
                   <span class="icon">
                     <svg>
                       <use xlink:href="img/icons/calc.svg#svg-calc"></use>
@@ -302,7 +328,12 @@
     </div>
     <div class="checkbox-label">
       <p>
-        Я согласен с <a href="#" class="btn btn-link">условиями политики конфиденциальности</a>
+        Я согласен с
+        <a class="btn btn-link" role="button" tabindex="0"
+          data-bs-toggle="modal"
+          data-bs-target="#modal-policy">
+            условиями политики конфиденциальности
+        </a>
       </p>
     </div>
   </div>
@@ -701,7 +732,12 @@
     </div>
     <div class="checkbox-label">
       <p>
-        Я согласен с <a href="#" class="btn btn-link">условиями политики конфиденциальности</a>
+        Я согласен с
+        <a class="btn btn-link" role="button" tabindex="0"
+          data-bs-toggle="modal"
+          data-bs-target="#modal-policy">
+            условиями политики конфиденциальности
+        </a>
       </p>
     </div>
   </div>
@@ -718,7 +754,7 @@
                     </p>
                   </div>
                   <div class="socials-actions">
-                    <a href="#" target="_blank" class="btn btn-lg btn-outline-primary btn-type-whatsapp">
+                    <a href="https://wa.me/+79312023562" target="_blank" class="btn btn-lg btn-outline-primary btn-type-whatsapp">
                       <span class="icon">
                         <svg>
                           <use xlink:href="img/icons/whatsapp.svg#svg-whatsapp"></use>
@@ -728,7 +764,7 @@
                         Написать в WhatsApp
                       </span>
                     </a>
-                    <a href="#" target="_blank" class="btn btn-lg btn-outline-primary btn-type-telegram">
+                    <a href="https://t.me/+79312023562" target="_blank" class="btn btn-lg btn-outline-primary btn-type-telegram">
                       <span class="icon">
                         <svg>
                           <use xlink:href="img/icons/telegram.svg#svg-telegram"></use>
@@ -813,7 +849,12 @@
     </div>
     <div class="checkbox-label">
       <p>
-        Я согласен с <a href="#" class="btn btn-link">условиями политики конфиденциальности</a>
+        Я согласен с
+        <a class="btn btn-link" role="button" tabindex="0"
+          data-bs-toggle="modal"
+          data-bs-target="#modal-policy">
+            условиями политики конфиденциальности
+        </a>
       </p>
     </div>
   </div>
@@ -835,34 +876,30 @@
         01
       </div>
     </div>
-    <div class="stages-card-main">
-      <p>
-        Перед тем как начать монтаж системы необходимо тщательно оценить ваш участок:
-      </p>
+    <div class="stages-card-main"
+      data-text-collapse>
+      <div class="stages-card-content">
+        <div class="text-collapse" data-text-expanded="false">
+          <div>
+            <p>
+              Специалист проводит замер территории, принимается во внимание рельеф местности, определяет возможность подключения к водоснабжению и электричеству, учитываются особенности ландшафта и насаждений.
+            </p>
+          </div>
+        </div>
+      </div>
 
-      <ul class="list-reset list-disc">
-
-          <li>
-            типы растений
-          </li>
-
-          <li>
-            площадь участка
-          </li>
-
-          <li>
-            особенности почвы и уклон
-          </li>
-
-      </ul>
-      <a href="#" target="_blank" class="btn btn-link stages-card-link">
-        <span>Подробнее</span>
+      <button type="button" class="btn btn-link stages-card-link text-toggle"
+        data-text-toggle>
+        <span class="text">
+          <span>Подробнее</span>
+          <span>Скрыть текст</span>
+        </span>
         <span class="icon">
           <svg>
             <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
           </svg>
         </span>
-      </a>
+      </button>
     </div>
   </div>
 
@@ -880,29 +917,37 @@
   <div class="stages-card-body">
     <div class="stages-card-header">
       <h3 class="stages-card-title">
-        Выбор подходящего типа системы полива
+        Составление схемы полива
       </h3>
 
       <div class="stages-card-current">
         02
       </div>
     </div>
-    <div class="stages-card-main">
-      <p>
-        В зависимости от типа вашего участка и потребностей растений выбирается один из типов системы полива.
-      </p>
+    <div class="stages-card-main"
+      data-text-collapse>
+      <div class="stages-card-content">
+        <div class="text-collapse" data-text-expanded="false">
+          <div>
+            <p>
+              Выбирается оптимальный способ полива (капельный, дождевание или комбинированный), составляется детальная схема размещения всех элементов, рассчитываются необходимые материалы и оборудование.
+            </p>
+          </div>
+        </div>
+      </div>
 
-      <ul class="list-reset list-disc">
-
-      </ul>
-      <a href="#" target="_blank" class="btn btn-link stages-card-link">
-        <span>Подробнее</span>
+      <button type="button" class="btn btn-link stages-card-link text-toggle"
+        data-text-toggle>
+        <span class="text">
+          <span>Подробнее</span>
+          <span>Скрыть текст</span>
+        </span>
         <span class="icon">
           <svg>
             <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
           </svg>
         </span>
-      </a>
+      </button>
     </div>
   </div>
 
@@ -920,29 +965,325 @@
   <div class="stages-card-body">
     <div class="stages-card-header">
       <h3 class="stages-card-title">
-        Проектирование  схемы системы
+        Расчет стоимости и заключение договора
       </h3>
 
       <div class="stages-card-current">
         03
       </div>
     </div>
-    <div class="stages-card-main">
-      <p>
-        На этом этапе проектируется схема расположения всех элементов
-      </p>
+    <div class="stages-card-main"
+      data-text-collapse>
+      <div class="stages-card-content">
+        <div class="text-collapse" data-text-expanded="false">
+          <div>
+            <p>
+              После согласования схемы полива с заказчиком, составляется смета и заключается договор с гарантией на работы и оборудование.
+            </p>
+          </div>
+        </div>
+      </div>
 
-      <ul class="list-reset list-disc">
-
-      </ul>
-      <a href="#" target="_blank" class="btn btn-link stages-card-link">
-        <span>Подробнее</span>
+      <button type="button" class="btn btn-link stages-card-link text-toggle"
+        data-text-toggle>
+        <span class="text">
+          <span>Подробнее</span>
+          <span>Скрыть текст</span>
+        </span>
         <span class="icon">
           <svg>
             <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
           </svg>
         </span>
-      </a>
+      </button>
+    </div>
+  </div>
+
+  <div class="stages-card-picture">
+    <picture>
+      <source srcset="./img/stages/image-3.webp" type="image/webp">
+      <img loading="lazy" src="./img/stages/image-3.jpg" class="image" width="378" height="210" alt="Картинка">
+    </picture>
+  </div>
+</article>
+
+                </div>
+                <div class="swiper-slide">
+                  <article class="stages-card">
+  <div class="stages-card-body">
+    <div class="stages-card-header">
+      <h3 class="stages-card-title">
+        Проектирование системы и закупка материалов
+      </h3>
+
+      <div class="stages-card-current">
+        04
+      </div>
+    </div>
+    <div class="stages-card-main"
+      data-text-collapse>
+      <div class="stages-card-content">
+        <div class="text-collapse" data-text-expanded="false">
+          <div>
+            <p>
+              Считаем расходы, группируем зоны полива, определяем трассы прокладки траншей, трубопроводов и кабелей управления, места установки клапанных боксов.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-link stages-card-link text-toggle"
+        data-text-toggle>
+        <span class="text">
+          <span>Подробнее</span>
+          <span>Скрыть текст</span>
+        </span>
+        <span class="icon">
+          <svg>
+            <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="stages-card-picture">
+    <picture>
+      <source srcset="./img/stages/image-3.webp" type="image/webp">
+      <img loading="lazy" src="./img/stages/image-3.jpg" class="image" width="378" height="210" alt="Картинка">
+    </picture>
+  </div>
+</article>
+
+                </div>
+                <div class="swiper-slide">
+                  <article class="stages-card">
+  <div class="stages-card-body">
+    <div class="stages-card-header">
+      <h3 class="stages-card-title">
+        Срез дерна подрезчиком, земляные работы
+      </h3>
+
+      <div class="stages-card-current">
+        05
+      </div>
+    </div>
+    <div class="stages-card-main"
+      data-text-collapse>
+      <div class="stages-card-content">
+        <div class="text-collapse" data-text-expanded="false">
+          <div>
+            <p>
+              На этом этапе проект переносится в натуру, размечаются траншеи, если на объекте уже постелен газон выполняется вырезка дерна дерноподрезчиком, осуществляется раработка траншей ручным способом, разбор мощения в местах пересечения трасс.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-link stages-card-link text-toggle"
+        data-text-toggle>
+        <span class="text">
+          <span>Подробнее</span>
+          <span>Скрыть текст</span>
+        </span>
+        <span class="icon">
+          <svg>
+            <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="stages-card-picture">
+    <picture>
+      <source srcset="./img/stages/image-3.webp" type="image/webp">
+      <img loading="lazy" src="./img/stages/image-3.jpg" class="image" width="378" height="210" alt="Картинка">
+    </picture>
+  </div>
+</article>
+
+                </div>
+                <div class="swiper-slide">
+                  <article class="stages-card">
+  <div class="stages-card-body">
+    <div class="stages-card-header">
+      <h3 class="stages-card-title">
+        Монтаж труб и кабелей
+      </h3>
+
+      <div class="stages-card-current">
+        06
+      </div>
+    </div>
+    <div class="stages-card-main"
+      data-text-collapse>
+      <div class="stages-card-content">
+        <div class="text-collapse" data-text-expanded="false">
+          <div>
+            <p>
+              Основной этап работ включает монтаж трубопроводов и установку дождевателей, выводов капельного полива, установка клапанных боксов, монтаж кабелей управления и других элементов системы полива.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-link stages-card-link text-toggle"
+        data-text-toggle>
+        <span class="text">
+          <span>Подробнее</span>
+          <span>Скрыть текст</span>
+        </span>
+        <span class="icon">
+          <svg>
+            <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="stages-card-picture">
+    <picture>
+      <source srcset="./img/stages/image-3.webp" type="image/webp">
+      <img loading="lazy" src="./img/stages/image-3.jpg" class="image" width="378" height="210" alt="Картинка">
+    </picture>
+  </div>
+</article>
+
+                </div>
+                <div class="swiper-slide">
+                  <article class="stages-card">
+  <div class="stages-card-body">
+    <div class="stages-card-header">
+      <h3 class="stages-card-title">
+        Монтаж насосного узла и системы управления
+      </h3>
+
+      <div class="stages-card-current">
+        07
+      </div>
+    </div>
+    <div class="stages-card-main"
+      data-text-collapse>
+      <div class="stages-card-content">
+        <div class="text-collapse" data-text-expanded="false">
+          <div>
+            <p>
+              Параллельно устанавливается насосный узел и система автоматического управления. Монтируются контроллер, датчики и другое оборудование для автоматизации процесса полива.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-link stages-card-link text-toggle"
+        data-text-toggle>
+        <span class="text">
+          <span>Подробнее</span>
+          <span>Скрыть текст</span>
+        </span>
+        <span class="icon">
+          <svg>
+            <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="stages-card-picture">
+    <picture>
+      <source srcset="./img/stages/image-3.webp" type="image/webp">
+      <img loading="lazy" src="./img/stages/image-3.jpg" class="image" width="378" height="210" alt="Картинка">
+    </picture>
+  </div>
+</article>
+
+                </div>
+                <div class="swiper-slide">
+                  <article class="stages-card">
+  <div class="stages-card-body">
+    <div class="stages-card-header">
+      <h3 class="stages-card-title">
+        Запуск в эксплуатацию
+      </h3>
+
+      <div class="stages-card-current">
+        08
+      </div>
+    </div>
+    <div class="stages-card-main"
+      data-text-collapse>
+      <div class="stages-card-content">
+        <div class="text-collapse" data-text-expanded="false">
+          <div>
+            <p>
+              После завершения монтажа проводится промывка, установка и настройка форсунок, и тщательная проверка системы. Выполняется тестирование всех узлов, настройка параметров работы, регулировка режимов полива.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-link stages-card-link text-toggle"
+        data-text-toggle>
+        <span class="text">
+          <span>Подробнее</span>
+          <span>Скрыть текст</span>
+        </span>
+        <span class="icon">
+          <svg>
+            <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="stages-card-picture">
+    <picture>
+      <source srcset="./img/stages/image-3.webp" type="image/webp">
+      <img loading="lazy" src="./img/stages/image-3.jpg" class="image" width="378" height="210" alt="Картинка">
+    </picture>
+  </div>
+</article>
+
+                </div>
+                <div class="swiper-slide">
+                  <article class="stages-card">
+  <div class="stages-card-body">
+    <div class="stages-card-header">
+      <h3 class="stages-card-title">
+        Сдача и сервисное обслуживание
+      </h3>
+
+      <div class="stages-card-current">
+        09
+      </div>
+    </div>
+    <div class="stages-card-main"
+      data-text-collapse>
+      <div class="stages-card-content">
+        <div class="text-collapse" data-text-expanded="false">
+          <div>
+            <p>
+              Финальный этап включает демонстрацию работы системы заказчику, обучение персонала её использованию и передачу всей необходимой документации. После этого система передаётся на сервисное обслуживание по договору.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-link stages-card-link text-toggle"
+        data-text-toggle>
+        <span class="text">
+          <span>Подробнее</span>
+          <span>Скрыть текст</span>
+        </span>
+        <span class="icon">
+          <svg>
+            <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
+          </svg>
+        </span>
+      </button>
     </div>
   </div>
 
@@ -1129,7 +1470,12 @@
     </div>
     <div class="checkbox-label">
       <p>
-        Я согласен с <a href="#" class="btn btn-link">условиями политики конфиденциальности</a>
+        Я согласен с
+        <a class="btn btn-link" role="button" tabindex="0"
+          data-bs-toggle="modal"
+          data-bs-target="#modal-policy">
+            условиями политики конфиденциальности
+        </a>
       </p>
     </div>
   </div>
@@ -1163,7 +1509,8 @@
         </div>
       </section>
 
-      <section class="section quiz">
+      <section class="section quiz"
+        data-scroll-target="quiz">
         <div class="container">
           <div class="section-header">
             <h2 class="section-title">
@@ -2303,137 +2650,140 @@
 
       <section class="section seo">
         <div class="container">
-          <div class="seo-wrapper" data-expanded="false">
-            <div class="seo-content">
-              <h2>
-                Профессиональный монтаж систем автоматического полива под ключ в Санкт-Петербурге
-              </h2>
+          <div data-text-collapse>
+            <div class="seo-wrapper text-collapse" data-text-expanded="false">
+              <div class="seo-content">
+                <h2>
+                  Профессиональный монтаж систем автоматического полива под ключ в Санкт-Петербурге
+                </h2>
 
-              <h3>
-                Почему вам нужна система автоматического полива?
-              </h3>
-              <p>
-                <b>Автоматизация полива</b> — это современное решение для поддержания красоты вашего участка без лишних хлопот. Компания GREEN-KEEP предлагает полный комплекс услуг по проектированию, монтажу и обслуживанию систем автоматического полива в Санкт-Петербурге и Ленинградской области.
-              </p>
+                <h3>
+                  Почему вам нужна система автоматического полива?
+                </h3>
+                <p>
+                  <b>Автоматизация полива</b> — это современное решение для поддержания красоты вашего участка без лишних хлопот. Компания GREEN-KEEP предлагает полный комплекс услуг по проектированию, монтажу и обслуживанию систем автоматического полива в Санкт-Петербурге и Ленинградской области.
+                </p>
 
-              <h3>
-                Наши преимущества
-              </h3>
-              <ul>
-                <li>
-                  <b>13 лет опыта</b> в монтаже автополива под ключ
-                </li>
-                <li>
-                  <b>Комплексный подход</b> к ландшафтному поливу
-                </li>
-                <li>
-                  <b>Гарантия 3 года</b> на все виды работ
-                </li>
-                <li>
-                  <b>Собственный склад</b> оборудования для полива газона
-                </li>
-                <li>
-                  <b>Выезд специалиста</b> для бесплатного расчета в день обращения
-                </li>
-                <li>
-                  <b>Круглосуточная поддержка</b> клиентов
-                </li>
-              </ul>
+                <h3>
+                  Наши преимущества
+                </h3>
+                <ul>
+                  <li>
+                    <b>13 лет опыта</b> в монтаже автополива под ключ
+                  </li>
+                  <li>
+                    <b>Комплексный подход</b> к ландшафтному поливу
+                  </li>
+                  <li>
+                    <b>Гарантия 3 года</b> на все виды работ
+                  </li>
+                  <li>
+                    <b>Собственный склад</b> оборудования для полива газона
+                  </li>
+                  <li>
+                    <b>Выезд специалиста</b> для бесплатного расчета в день обращения
+                  </li>
+                  <li>
+                    <b>Круглосуточная поддержка</b> клиентов
+                  </li>
+                </ul>
 
-              <h3>
-                Что входит в наши услуги
-              </h3>
-              <p>
-                <b>Полный цикл работ:</b>
-              </p>
-              <ul>
-                <li>
-                  Проектирование системы полива под ключ
-                </li>
-                <li>
-                  Монтаж автополива и настройка оборудования
-                </li>
-                <li>
-                  Установка системы полива газона
-                </li>
-                <li>
-                  Ландшафтный полив всех зон участка
-                </li>
-                <li>
-                  Пусконаладочные работы
-                </li>
-                <li>
-                  Техническое обслуживание
-                </li>
-              </ul>
+                <h3>
+                  Что входит в наши услуги
+                </h3>
+                <p>
+                  <b>Полный цикл работ:</b>
+                </p>
+                <ul>
+                  <li>
+                    Проектирование системы полива под ключ
+                  </li>
+                  <li>
+                    Монтаж автополива и настройка оборудования
+                  </li>
+                  <li>
+                    Установка системы полива газона
+                  </li>
+                  <li>
+                    Ландшафтный полив всех зон участка
+                  </li>
+                  <li>
+                    Пусконаладочные работы
+                  </li>
+                  <li>
+                    Техническое обслуживание
+                  </li>
+                </ul>
 
-              <h3>
-                Используемое оборудование
-              </h3>
-              <p>
-                Мы работаем с оборудованием ведущих производителей:
-              </p>
-              <ul>
-                <li>
-                  Rain Bird
-                </li>
-                <li>
-                  Hunter
-                </li>
-              </ul>
+                <h3>
+                  Используемое оборудование
+                </h3>
+                <p>
+                  Мы работаем с оборудованием ведущих производителей:
+                </p>
+                <ul>
+                  <li>
+                    Rain Bird
+                  </li>
+                  <li>
+                    Hunter
+                  </li>
+                </ul>
 
-              <h3>
-                Почему выбирают нас?
-              </h3>
-              <p>
-                <b>Экономия ресурсов</b> — наши системы позволяют сократить расход воды до 50% по сравнению с ручным поливом. <b>Точность полива</b> обеспечивается современными датчиками влажности и метеостанциями. <b>Удобство использования</b> — управление системой возможно через мобильное приложение.
-              </p>
+                <h3>
+                  Почему выбирают нас?
+                </h3>
+                <p>
+                  <b>Экономия ресурсов</b> — наши системы позволяют сократить расход воды до 50% по сравнению с ручным поливом. <b>Точность полива</b> обеспечивается современными датчиками влажности и метеостанциями. <b>Удобство использования</b> — управление системой возможно через мобильное приложение.
+                </p>
 
-              <h3>
-                Специальное предложение
-              </h3>
-              <p>
-                Закажите монтаж системы автоматического полива под ключ до конца месяца и получите:
-              </p>
-              <ul>
-                <li>
-                  Бесплатную консультацию специалиста
-                </li>
-                <li>
-                  Скидку 15% на оборудование для автополива
-                </li>
-                <li>
-                  Гарантийное обслуживание 3 года
-                </li>
-                <li>
-                  Бесплатную настройку системы полива газона
-                </li>
-              </ul>
+                <h3>
+                  Специальное предложение
+                </h3>
+                <p>
+                  Закажите монтаж системы автоматического полива под ключ до конца месяца и получите:
+                </p>
+                <ul>
+                  <li>
+                    Бесплатную консультацию специалиста
+                  </li>
+                  <li>
+                    Скидку 15% на оборудование для автополива
+                  </li>
+                  <li>
+                    Гарантийное обслуживание 3 года
+                  </li>
+                  <li>
+                    Бесплатную настройку системы полива газона
+                  </li>
+                </ul>
 
-              <h3>
-                Как заказать услуги
-              </h3>
-              <p>
-                Позвоните нам по телефону <a href="tel:+78124907686">+7 (812) 490-76-86</a> или оставьте заявку на нашем сайте. Наш специалист свяжется с вами в течение 15 минут для обсуждения деталей проекта.
-                <br>
-                <b>Работаем по договору</b> с предоставлением всей необходимой документации и гарантийных обязательств.
-                <br>
-                Создайте идеальный газон с профессиональной системой автоматического полива под ключ! Наши специалисты выполнят монтаж автополива и обеспечат качественный полив газона на вашем участке.
-              </p>
+                <h3>
+                  Как заказать услуги
+                </h3>
+                <p>
+                  Позвоните нам по телефону <a href="tel:+78124907686">+7 (812) 490-76-86</a> или оставьте заявку на нашем сайте. Наш специалист свяжется с вами в течение 15 минут для обсуждения деталей проекта.
+                  <br>
+                  <b>Работаем по договору</b> с предоставлением всей необходимой документации и гарантийных обязательств.
+                  <br>
+                  Создайте идеальный газон с профессиональной системой автоматического полива под ключ! Наши специалисты выполнят монтаж автополива и обеспечат качественный полив газона на вашем участке.
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="seo-actions">
-            <button type="button" class="btn seo-button">
-              <span class="text">
-                <span>Показать весь текст</span>
-                <span>Скрыть текст</span>
-              </span>
-              <span class="icon">
-                <svg>
-                  <use xlink:href="img/icons/angle-down.svg#svg-angle-down"></use>
-                </svg>
-              </span>
-            </button>
+            <div class="seo-actions">
+              <button type="button" class="btn text-toggle seo-button"
+                data-text-toggle>
+                <span class="text">
+                  <span>Показать весь текст</span>
+                  <span>Скрыть текст</span>
+                </span>
+                <span class="icon">
+                  <svg>
+                    <use xlink:href="img/icons/angle-down.svg#svg-angle-down"></use>
+                  </svg>
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -2488,7 +2838,7 @@
               </div>
 
               <div class="socials-actions">
-                <a href="#" target="_blank" class="btn btn-lg btn-light btn-type-whatsapp">
+                <a href="https://wa.me/+79312023562" target="_blank" class="btn btn-lg btn-light btn-type-whatsapp">
                   <span class="icon">
                     <svg>
                       <use xlink:href="img/icons/whatsapp.svg#svg-whatsapp"></use>
@@ -2498,7 +2848,7 @@
                     Написать в WhatsApp
                   </span>
                 </a>
-                <a href="#" target="_blank" class="btn btn-lg btn-light btn-type-telegram">
+                <a href="https://t.me/+79312023562" target="_blank" class="btn btn-lg btn-light btn-type-telegram">
                   <span class="icon">
                     <svg>
                       <use xlink:href="img/icons/telegram.svg#svg-telegram"></use>
@@ -2552,7 +2902,12 @@
     </div>
     <div class="checkbox-label">
       <p>
-        Я согласен с <a href="#" class="btn btn-link">условиями политики конфиденциальности</a>
+        Я согласен с
+        <a class="btn btn-link" role="button" tabindex="0"
+          data-bs-toggle="modal"
+          data-bs-target="#modal-policy">
+            условиями политики конфиденциальности
+        </a>
       </p>
     </div>
   </div>
@@ -2579,7 +2934,7 @@
               <div class="hero-form-actions">
                 <div class="form-control js-input-validate">
                   <div class="fieldset">
-                    <input type="email" class="input" name="phone" autocomplete="email" placeholder="E-mail" required>
+                    <input type="email" class="input" name="email" autocomplete="email" placeholder="E-mail" required>
                   </div>
                   <div class="error-message"></div>
                 </div>
@@ -2600,7 +2955,12 @@
     </div>
     <div class="checkbox-label">
       <p>
-        Я согласен с <a href="#" class="btn btn-link">условиями политики конфиденциальности</a>
+        Я согласен с
+        <a class="btn btn-link" role="button" tabindex="0"
+          data-bs-toggle="modal"
+          data-bs-target="#modal-policy">
+            условиями политики конфиденциальности
+        </a>
       </p>
     </div>
   </div>
@@ -2681,7 +3041,7 @@
             data-transfer-origin="footer-header-socials"
             data-transfer-breakpoint="991.98">
             <li class="socials-list-item">
-              <a href="#" class="btn btn-icon btn-vk socials-list-link">
+              <a href="https://vk.com/green_keep" target="_blank" class="btn btn-icon btn-vk socials-list-link">
                 <span class="icon">
                   <svg>
                     <use xlink:href="img/icons/vk-fill.svg#svg-vk-fill"></use>
@@ -2690,7 +3050,7 @@
               </a>
             </li>
             <li class="socials-list-item">
-              <a href="#" class="btn btn-icon btn-dzen socials-list-link">
+              <a href="https://dzen.ru/a/Z9vsAiAJ_ncnb_Sl?sid=93585938100671489" target="_blank" class="btn btn-icon btn-dzen socials-list-link">
                 <span class="icon">
                   <svg>
                     <use xlink:href="img/icons/dzen-fill.svg#svg-dzen-fill"></use>
@@ -2735,9 +3095,10 @@
             </li>
           </ul>
 
-          <a href="#" class="btn footer-up">
+          <button type="button" class="btn footer-up"
+            data-scroll-anchor="top">
             Наверх
-          </a>
+          </button>
         </div>
       </div>
       <div class="footer-end"
@@ -2770,7 +3131,7 @@
         </div>
 
         <div class="footer-socials">
-          <a href="#" target="_blank" class="btn btn-lg btn-type-whatsapp footer-socials-button">
+          <a href="https://wa.me/+79312023562" target="_blank" class="btn btn-lg btn-type-whatsapp footer-socials-button">
             <span class="icon">
               <svg>
                 <use xlink:href="img/icons/whatsapp.svg#svg-whatsapp"></use>
@@ -2778,7 +3139,7 @@
             </span>
             <span>Написать в WhatsApp</span>
           </a>
-          <a href="#" target="_blank" class="btn btn-lg btn-type-telegram footer-socials-button">
+          <a href="https://t.me/+79312023562" target="_blank" class="btn btn-lg btn-type-telegram footer-socials-button">
             <span class="icon">
               <svg>
                 <use xlink:href="img/icons/telegram.svg#svg-telegram"></use>
@@ -2799,14 +3160,22 @@
             © 2025, Компания ООО «Тру Винд». Все права защищены
           </p>
         </div>
-        <div class="footer-bottom-nav">
-          <a href="#" class="btn footer-bottom-link">
-            Политика конфиденциальности
-          </a>
-          <a href="#" class="btn footer-bottom-link">
-            Публичная оферта
-          </a>
-        </div>
+        <ul class="list-reset footer-bottom-nav">
+          <li>
+            <button type="button" class="btn btn-link footer-bottom-link"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-policy">
+              Политика конфиденциальности
+            </button>
+          </li>
+          <li>
+            <button type="button" class="btn btn-link footer-bottom-link"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-user-agreement">
+              Пользовательское соглашение
+            </button>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -2848,7 +3217,7 @@
   </div>
 </div>
 
-  <div class="modal modal-form fade" id="modal-form" tabindex="-1" aria-hidden="true">
+  <div class="modal modal--form fade" id="modal-form" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
@@ -2867,12 +3236,11 @@
             </h3>
             <div class="modal-subtitle">
               <p>
-                Мы сразу назовем примерную стоимость и, если она вас устроит, подберем удобное время для записи на бесплатный выезд и замер участка
+                Мы сразу назовем примерную стоимость и, если она вас устроит, подберем удобное время для записи на бесплатный выезд и замер участка
               </p>
             </div>
           </div>
           <div class="hero-form-main">
-            <div class="loader is-hidden"></div>
             <div class="hero-form-actions">
               <div class="form-control js-input-validate">
   <div class="fieldset">
@@ -2904,7 +3272,12 @@
     </div>
     <div class="checkbox-label">
       <p>
-        Я согласен с <a href="#" class="btn btn-link">условиями политики конфиденциальности</a>
+        Я согласен с
+        <a class="btn btn-link" role="button" tabindex="0"
+          data-bs-toggle="modal"
+          data-bs-target="#modal-policy">
+            условиями политики конфиденциальности
+        </a>
       </p>
     </div>
   </div>
@@ -2918,7 +3291,7 @@
   </div>
 </div>
 
-<div class="modal modal-thanks fade" id="modal-thanks" tabindex="-1" aria-hidden="true">
+<div class="modal modal--thanks fade" id="modal-thanks" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
@@ -2951,7 +3324,7 @@
   </div>
 </div>
 
-<div class="modal modal-thanks fade" id="modal-error" tabindex="-1" aria-hidden="true">
+<div class="modal modal--thanks fade" id="modal-error" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
@@ -2977,6 +3350,579 @@
           <button type="button" class="btn btn-xl btn-primary btn-submit" data-bs-dismiss="modal">
             Спасибо за заявку
           </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal--content fade" id="modal-user-agreement" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
+        <span class="icon">
+          <svg>
+            <use xlink:href="img/icons/close.svg#svg-close"></use>
+          </svg>
+        </span>
+      </button>
+
+      <div class="modal-body">
+        <div class="seo-content">
+          <h2>
+            Пользовательское соглашение сайта <a href="https://greenkeep.ru/" target="_blank">greenkeep.ru</a>
+          </h2>
+          <ol>
+            <li>
+              Общие положения
+
+              <ol>
+                <li>
+                  Настоящее Пользовательское соглашение (далее — Соглашение) регулирует отношения между Пользователем и ООО «Тру Винд» (далее — Компания) в отношении использования сайта <a href="https://greenkeep.ru/" target="_blank">greenkeep.ru</a>.
+                </li>
+                <li>
+                  Используя сайт, Пользователь подтверждает свое согласие с условиями настоящего Соглашения.
+                </li>
+              </ol>
+            </li>
+            <li>
+              Определения
+
+              <ol>
+                <li>
+                  Пользователь — физическое лицо, использующее сайт.
+                </li>
+                <li>
+                  Сайт — интернет-ресурс, расположенный по адресу <a href="https://greenkeep.ru/" target="_blank">greenkeep.ru</a>.
+                </li>
+                <li>
+                  Услуги — информация и сервисы, предоставляемые через сайт.
+                </li>
+              </ol>
+            </li>
+            <li>
+              Порядок использования
+
+              <ol>
+                <li>
+                  Доступ к сайту предоставляется на безвозмездной основе.
+                </li>
+                <li>
+                  Пользователь обязуется:
+
+                  <ul>
+                    <li>
+                      Использовать сайт в соответствии с действующим законодательством
+                    </li>
+                    <li>
+                      Не нарушать работу сайта
+                    </li>
+                    <li>
+                      Не распространять запрещенный контент
+                    </li>
+                    <li>
+                      Соблюдать права третьих лиц
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+            </li>
+            <li>
+              Права и обязанности Компании
+
+              <ol>
+                <li>
+                  Компания вправе:
+
+                  <ul>
+                    <li>
+                      Изменять условия Соглашения
+                    </li>
+                    <li>
+                      Приостанавливать работу сайта
+                    </li>
+                    <li>
+                      Удалять запрещенный контент
+                    </li>
+                    <li>
+                      Отказывать в доступе при нарушении правил
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Компания обязуется:
+
+                  <ul>
+                    <li>
+                      Обеспечивать работоспособность сайта
+                    </li>
+                    <li>
+                      Соблюдать конфиденциальность персональных данных
+                    </li>
+                    <li>
+                      Предоставлять актуальную информацию
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+            </li>
+            <li>
+              Ограничение ответственности
+
+              <ol>
+                <li>
+                  Компания не несет ответственности за:
+
+                  <ul>
+                    <li>
+                      Непреодолимые обстоятельства
+                    </li>
+                    <li>
+                      Действия третьих лиц
+                    </li>
+                    <li>
+                      Технические сбои
+                    </li>
+                    <li>
+                      Недостоверность предоставленной Пользователем информации
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+            </li>
+            <li>
+              Персональные данные
+
+              <ol>
+                <li>
+                  Обработка персональных данных осуществляется в соответствии с Политикой конфиденциальности.
+                </li>
+                <li>
+                  Пользователь дает согласие на обработку своих персональных данных.
+                </li>
+              </ol>
+            </li>
+            <li>
+              Интеллектуальная собственность
+
+              <ol>
+                <li>
+                  Все материалы сайта являются собственностью Компании и защищены законом.
+                </li>
+                <li>
+                  Запрещается копирование и распространение материалов без согласия Компании.
+                </li>
+              </ol>
+            </li>
+            <li>
+              Порядок разрешения споров
+
+              <ol>
+                <li>
+                  Все споры разрешаются в установленном законом порядке.
+                </li>
+                <li>
+                  При возникновении споров стороны стремятся разрешить их путем переговоров.
+                </li>
+              </ol>
+            </li>
+            <li>
+              Изменения Соглашения
+
+              <ol>
+                <li>
+                  Компания вправе вносить изменения в Соглашение.
+                </li>
+                <li>
+                  Новая редакция Соглашения вступает в силу после ее публикации на сайте.
+                </li>
+              </ol>
+            </li>
+            <li>
+              Заключительные положения
+
+              <ol>
+                <li>
+                  Соглашение составлено в электронном виде.
+                </li>
+                <li>
+                  Признание одного положения недействительным не влияет на действительность остальных положений.
+                </li>
+              </ol>
+            </li>
+            <li>
+              Контактная информация
+
+              <ol>
+                <li>
+                  По вопросам, связанным с использованием сайта, Пользователь может обратиться:
+
+                  <ul>
+                    <li>
+                      По телефону: <a href="tel:+78125027209" target="_blank">+7 (812) 502-72-09</a>
+                    </li>
+                    <li>
+                      По email: <a href="mailto:info@gazon-poliv.ru" target="_blank">info@gazon-poliv.ru</a>
+                    </li>
+                    <li>
+                      По адресу: 191025, г. Санкт-Петербург, вн. тер. г. муниципальный округ № 65, пр.-кт. Приморский, д. 163, литера А, кв. 11
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+            </li>
+            <li>
+              Приложения
+
+              <ol>
+                <li>
+                  К Соглашению прилагаются:
+
+                  <ul>
+                    <li>
+                      Политика конфиденциальности
+                    </li>
+                    <li>
+                      Правила использования сайта
+                    </li>
+                    <li>
+                      Условия предоставления услуг
+                    </li>
+                  </ul>
+
+                  <p>
+                    Все актуальные версии документов, хранятся в специальном разделе на Яндекс.Диске по ссылке: <a href="https://disk.yandex.ru/d/kBRKbsZetsf0eQ" target="_blank">https://disk.yandex.ru/d/kBRKbsZetsf0eQ</a>
+                  </p>
+                  <p>
+                    Дата принятия: 02.07.2025
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              Дополнительные условия
+
+              <ol>
+                <li>
+                  Пользователь подтверждает, что:
+
+                  <ul>
+                    <li>
+                      Ознакомлен с условиями Соглашения
+                    </li>
+                    <li>
+                      Согласен с ними
+                    </li>
+                    <li>
+                      Имеет право на заключение подобных соглашений
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+            </li>
+            <li>
+              Особые условия
+
+              <ol>
+                <li>
+                  При оформлении заказа Пользователь подтверждает:
+
+                  <ul>
+                    <li>
+                      Согласие с условиями оплаты
+                    </li>
+                    <li>
+                      Согласие с условиями доставки
+                    </li>
+                    <li>
+                      Согласие с гарантийными обязательствами
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+            </li>
+            <li>
+              Сроки действия
+
+              <ol>
+                <li>
+                  Соглашение действует бессрочно и вступает в силу с момента его принятия Пользователем.
+                </li>
+              </ol>
+            </li>
+            <li>
+              Порядок принятия
+
+              <ol>
+                <li>
+                  Пользователь принимает Соглашение путем:
+
+                  <ul>
+                    <li>
+                      Нажатия кнопки «Согласен»
+                    </li>
+                    <li>
+                      Продолжения использования сайта
+                    </li>
+                    <li>
+                      Оформления заказа
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+            </li>
+          </ol>
+          <p>
+            С уважением,
+            <br>
+            ООО «Тру Винд»
+          </p>
+          <p>
+            P. S. Настоящим Пользователь подтверждает, что ознакомлен и согласен с условиями настоящего Соглашения.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal--content fade" id="modal-policy" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
+        <span class="icon">
+          <svg>
+            <use xlink:href="img/icons/close.svg#svg-close"></use>
+          </svg>
+        </span>
+      </button>
+
+      <div class="modal-body">
+        <div class="seo-content">
+          <h2>
+            Политика обработки персональных данных
+          </h2>
+
+          <ol>
+            <li>
+              Общие положения
+
+              <p>
+                Настоящая Политика обработки персональных данных (далее — Политика) разработана в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных» и иными нормативными актами в области обработки персональных данных.
+              </p>
+              <p>
+                Политика применяется к сайту <a href="https://greenkeep.ru/" target="_blank">greenkeep.ru</a> и определяет порядок обработки персональных данных пользователей.
+              </p>
+            </li>
+            <li>
+              Оператор персональных данных
+
+              <ul>
+                <li>
+                  Оператор: ООО «Тру Винд»
+                </li>
+                <li>
+                  Адрес: 191025, г. Санкт-Петербург, вн. тер. г. муниципальный округ № 65, пр.-кт. Приморский, д. 163, литера А, кв. 11
+                </li>
+                <li>
+                  Email: <a href="mailto:info@gazon-poliv.ru" target="_blank">info@gazon-poliv.ru</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              Цели обработки персональных данных
+
+              <ul>
+                <li>
+                  Обработка заявок и обращений пользователей
+                </li>
+                <li>
+                  Предоставление информации о товарах и услугах
+                </li>
+                <li>
+                  Заключение и исполнение договоров
+                </li>
+                <li>
+                  Отправка информационных рассылок
+                </li>
+                <li>
+                  Анализ пользовательского поведения (с использованием cookie)
+                </li>
+              </ul>
+            </li>
+            <li>
+              Категории обрабатываемых данных
+
+              <ul>
+                <li>
+                  Персональные данные:
+
+                  <ul>
+                    <li>
+                      Фамилия, имя, отчество
+                    </li>
+                    <li>
+                      Контактные данные (телефон, email)
+                    </li>
+                    <li>
+                      Адрес доставки
+                    </li>
+                    <li>
+                      Данные для оплаты
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+
+              <ul>
+                <li>
+                  Cookie-данные:
+
+                  <ul>
+                    <li>
+                      IP-адрес
+                    </li>
+                    <li>
+                      Тип браузера
+                    </li>
+                    <li>
+                      Время посещения сайта
+                    </li>
+                    <li>
+                      История просмотров
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              Порядок и сроки обработки
+
+              <ul>
+                <li>
+                  Обработка данных осуществляется с использованием автоматизированных и неавтоматизированных средств
+                </li>
+                <li>
+                  Хранение данных осуществляется в течение срока действия договора и 3 лет после его окончания
+                </li>
+                <li>
+                  Данные уничтожаются при достижении целей обработки или по требованию субъекта данных
+                </li>
+              </ul>
+            </li>
+            <li>
+              Меры защиты
+
+              <ul>
+                <li>
+                  Конфиденциальность данных гарантируется
+                </li>
+                <li>
+                  Применяются технические и организационные меры защиты
+                </li>
+                <li>
+                  Доступ к данным имеют только уполномоченные сотрудники
+                </li>
+              </ul>
+            </li>
+            <li>
+              Права субъектов персональных данных
+
+              <ul>
+                <li>
+                  На доступ к своим персональным данным
+                </li>
+                <li>
+                  На их исправление
+                </li>
+                <li>
+                  На удаление
+                </li>
+                <li>
+                  На ограничение обработки
+                </li>
+                <li>
+                  На перенос данных
+                </li>
+              </ul>
+            </li>
+            <li>
+              Передача данных
+
+              <ul>
+                <li>
+                  Данные могут передаваться:
+
+                  <ul>
+                    <li>
+                      Доверенным подрядчикам
+                    </li>
+                    <li>
+                      По требованию уполномоченных органов
+                    </li>
+                    <li>
+                      В рамках исполнения договорных обязательств
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              Трансграничная передача
+
+              <p>
+                Трансграничная передача данных осуществляется в соответствии с требованиями законодательства РФ.
+              </p>
+            </li>
+            <li>
+              Срок действия
+
+              <p>
+                Политика действует бессрочно и может быть изменена Оператором с уведомлением пользователей.
+              </p>
+            </li>
+            <li>
+              Контакты для обращений
+
+              <p>
+                По вопросам обработки персональных данных можно обращаться:
+              </p>
+              <ul>
+                <li>
+                  По телефону: <a href="tel:+78125027209" target="_blank">+7 (812) 502-72-09</a>
+                </li>
+                <li>
+                  По email: <a href="mailto:info@gazon-poliv.ru" target="_blank">info@gazon-poliv.ru</a>
+                </li>
+                <li>
+                  По почте: г. Санкт-Петербург, пр. Народного ополчения 22к8 выставочный дом № 8
+                </li>
+              </ul>
+              <p>
+                Дата принятия: 02.07.2025
+              </p>
+            </li>
+            <li>
+              Дополнительные положения
+
+              <p>
+                Оператор обязуется соблюдать конфиденциальность данных
+                <br>
+                Пользователь подтверждает ознакомление с Политикой при регистрации/оформилении заказа
+                <br>
+                Действие Политики распространяется на все формы сбора данных на сайте <a href="https://greenkeep.ru/" target="_blank">greenkeep.ru</a>
+              </p>
+            </li>
+          </ol>
+
+          <p>
+            С уважением,
+            <br>
+            ООО «Тру Винд»
+          </p>
+          <p>
+            P. S. Все актуальные версии документов, регламентирующих работу с персональными данными, хранятся в специальном разделе на Яндекс.Диске по ссылке: <a href="https://disk.yandex.ru/d/kBRKbsZetsf0eQ" target="_blank">https://disk.yandex.ru/d/kBRKbsZetsf0eQ</a>
+          </p>
         </div>
       </div>
     </div>

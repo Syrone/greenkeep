@@ -66,7 +66,7 @@
             data-transfer-origin="footer-header-socials"
             data-transfer-breakpoint="991.98">
             <li class="socials-list-item">
-              <a href="#" class="btn btn-icon btn-vk socials-list-link">
+              <a href="https://vk.com/green_keep" target="_blank" class="btn btn-icon btn-vk socials-list-link">
                 <span class="icon">
                   <svg>
                     <use xlink:href="img/icons/vk-fill.svg#svg-vk-fill"></use>
@@ -75,7 +75,7 @@
               </a>
             </li>
             <li class="socials-list-item">
-              <a href="#" class="btn btn-icon btn-dzen socials-list-link">
+              <a href="https://dzen.ru/a/Z9vsAiAJ_ncnb_Sl?sid=93585938100671489" target="_blank" class="btn btn-icon btn-dzen socials-list-link">
                 <span class="icon">
                   <svg>
                     <use xlink:href="img/icons/dzen-fill.svg#svg-dzen-fill"></use>
@@ -120,9 +120,10 @@
             </li>
           </ul>
 
-          <a href="#" class="btn footer-up">
+          <button type="button" class="btn footer-up"
+            data-scroll-anchor="top">
             Наверх
-          </a>
+          </button>
         </div>
       </div>
       <div class="footer-end"
@@ -138,7 +139,7 @@
         </div>
 
         <div class="footer-socials">
-          <a href="#" target="_blank" class="btn btn-lg btn-type-whatsapp footer-socials-button">
+          <a href="https://wa.me/+79312023562" target="_blank" class="btn btn-lg btn-type-whatsapp footer-socials-button">
             <span class="icon">
               <svg>
                 <use xlink:href="img/icons/whatsapp.svg#svg-whatsapp"></use>
@@ -146,7 +147,7 @@
             </span>
             <span>Написать в WhatsApp</span>
           </a>
-          <a href="#" target="_blank" class="btn btn-lg btn-type-telegram footer-socials-button">
+          <a href="https://t.me/+79312023562" target="_blank" class="btn btn-lg btn-type-telegram footer-socials-button">
             <span class="icon">
               <svg>
                 <use xlink:href="img/icons/telegram.svg#svg-telegram"></use>
@@ -167,14 +168,22 @@
             © 2025, Компания ООО «Тру Винд». Все права защищены
           </p>
         </div>
-        <div class="footer-bottom-nav">
-          <a href="#" class="btn footer-bottom-link">
-            Политика конфиденциальности
-          </a>
-          <a href="#" class="btn footer-bottom-link">
-            Публичная оферта
-          </a>
-        </div>
+        <ul class="list-reset footer-bottom-nav">
+          <li>
+            <button type="button" class="btn btn-link footer-bottom-link"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-policy">
+              Политика конфиденциальности
+            </button>
+          </li>
+          <li>
+            <button type="button" class="btn btn-link footer-bottom-link"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-user-agreement">
+              Пользовательское соглашение
+            </button>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

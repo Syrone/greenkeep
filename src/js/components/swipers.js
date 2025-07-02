@@ -29,7 +29,7 @@ document.querySelectorAll('.stages-swiper')?.forEach(element => {
         slidesPerView: 2,
         spaceBetween: 8,
       },
-      992: {
+      1200: {
         slidesPerView: 3,
         spaceBetween: 24,
       },

@@ -17,14 +17,17 @@
 	--_color: var(--text-color);
 	--_color-hover: var(--primary);
 	--_color-active: var(--primary);
+	--_color-disabled: var(--gray);
 
 	--_bg: transparent;
 	--_bg-hover: transparent;
 	--_bg-active: transparent;
+	--_bg-disabled: transparent;
 
 	--_border-color: transparent;
 	--_border-color-hover: transparent;
 	--_border-color-active: transparent;
+	--_border-color-disabled: transparent;
 
 	--_icon-size: 1rem;
 	--_icon-color: currentColor;
@@ -69,6 +72,14 @@
 		border-color: var(--_border-color-active);
 		transform: var(--_transform-active);
 	}
+
+  &[inert],
+  &[disabled] {
+    color: var(--_color-disabled);
+    background-color: var(--_bg-disabled);
+    border-color: var(--_border-color-disabled);
+    cursor: not-allowed;
+  }
 
 	.icon {
 		--_size: var(--_icon-size);
@@ -145,6 +156,7 @@
   --_bg: var(--primary);
   --_bg-hover: var(--primary-400);
   --_bg-active: var(--primary);
+  --_bg-disabled: var(--light-200);
 }
 
 .btn-outline-primary {
@@ -153,10 +165,12 @@
 	--_color-active: var(--text-color);
 
   --_bg-hover: var(--primary);
+  --_bg-disabled: var(--light-200);
 
   --_border-color: var(--primary);
   --_border-color-hover: var(--primary);
   --_border-color-active: var(--primary);
+  --_border-color-active: var(--light-200);
 }
 
 .btn-light {
@@ -194,6 +208,7 @@
   --_bg: var(--dark-500);
   --_bg-hover: var(--dark-300);
   --_bg-active: var(--dark-500);
+  --_bg-disabled: var(--light-200);
 }
 
 .btn-whatsapp,
@@ -291,6 +306,8 @@
 }
 
 .btn-link {
+  --_border-width: 0;
+
 	--_color: var(--primary);
 	--_color-hover: var(--primary-400);
 	--_color-active: var(--primary);

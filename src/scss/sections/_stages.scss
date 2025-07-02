@@ -130,11 +130,13 @@
       flex: 1 1;
       display: flex;
       flex-direction: column;
+      gap: 1.25rem;
       font-size: .875rem;
       font-weight: 500;
       line-height: 1.32;
 
       @include mixins.breakpoint-up(lg) {
+        gap: 2rem;
         font-size: 1.125rem;
         line-height: 1.4;
       }
@@ -149,6 +151,15 @@
       }
     }
 
+    &-content {
+      flex: 1 1;
+
+      .text-collapse {
+        --_collapse-height: 4.75rem;
+        --_collapse-gradient: linear-gradient(to bottom, black calc(100% - 2.5rem), transparent 100%);
+      }
+    }
+
     &-link {
       --_fw: 500;
       --_lh: 1.4;
@@ -158,7 +169,6 @@
       align-self: flex-start;
       gap: 1rem;
       text-align: start;
-      margin-top: auto;
 
       @include mixins.breakpoint-up(lg) {
         --_fs: 1.125rem;

@@ -7,38 +7,20 @@
     display: block;
   }
 
-  &-wrapper {
-
-    &[data-expanded="true"] {
-
-      .seo-content {
-        max-height: 125rem;
-      }
-    }
-
-    &[data-expanded="false"] {
-        mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-        mask-repeat: no-repeat;
-        mask-size: 100% 100%;
-    }
-  }
-
   &-content {
-    max-height: 8.25rem;
     font-size: 1.125rem;
     font-weight: 500;
     line-height: 1.4;
-    overflow: hidden;
-
-    transition-property: max-height;
-    transition-duration: var(--transition-duration);
-    transition-timing-function: var(--transition-timing-function);
 
     h2 {
       font-size: 1.5rem;
 
       &:not(:first-child) {
         margin-top: 2rem;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
       }
     }
 
@@ -54,9 +36,9 @@
       }
     }
 
-    ul {
+    ul,
+    ol {
       margin: 0;
-      padding-left: 1.25em;
 
       &:not(:first-child) {
         margin-top: .5rem;
@@ -64,6 +46,51 @@
 
       &:not(:last-child) {
         margin-bottom: .5rem;
+      }
+
+      ul,
+      ol,
+      p {
+        margin-block: .5rem;
+        padding-left: 1.25em;
+      }
+
+      ul {
+        padding-left: 2.5rem;
+
+        ul {
+          padding-left: 1.25rem;
+        }
+      }
+
+      ol {
+        padding-left: 1.5rem;
+      }
+    }
+
+    ol {
+      list-style: none;
+      counter-reset: section;
+      padding-left: 0;
+
+      > li {
+        counter-increment: section;
+
+        &::before {
+          content: counter(section) ". ";
+        }
+      }
+
+      ol {
+        counter-reset: subsection;
+
+        > li {
+          counter-increment: subsection;
+
+          &::before {
+            content: counter(section) "." counter(subsection) " ";
+          }
+        }
       }
     }
 
@@ -101,36 +128,5 @@
     --_color: var(--text-color);
     --_color-hover: var(--primary);
     --_color-active: var(--text-color);
-
-    .text {
-
-      span {
-
-        &:last-child {
-          display: none;
-        }
-      }
-    }
-
-    &.is-open {
-
-      .text {
-
-        span {
-
-          &:first-child {
-            display: none;
-          }
-
-          &:last-child {
-            display: initial;
-          }
-        }
-      }
-
-      .icon {
-        transform: rotate(180deg);
-      }
-    }
   }
 }

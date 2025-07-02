@@ -21692,7 +21692,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_scroll_to_anchor_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/scroll-to-anchor.js */ "./src/js/components/scroll-to-anchor.js");
 /* harmony import */ var _components_swipers_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/swipers.js */ "./src/js/components/swipers.js");
 /* harmony import */ var _components_form_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/form.js */ "./src/js/components/form.js");
-/* harmony import */ var _components_seo_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/seo.js */ "./src/js/components/seo.js");
+/* harmony import */ var _components_text_collapse_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/text-collapse.js */ "./src/js/components/text-collapse.js");
 /* harmony import */ var _components_accordion_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/accordion.js */ "./src/js/components/accordion.js");
 /* harmony import */ var _components_dropdown_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/dropdown.js */ "./src/js/components/dropdown.js");
 /* harmony import */ var _components_offcanvas_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/offcanvas.js */ "./src/js/components/offcanvas.js");
@@ -21848,10 +21848,50 @@ const rules = [{
     errorMessage: 'Вы должны согласиться с условиями'
   }]
 }];
-const afterForm = form => {
-  console.log('Форма успешно отправлена:', form);
+const afterForm = (target, status) => {
+  // Находим модальное окно #modal-form
+  const submitButton = target.querySelector('button[type="submit"]');
+  const modalForm = document.getElementById('modal-form');
+  const modalThanks = document.getElementById('modal-thanks');
+  const modalError = document.getElementById('modal-error');
+  if (submitButton) {
+    submitButton.inert = true;
+  }
+  target.style.pointerEvents = '';
+  target.querySelector('.loader').classList.add('is-hidden');
+  // Закрываем #modal-form, если форма находится внутри него
+  if (modalForm && window.modalInstances.has(modalForm)) {
+    const modalFormInstance = window.modalInstances.get(modalForm);
+    if (modalForm.contains(target)) {
+      modalFormInstance.hide();
+    }
+  }
+
+  // Обработка статуса ответа
+  if (status === 200) {
+    // Инициализируем и открываем модальное окно #modal-thanks
+    if (!window.modalInstances.has(modalThanks)) {
+      window.initializeModal(modalThanks);
+    }
+    const modalThanksInstance = window.modalInstances.get(modalThanks);
+    modalThanksInstance.show();
+  } else {
+    // Инициализируем и открываем модальное окно #modal-error
+    if (!window.modalInstances.has(modalError)) {
+      window.initializeModal(modalError);
+    }
+    const modalErrorInstance = window.modalInstances.get(modalError);
+    modalErrorInstance.show();
+  }
 };
-(0,_functions_validate_forms_js__WEBPACK_IMPORTED_MODULE_0__.validateForms)('.js-form', rules, afterForm);
+const onProcessing = (target, fields, isValid) => {
+  const allValid = Object.values(fields).every(field => field.isValid === true);
+  target.querySelector('button[type="submit"]').inert = !allValid;
+  if (isValid === false || isValid === undefined) {
+    target.querySelector('.loader').classList.add('is-hidden');
+  }
+};
+(0,_functions_validate_forms_js__WEBPACK_IMPORTED_MODULE_0__.validateForms)('.js-form', rules, afterForm, onProcessing);
 
 /***/ }),
 
@@ -21959,6 +21999,13 @@ __webpack_require__.r(__webpack_exports__);
 document.querySelectorAll('[data-scroll-anchor]')?.forEach(button => {
   button.addEventListener('click', e => {
     const targetKey = button.dataset.scrollAnchor;
+    if (targetKey === 'top') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      return;
+    }
     const target = document.querySelector(`[data-scroll-target="${targetKey}"]`);
     if (target) {
       const headerHeight = (0,_functions_header_height_js__WEBPACK_IMPORTED_MODULE_0__.getHeaderHeight)();
@@ -21969,26 +22016,10 @@ document.querySelectorAll('[data-scroll-anchor]')?.forEach(button => {
         behavior: 'smooth'
       });
     }
-  });
-});
-
-/***/ }),
-
-/***/ "./src/js/components/seo.js":
-/*!**********************************!*\
-  !*** ./src/js/components/seo.js ***!
-  \**********************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-document.querySelectorAll('.seo')?.forEach(element => {
-  const wrapper = element.querySelector('.seo-wrapper');
-  const toggle = element.querySelector('.seo-button');
-  toggle.addEventListener('click', () => {
-    const expanded = wrapper.dataset.expanded === 'true';
-    wrapper.dataset.expanded = !expanded;
-    toggle.classList.toggle('is-open', !expanded);
+    const offcanvasElement = button.closest('.offcanvas');
+    if (offcanvasElement && window.offcanvasInstances?.has(offcanvasElement)) {
+      window.offcanvasInstances.get(offcanvasElement).hide();
+    }
   });
 });
 
@@ -22032,7 +22063,7 @@ document.querySelectorAll('.stages-swiper')?.forEach(element => {
         slidesPerView: 2,
         spaceBetween: 8
       },
-      992: {
+      1200: {
         slidesPerView: 3,
         spaceBetween: 24
       }
@@ -22140,6 +22171,26 @@ document.querySelectorAll('.letters-swiper')?.forEach(element => {
         spaceBetween: 24
       }
     }
+  });
+});
+
+/***/ }),
+
+/***/ "./src/js/components/text-collapse.js":
+/*!********************************************!*\
+  !*** ./src/js/components/text-collapse.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+document.querySelectorAll('[data-text-collapse]')?.forEach(element => {
+  const collapse = element.querySelector('[data-text-expanded="false"]');
+  const toggle = element.querySelector('[data-text-toggle]');
+  toggle.addEventListener('click', () => {
+    const expanded = collapse.dataset.textExpanded === 'true';
+    collapse.dataset.textExpanded = !expanded;
+    toggle.classList.toggle('is-open', !expanded);
   });
 });
 
@@ -22368,7 +22419,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_inputmask_dist_inputmask_es6_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/inputmask/dist/inputmask.es6.js */ "./node_modules/inputmask/dist/inputmask.es6.js");
 
 
-const validateForms = (selector, rules, afterSend) => {
+const validateForms = (selector, rules, afterSend, onProcessing) => {
   const forms = document.querySelectorAll(selector);
   if (!forms || forms.length === 0) {
     console.error('Нет таких форм!');
@@ -22379,10 +22430,23 @@ const validateForms = (selector, rules, afterSend) => {
     return false;
   }
   forms.forEach(form => {
+    const submitButton = form.querySelector('button[type="submit"]');
     const telSelector = form.querySelector('input[type="tel"]');
     if (telSelector) {
       const inputMask = new _node_modules_inputmask_dist_inputmask_es6_js__WEBPACK_IMPORTED_MODULE_1__["default"]('+7 (999)9999999');
       inputMask.mask(telSelector);
+    }
+    if (submitButton) {
+      submitButton.inert = true;
+      const loader = Object.assign(document.createElement('div'), {
+        className: 'loader is-hidden'
+      });
+      submitButton.parentNode.insertBefore(loader, submitButton);
+      submitButton.addEventListener('click', () => {
+        loader.classList.remove('is-hidden');
+        form.style.pointerEvents = 'none';
+        setTimeout(() => submitButton.inert = true);
+      });
     }
     const formRules = rules.map(item => {
       const newItem = {
@@ -22410,6 +22474,12 @@ const validateForms = (selector, rules, afterSend) => {
         });
       }
     });
+    validation.onValidate(({
+      fields,
+      isValid
+    }) => {
+      onProcessing && onProcessing(form, fields, isValid);
+    });
     validation.onSuccess(ev => {
       let formData = new FormData(ev.target);
       if (telSelector) {
@@ -22420,13 +22490,8 @@ const validateForms = (selector, rules, afterSend) => {
       let xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            if (afterSend) {
-              afterSend(ev.target);
-            }
-            console.log('Отправлено');
-          } else {
-            console.error('Ошибка при отправке формы');
+          if (afterSend) {
+            afterSend(ev.target, xhr.status);
           }
         }
       };

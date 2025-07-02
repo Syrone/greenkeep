@@ -9,26 +9,30 @@
         @current
       </div>
     </div>
-    <div class="stages-card-main">
-      <p>
-        @desc
-      </p>
+    <div class="stages-card-main"
+      data-text-collapse>
+      <div class="stages-card-content">
+        <div class="text-collapse" data-text-expanded="false">
+          <div>
+            <p>
+              @desc
+            </p>
+          </div>
+        </div>
+      </div>
 
-      <ul class="list-reset list-disc">
-        @for(var i = 0; i < list.length; i++) {
-          <li>
-            `+list[i]+`
-          </li>
-        }
-      </ul>
-      <a href="#" target="_blank" class="btn btn-link stages-card-link">
-        <span>Подробнее</span>
+      <button type="button" class="btn btn-link stages-card-link text-toggle"
+        data-text-toggle>
+        <span class="text">
+          <span>Подробнее</span>
+          <span>Скрыть текст</span>
+        </span>
         <span class="icon">
           <svg>
             <use xlink:href="img/icons/arrow-right.svg#svg-arrow-right"></use>
           </svg>
         </span>
-      </a>
+      </button>
     </div>
   </div>
 
